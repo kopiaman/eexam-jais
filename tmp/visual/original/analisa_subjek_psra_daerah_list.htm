@@ -1,0 +1,1299 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+
+
+{BEGIN container_toplinks}
+<div class="rnr-c rnr-ch rnr-c-toplinks">
+
+{BEGIN security_block}
+<div  class="style1 rnr-bl rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message} 
+	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+	{BEGIN adminarea_link}
+	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
+	{END adminarea_link}
+
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
+</div></div>
+{END security_block}
+
+
+{BEGIN asearch_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}">	<a href="analisa_subjek_psra_daerah_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
+</div>
+{END asearch_link}
+
+
+
+{BEGIN export_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_export {$brickclass_toplinks_export}">	<a target="_blank" href="analisa_subjek_psra_daerah_export.php" class="rnr-button" {$exportlink_attrs}>Export results</a>
+</div>
+{END export_link}
+
+
+
+
+<div  class="style1 rnr-bl rnr-b-printpanel {$brickclass_printpanel}"></div>
+
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_toplinks}
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+
+{BEGIN menu_block}
+{$menu main horizontal}{END menu_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_hmenu}
+
+
+
+{BEGIN container_search}
+<div class="rnr-c rnr-ch rnr-c-search">
+
+{BEGIN searchform_block}
+<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		{BEGIN searchform_search}
+			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
+		{END searchform_search}
+		{BEGIN searchform_showall}	
+		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
+		{END searchform_showall}
+	</span>
+</div>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+{BEGIN searchsaving_block}
+<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
+{END searchsaving_block}
+
+<div class="rnr-hfiller"></div>
+{BEGIN details_block}
+<div  class="style1 rnr-br rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Page <b>{$page}</b> of <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Records Per Page:&nbsp;{$recsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+{BEGIN searchPanel}
+<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criteria:&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="rnr-buttons-group">
+			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
+		</span>
+		
+		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+	</div>
+	
+
+	<table class="controlsBlock {$controls_block_class}">
+				{BEGIN searchCtrlBlock}
+		<tr class="srchPanelRow" {$filterRow_attrs}>
+			<td class="srchPanelCell">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+				<div class="rnr-searchtype">{$searchtype}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock}
+		 
+		{BEGIN searchCtrlBlock_sZone}
+		<tr class="srchPanelRow {$filterRow_class_sZone}" {$filterRow_attrs_sZone}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label analisa_subjek_psra_daerah sZone}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_sZone}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_sZone}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_sZone}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_sZone}
+		 
+		{BEGIN searchCtrlBlock_eYear}
+		<tr class="srchPanelRow {$filterRow_class_eYear}" {$filterRow_attrs_eYear}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label analisa_subjek_psra_daerah eYear}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_eYear}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_eYear}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_eYear}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_eYear}
+	</table>	
+
+
+	
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	</div>
+</div>
+
+</div></div>{END searchPanel}
+
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_bigblock}
+<div class="rnr-c rnr-cv rnr-c-bigblock">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_recordcontrols} rnr-wrapper rnr-cbw-recordcontrols">
+
+{BEGIN container_recordcontrols}
+<div class="rnr-c rnr-ch rnr-c-recordcontrols">
+<div class="rnr-hfiller"></div>
+
+{BEGIN record_controls_block}
+<div  class="style1 rnr-br rnr-b-recordcontrol {$brickclass_recordcontrol}">	
+	
+	
+		{BEGIN exportselected_link}
+		<a href="#" class="rnr-button" {$exportselectedlink_attrs} {$exportselectedlink_span}>Export selected</a>
+	{END exportselected_link}
+
+</div>
+{END record_controls_block}
+
+
+</div>
+{END container_recordcontrols}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_message} rnr-wrapper rnr-cbw-message">
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_grid} rnr-wrapper rnr-cbw-grid">
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+						<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
+						<thead>
+															{BEGIN grid_header}
+								<tr class="rnr-toprow style1 {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<th class="rnr-bc">
+										<input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																																			{BEGIN sZone_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$sZone_class}">
+									{BEGIN sZone_fieldheader}
+																				<span {$sZone_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah sZone}
+										</span>
+									{END sZone_fieldheader}
+									</th>
+									{END sZone_fieldheadercolumn}
+
+																	{BEGIN eYear_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$eYear_class}">
+									{BEGIN eYear_fieldheader}
+																				<span {$eYear_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah eYear}
+										</span>
+									{END eYear_fieldheader}
+									</th>
+									{END eYear_fieldheadercolumn}
+
+																	{BEGIN s1calon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1calon_class}">
+									{BEGIN s1calon_fieldheader}
+																				<span {$s1calon_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1calon}
+										</span>
+									{END s1calon_fieldheader}
+									</th>
+									{END s1calon_fieldheadercolumn}
+
+																	{BEGIN s1TH_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1TH_class}">
+									{BEGIN s1TH_fieldheader}
+																				<span {$s1TH_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1TH}
+										</span>
+									{END s1TH_fieldheader}
+									</th>
+									{END s1TH_fieldheadercolumn}
+
+																	{BEGIN s1DF_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1DF_class}">
+									{BEGIN s1DF_fieldheader}
+																				<span {$s1DF_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1DF}
+										</span>
+									{END s1DF_fieldheader}
+									</th>
+									{END s1DF_fieldheadercolumn}
+
+																	{BEGIN s1MQ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1MQ_class}">
+									{BEGIN s1MQ_fieldheader}
+																				<span {$s1MQ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1MQ}
+										</span>
+									{END s1MQ_fieldheader}
+									</th>
+									{END s1MQ_fieldheadercolumn}
+
+																	{BEGIN s1JD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1JD_class}">
+									{BEGIN s1JD_fieldheader}
+																				<span {$s1JD_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1JD}
+										</span>
+									{END s1JD_fieldheader}
+									</th>
+									{END s1JD_fieldheadercolumn}
+
+																	{BEGIN s1JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1JJ_class}">
+									{BEGIN s1JJ_fieldheader}
+																				<span {$s1JJ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1JJ}
+										</span>
+									{END s1JJ_fieldheader}
+									</th>
+									{END s1JJ_fieldheadercolumn}
+
+																	{BEGIN s1MZ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1MZ_class}">
+									{BEGIN s1MZ_fieldheader}
+																				<span {$s1MZ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1MZ}
+										</span>
+									{END s1MZ_fieldheader}
+									</th>
+									{END s1MZ_fieldheadercolumn}
+
+																	{BEGIN s1lulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1lulus_class}">
+									{BEGIN s1lulus_fieldheader}
+																				<span {$s1lulus_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1lulus}
+										</span>
+									{END s1lulus_fieldheader}
+									</th>
+									{END s1lulus_fieldheadercolumn}
+
+																	{BEGIN s1gagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s1gagal_class}">
+									{BEGIN s1gagal_fieldheader}
+																				<span {$s1gagal_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s1gagal}
+										</span>
+									{END s1gagal_fieldheader}
+									</th>
+									{END s1gagal_fieldheadercolumn}
+
+																	{BEGIN s2calon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2calon_class}">
+									{BEGIN s2calon_fieldheader}
+																				<span {$s2calon_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2calon}
+										</span>
+									{END s2calon_fieldheader}
+									</th>
+									{END s2calon_fieldheadercolumn}
+
+																	{BEGIN s2TH_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2TH_class}">
+									{BEGIN s2TH_fieldheader}
+																				<span {$s2TH_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2TH}
+										</span>
+									{END s2TH_fieldheader}
+									</th>
+									{END s2TH_fieldheadercolumn}
+
+																	{BEGIN s2DF_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2DF_class}">
+									{BEGIN s2DF_fieldheader}
+																				<span {$s2DF_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2DF}
+										</span>
+									{END s2DF_fieldheader}
+									</th>
+									{END s2DF_fieldheadercolumn}
+
+																	{BEGIN s2MQ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2MQ_class}">
+									{BEGIN s2MQ_fieldheader}
+																				<span {$s2MQ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2MQ}
+										</span>
+									{END s2MQ_fieldheader}
+									</th>
+									{END s2MQ_fieldheadercolumn}
+
+																	{BEGIN s2JD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2JD_class}">
+									{BEGIN s2JD_fieldheader}
+																				<span {$s2JD_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2JD}
+										</span>
+									{END s2JD_fieldheader}
+									</th>
+									{END s2JD_fieldheadercolumn}
+
+																	{BEGIN s2JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2JJ_class}">
+									{BEGIN s2JJ_fieldheader}
+																				<span {$s2JJ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2JJ}
+										</span>
+									{END s2JJ_fieldheader}
+									</th>
+									{END s2JJ_fieldheadercolumn}
+
+																	{BEGIN s2MZ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2MZ_class}">
+									{BEGIN s2MZ_fieldheader}
+																				<span {$s2MZ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2MZ}
+										</span>
+									{END s2MZ_fieldheader}
+									</th>
+									{END s2MZ_fieldheadercolumn}
+
+																	{BEGIN s2lulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2lulus_class}">
+									{BEGIN s2lulus_fieldheader}
+																				<span {$s2lulus_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2lulus}
+										</span>
+									{END s2lulus_fieldheader}
+									</th>
+									{END s2lulus_fieldheadercolumn}
+
+																	{BEGIN s2gagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s2gagal_class}">
+									{BEGIN s2gagal_fieldheader}
+																				<span {$s2gagal_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s2gagal}
+										</span>
+									{END s2gagal_fieldheader}
+									</th>
+									{END s2gagal_fieldheadercolumn}
+
+																	{BEGIN s3calon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3calon_class}">
+									{BEGIN s3calon_fieldheader}
+																				<span {$s3calon_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3calon}
+										</span>
+									{END s3calon_fieldheader}
+									</th>
+									{END s3calon_fieldheadercolumn}
+
+																	{BEGIN s3TH_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3TH_class}">
+									{BEGIN s3TH_fieldheader}
+																				<span {$s3TH_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3TH}
+										</span>
+									{END s3TH_fieldheader}
+									</th>
+									{END s3TH_fieldheadercolumn}
+
+																	{BEGIN s3DF_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3DF_class}">
+									{BEGIN s3DF_fieldheader}
+																				<span {$s3DF_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3DF}
+										</span>
+									{END s3DF_fieldheader}
+									</th>
+									{END s3DF_fieldheadercolumn}
+
+																	{BEGIN s3MQ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3MQ_class}">
+									{BEGIN s3MQ_fieldheader}
+																				<span {$s3MQ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3MQ}
+										</span>
+									{END s3MQ_fieldheader}
+									</th>
+									{END s3MQ_fieldheadercolumn}
+
+																	{BEGIN s3JD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3JD_class}">
+									{BEGIN s3JD_fieldheader}
+																				<span {$s3JD_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3JD}
+										</span>
+									{END s3JD_fieldheader}
+									</th>
+									{END s3JD_fieldheadercolumn}
+
+																	{BEGIN s3JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3JJ_class}">
+									{BEGIN s3JJ_fieldheader}
+																				<span {$s3JJ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3JJ}
+										</span>
+									{END s3JJ_fieldheader}
+									</th>
+									{END s3JJ_fieldheadercolumn}
+
+																	{BEGIN s3MZ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3MZ_class}">
+									{BEGIN s3MZ_fieldheader}
+																				<span {$s3MZ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3MZ}
+										</span>
+									{END s3MZ_fieldheader}
+									</th>
+									{END s3MZ_fieldheadercolumn}
+
+																	{BEGIN s3lulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3lulus_class}">
+									{BEGIN s3lulus_fieldheader}
+																				<span {$s3lulus_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3lulus}
+										</span>
+									{END s3lulus_fieldheader}
+									</th>
+									{END s3lulus_fieldheadercolumn}
+
+																	{BEGIN s3gagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s3gagal_class}">
+									{BEGIN s3gagal_fieldheader}
+																				<span {$s3gagal_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s3gagal}
+										</span>
+									{END s3gagal_fieldheader}
+									</th>
+									{END s3gagal_fieldheadercolumn}
+
+																	{BEGIN s4calon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4calon_class}">
+									{BEGIN s4calon_fieldheader}
+																				<span {$s4calon_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4calon}
+										</span>
+									{END s4calon_fieldheader}
+									</th>
+									{END s4calon_fieldheadercolumn}
+
+																	{BEGIN s4TH_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4TH_class}">
+									{BEGIN s4TH_fieldheader}
+																				<span {$s4TH_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4TH}
+										</span>
+									{END s4TH_fieldheader}
+									</th>
+									{END s4TH_fieldheadercolumn}
+
+																	{BEGIN s4DF_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4DF_class}">
+									{BEGIN s4DF_fieldheader}
+																				<span {$s4DF_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4DF}
+										</span>
+									{END s4DF_fieldheader}
+									</th>
+									{END s4DF_fieldheadercolumn}
+
+																	{BEGIN s4MQ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4MQ_class}">
+									{BEGIN s4MQ_fieldheader}
+																				<span {$s4MQ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4MQ}
+										</span>
+									{END s4MQ_fieldheader}
+									</th>
+									{END s4MQ_fieldheadercolumn}
+
+																	{BEGIN s4JD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4JD_class}">
+									{BEGIN s4JD_fieldheader}
+																				<span {$s4JD_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4JD}
+										</span>
+									{END s4JD_fieldheader}
+									</th>
+									{END s4JD_fieldheadercolumn}
+
+																	{BEGIN s4JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4JJ_class}">
+									{BEGIN s4JJ_fieldheader}
+																				<span {$s4JJ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4JJ}
+										</span>
+									{END s4JJ_fieldheader}
+									</th>
+									{END s4JJ_fieldheadercolumn}
+
+																	{BEGIN s4MZ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4MZ_class}">
+									{BEGIN s4MZ_fieldheader}
+																				<span {$s4MZ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4MZ}
+										</span>
+									{END s4MZ_fieldheader}
+									</th>
+									{END s4MZ_fieldheadercolumn}
+
+																	{BEGIN s4lulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4lulus_class}">
+									{BEGIN s4lulus_fieldheader}
+																				<span {$s4lulus_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4lulus}
+										</span>
+									{END s4lulus_fieldheader}
+									</th>
+									{END s4lulus_fieldheadercolumn}
+
+																	{BEGIN s4gagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s4gagal_class}">
+									{BEGIN s4gagal_fieldheader}
+																				<span {$s4gagal_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s4gagal}
+										</span>
+									{END s4gagal_fieldheader}
+									</th>
+									{END s4gagal_fieldheadercolumn}
+
+																	{BEGIN s5calon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5calon_class}">
+									{BEGIN s5calon_fieldheader}
+																				<span {$s5calon_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5calon}
+										</span>
+									{END s5calon_fieldheader}
+									</th>
+									{END s5calon_fieldheadercolumn}
+
+																	{BEGIN s5TH_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5TH_class}">
+									{BEGIN s5TH_fieldheader}
+																				<span {$s5TH_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5TH}
+										</span>
+									{END s5TH_fieldheader}
+									</th>
+									{END s5TH_fieldheadercolumn}
+
+																	{BEGIN s5DF_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5DF_class}">
+									{BEGIN s5DF_fieldheader}
+																				<span {$s5DF_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5DF}
+										</span>
+									{END s5DF_fieldheader}
+									</th>
+									{END s5DF_fieldheadercolumn}
+
+																	{BEGIN s5MQ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5MQ_class}">
+									{BEGIN s5MQ_fieldheader}
+																				<span {$s5MQ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5MQ}
+										</span>
+									{END s5MQ_fieldheader}
+									</th>
+									{END s5MQ_fieldheadercolumn}
+
+																	{BEGIN s5JD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5JD_class}">
+									{BEGIN s5JD_fieldheader}
+																				<span {$s5JD_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5JD}
+										</span>
+									{END s5JD_fieldheader}
+									</th>
+									{END s5JD_fieldheadercolumn}
+
+																	{BEGIN s5JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5JJ_class}">
+									{BEGIN s5JJ_fieldheader}
+																				<span {$s5JJ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5JJ}
+										</span>
+									{END s5JJ_fieldheader}
+									</th>
+									{END s5JJ_fieldheadercolumn}
+
+																	{BEGIN s5MZ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5MZ_class}">
+									{BEGIN s5MZ_fieldheader}
+																				<span {$s5MZ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5MZ}
+										</span>
+									{END s5MZ_fieldheader}
+									</th>
+									{END s5MZ_fieldheadercolumn}
+
+																	{BEGIN s5lulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5lulus_class}">
+									{BEGIN s5lulus_fieldheader}
+																				<span {$s5lulus_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5lulus}
+										</span>
+									{END s5lulus_fieldheader}
+									</th>
+									{END s5lulus_fieldheadercolumn}
+
+																	{BEGIN s5gagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s5gagal_class}">
+									{BEGIN s5gagal_fieldheader}
+																				<span {$s5gagal_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s5gagal}
+										</span>
+									{END s5gagal_fieldheader}
+									</th>
+									{END s5gagal_fieldheadercolumn}
+
+																	{BEGIN s6calon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6calon_class}">
+									{BEGIN s6calon_fieldheader}
+																				<span {$s6calon_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6calon}
+										</span>
+									{END s6calon_fieldheader}
+									</th>
+									{END s6calon_fieldheadercolumn}
+
+																	{BEGIN s6TH_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6TH_class}">
+									{BEGIN s6TH_fieldheader}
+																				<span {$s6TH_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6TH}
+										</span>
+									{END s6TH_fieldheader}
+									</th>
+									{END s6TH_fieldheadercolumn}
+
+																	{BEGIN s6DF_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6DF_class}">
+									{BEGIN s6DF_fieldheader}
+																				<span {$s6DF_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6DF}
+										</span>
+									{END s6DF_fieldheader}
+									</th>
+									{END s6DF_fieldheadercolumn}
+
+																	{BEGIN s6MQ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6MQ_class}">
+									{BEGIN s6MQ_fieldheader}
+																				<span {$s6MQ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6MQ}
+										</span>
+									{END s6MQ_fieldheader}
+									</th>
+									{END s6MQ_fieldheadercolumn}
+
+																	{BEGIN s6JD_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6JD_class}">
+									{BEGIN s6JD_fieldheader}
+																				<span {$s6JD_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6JD}
+										</span>
+									{END s6JD_fieldheader}
+									</th>
+									{END s6JD_fieldheadercolumn}
+
+																	{BEGIN s6JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6JJ_class}">
+									{BEGIN s6JJ_fieldheader}
+																				<span {$s6JJ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6JJ}
+										</span>
+									{END s6JJ_fieldheader}
+									</th>
+									{END s6JJ_fieldheadercolumn}
+
+																	{BEGIN s6MZ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6MZ_class}">
+									{BEGIN s6MZ_fieldheader}
+																				<span {$s6MZ_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6MZ}
+										</span>
+									{END s6MZ_fieldheader}
+									</th>
+									{END s6MZ_fieldheadercolumn}
+
+																	{BEGIN s6lulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6lulus_class}">
+									{BEGIN s6lulus_fieldheader}
+																				<span {$s6lulus_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6lulus}
+										</span>
+									{END s6lulus_fieldheader}
+									</th>
+									{END s6lulus_fieldheadercolumn}
+
+																	{BEGIN s6gagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$s6gagal_class}">
+									{BEGIN s6gagal_fieldheader}
+																				<span {$s6gagal_orderlinkattrs}>
+											{$label analisa_subjek_psra_daerah s6gagal}
+										</span>
+									{END s6gagal_fieldheader}
+									</th>
+									{END s6gagal_fieldheadercolumn}
+
+
+									
+									<th class="rnr-edge">&nbsp;</th>
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+						</thead>
+						<tbody>	
+															{BEGIN grid_row}
+								<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+									{BEGIN grid_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
+									
+									
+									
+																		</td>	
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="rnr-bc" iEditCont="checkBox" {$rowstyle} {$recordattrs}>
+									{BEGIN checkbox}
+									<input type="checkbox" {$checkbox_attrs}>
+									{END checkbox}
+									</td>
+									{END checkbox_column}
+
+									
+										{BEGIN sZone_fieldcolumn}
+	<td class="{$sZone_class}" {$sZone_style} {$recordattrs}>
+		{$sZone_value}
+	</td>
+{END sZone_fieldcolumn}
+
+	{BEGIN eYear_fieldcolumn}
+	<td class="{$eYear_class}" {$eYear_style} {$recordattrs}>
+		{$eYear_value}
+	</td>
+{END eYear_fieldcolumn}
+
+	{BEGIN s1calon_fieldcolumn}
+	<td class="{$s1calon_class}" {$s1calon_style} {$recordattrs}>
+		{$s1calon_value}
+	</td>
+{END s1calon_fieldcolumn}
+
+	{BEGIN s1TH_fieldcolumn}
+	<td class="{$s1TH_class}" {$s1TH_style} {$recordattrs}>
+		{$s1TH_value}
+	</td>
+{END s1TH_fieldcolumn}
+
+	{BEGIN s1DF_fieldcolumn}
+	<td class="{$s1DF_class}" {$s1DF_style} {$recordattrs}>
+		{$s1DF_value}
+	</td>
+{END s1DF_fieldcolumn}
+
+	{BEGIN s1MQ_fieldcolumn}
+	<td class="{$s1MQ_class}" {$s1MQ_style} {$recordattrs}>
+		{$s1MQ_value}
+	</td>
+{END s1MQ_fieldcolumn}
+
+	{BEGIN s1JD_fieldcolumn}
+	<td class="{$s1JD_class}" {$s1JD_style} {$recordattrs}>
+		{$s1JD_value}
+	</td>
+{END s1JD_fieldcolumn}
+
+	{BEGIN s1JJ_fieldcolumn}
+	<td class="{$s1JJ_class}" {$s1JJ_style} {$recordattrs}>
+		{$s1JJ_value}
+	</td>
+{END s1JJ_fieldcolumn}
+
+	{BEGIN s1MZ_fieldcolumn}
+	<td class="{$s1MZ_class}" {$s1MZ_style} {$recordattrs}>
+		{$s1MZ_value}
+	</td>
+{END s1MZ_fieldcolumn}
+
+	{BEGIN s1lulus_fieldcolumn}
+	<td class="{$s1lulus_class}" {$s1lulus_style} {$recordattrs}>
+		{$s1lulus_value}
+	</td>
+{END s1lulus_fieldcolumn}
+
+	{BEGIN s1gagal_fieldcolumn}
+	<td class="{$s1gagal_class}" {$s1gagal_style} {$recordattrs}>
+		{$s1gagal_value}
+	</td>
+{END s1gagal_fieldcolumn}
+
+	{BEGIN s2calon_fieldcolumn}
+	<td class="{$s2calon_class}" {$s2calon_style} {$recordattrs}>
+		{$s2calon_value}
+	</td>
+{END s2calon_fieldcolumn}
+
+	{BEGIN s2TH_fieldcolumn}
+	<td class="{$s2TH_class}" {$s2TH_style} {$recordattrs}>
+		{$s2TH_value}
+	</td>
+{END s2TH_fieldcolumn}
+
+	{BEGIN s2DF_fieldcolumn}
+	<td class="{$s2DF_class}" {$s2DF_style} {$recordattrs}>
+		{$s2DF_value}
+	</td>
+{END s2DF_fieldcolumn}
+
+	{BEGIN s2MQ_fieldcolumn}
+	<td class="{$s2MQ_class}" {$s2MQ_style} {$recordattrs}>
+		{$s2MQ_value}
+	</td>
+{END s2MQ_fieldcolumn}
+
+	{BEGIN s2JD_fieldcolumn}
+	<td class="{$s2JD_class}" {$s2JD_style} {$recordattrs}>
+		{$s2JD_value}
+	</td>
+{END s2JD_fieldcolumn}
+
+	{BEGIN s2JJ_fieldcolumn}
+	<td class="{$s2JJ_class}" {$s2JJ_style} {$recordattrs}>
+		{$s2JJ_value}
+	</td>
+{END s2JJ_fieldcolumn}
+
+	{BEGIN s2MZ_fieldcolumn}
+	<td class="{$s2MZ_class}" {$s2MZ_style} {$recordattrs}>
+		{$s2MZ_value}
+	</td>
+{END s2MZ_fieldcolumn}
+
+	{BEGIN s2lulus_fieldcolumn}
+	<td class="{$s2lulus_class}" {$s2lulus_style} {$recordattrs}>
+		{$s2lulus_value}
+	</td>
+{END s2lulus_fieldcolumn}
+
+	{BEGIN s2gagal_fieldcolumn}
+	<td class="{$s2gagal_class}" {$s2gagal_style} {$recordattrs}>
+		{$s2gagal_value}
+	</td>
+{END s2gagal_fieldcolumn}
+
+	{BEGIN s3calon_fieldcolumn}
+	<td class="{$s3calon_class}" {$s3calon_style} {$recordattrs}>
+		{$s3calon_value}
+	</td>
+{END s3calon_fieldcolumn}
+
+	{BEGIN s3TH_fieldcolumn}
+	<td class="{$s3TH_class}" {$s3TH_style} {$recordattrs}>
+		{$s3TH_value}
+	</td>
+{END s3TH_fieldcolumn}
+
+	{BEGIN s3DF_fieldcolumn}
+	<td class="{$s3DF_class}" {$s3DF_style} {$recordattrs}>
+		{$s3DF_value}
+	</td>
+{END s3DF_fieldcolumn}
+
+	{BEGIN s3MQ_fieldcolumn}
+	<td class="{$s3MQ_class}" {$s3MQ_style} {$recordattrs}>
+		{$s3MQ_value}
+	</td>
+{END s3MQ_fieldcolumn}
+
+	{BEGIN s3JD_fieldcolumn}
+	<td class="{$s3JD_class}" {$s3JD_style} {$recordattrs}>
+		{$s3JD_value}
+	</td>
+{END s3JD_fieldcolumn}
+
+	{BEGIN s3JJ_fieldcolumn}
+	<td class="{$s3JJ_class}" {$s3JJ_style} {$recordattrs}>
+		{$s3JJ_value}
+	</td>
+{END s3JJ_fieldcolumn}
+
+	{BEGIN s3MZ_fieldcolumn}
+	<td class="{$s3MZ_class}" {$s3MZ_style} {$recordattrs}>
+		{$s3MZ_value}
+	</td>
+{END s3MZ_fieldcolumn}
+
+	{BEGIN s3lulus_fieldcolumn}
+	<td class="{$s3lulus_class}" {$s3lulus_style} {$recordattrs}>
+		{$s3lulus_value}
+	</td>
+{END s3lulus_fieldcolumn}
+
+	{BEGIN s3gagal_fieldcolumn}
+	<td class="{$s3gagal_class}" {$s3gagal_style} {$recordattrs}>
+		{$s3gagal_value}
+	</td>
+{END s3gagal_fieldcolumn}
+
+	{BEGIN s4calon_fieldcolumn}
+	<td class="{$s4calon_class}" {$s4calon_style} {$recordattrs}>
+		{$s4calon_value}
+	</td>
+{END s4calon_fieldcolumn}
+
+	{BEGIN s4TH_fieldcolumn}
+	<td class="{$s4TH_class}" {$s4TH_style} {$recordattrs}>
+		{$s4TH_value}
+	</td>
+{END s4TH_fieldcolumn}
+
+	{BEGIN s4DF_fieldcolumn}
+	<td class="{$s4DF_class}" {$s4DF_style} {$recordattrs}>
+		{$s4DF_value}
+	</td>
+{END s4DF_fieldcolumn}
+
+	{BEGIN s4MQ_fieldcolumn}
+	<td class="{$s4MQ_class}" {$s4MQ_style} {$recordattrs}>
+		{$s4MQ_value}
+	</td>
+{END s4MQ_fieldcolumn}
+
+	{BEGIN s4JD_fieldcolumn}
+	<td class="{$s4JD_class}" {$s4JD_style} {$recordattrs}>
+		{$s4JD_value}
+	</td>
+{END s4JD_fieldcolumn}
+
+	{BEGIN s4JJ_fieldcolumn}
+	<td class="{$s4JJ_class}" {$s4JJ_style} {$recordattrs}>
+		{$s4JJ_value}
+	</td>
+{END s4JJ_fieldcolumn}
+
+	{BEGIN s4MZ_fieldcolumn}
+	<td class="{$s4MZ_class}" {$s4MZ_style} {$recordattrs}>
+		{$s4MZ_value}
+	</td>
+{END s4MZ_fieldcolumn}
+
+	{BEGIN s4lulus_fieldcolumn}
+	<td class="{$s4lulus_class}" {$s4lulus_style} {$recordattrs}>
+		{$s4lulus_value}
+	</td>
+{END s4lulus_fieldcolumn}
+
+	{BEGIN s4gagal_fieldcolumn}
+	<td class="{$s4gagal_class}" {$s4gagal_style} {$recordattrs}>
+		{$s4gagal_value}
+	</td>
+{END s4gagal_fieldcolumn}
+
+	{BEGIN s5calon_fieldcolumn}
+	<td class="{$s5calon_class}" {$s5calon_style} {$recordattrs}>
+		{$s5calon_value}
+	</td>
+{END s5calon_fieldcolumn}
+
+	{BEGIN s5TH_fieldcolumn}
+	<td class="{$s5TH_class}" {$s5TH_style} {$recordattrs}>
+		{$s5TH_value}
+	</td>
+{END s5TH_fieldcolumn}
+
+	{BEGIN s5DF_fieldcolumn}
+	<td class="{$s5DF_class}" {$s5DF_style} {$recordattrs}>
+		{$s5DF_value}
+	</td>
+{END s5DF_fieldcolumn}
+
+	{BEGIN s5MQ_fieldcolumn}
+	<td class="{$s5MQ_class}" {$s5MQ_style} {$recordattrs}>
+		{$s5MQ_value}
+	</td>
+{END s5MQ_fieldcolumn}
+
+	{BEGIN s5JD_fieldcolumn}
+	<td class="{$s5JD_class}" {$s5JD_style} {$recordattrs}>
+		{$s5JD_value}
+	</td>
+{END s5JD_fieldcolumn}
+
+	{BEGIN s5JJ_fieldcolumn}
+	<td class="{$s5JJ_class}" {$s5JJ_style} {$recordattrs}>
+		{$s5JJ_value}
+	</td>
+{END s5JJ_fieldcolumn}
+
+	{BEGIN s5MZ_fieldcolumn}
+	<td class="{$s5MZ_class}" {$s5MZ_style} {$recordattrs}>
+		{$s5MZ_value}
+	</td>
+{END s5MZ_fieldcolumn}
+
+	{BEGIN s5lulus_fieldcolumn}
+	<td class="{$s5lulus_class}" {$s5lulus_style} {$recordattrs}>
+		{$s5lulus_value}
+	</td>
+{END s5lulus_fieldcolumn}
+
+	{BEGIN s5gagal_fieldcolumn}
+	<td class="{$s5gagal_class}" {$s5gagal_style} {$recordattrs}>
+		{$s5gagal_value}
+	</td>
+{END s5gagal_fieldcolumn}
+
+	{BEGIN s6calon_fieldcolumn}
+	<td class="{$s6calon_class}" {$s6calon_style} {$recordattrs}>
+		{$s6calon_value}
+	</td>
+{END s6calon_fieldcolumn}
+
+	{BEGIN s6TH_fieldcolumn}
+	<td class="{$s6TH_class}" {$s6TH_style} {$recordattrs}>
+		{$s6TH_value}
+	</td>
+{END s6TH_fieldcolumn}
+
+	{BEGIN s6DF_fieldcolumn}
+	<td class="{$s6DF_class}" {$s6DF_style} {$recordattrs}>
+		{$s6DF_value}
+	</td>
+{END s6DF_fieldcolumn}
+
+	{BEGIN s6MQ_fieldcolumn}
+	<td class="{$s6MQ_class}" {$s6MQ_style} {$recordattrs}>
+		{$s6MQ_value}
+	</td>
+{END s6MQ_fieldcolumn}
+
+	{BEGIN s6JD_fieldcolumn}
+	<td class="{$s6JD_class}" {$s6JD_style} {$recordattrs}>
+		{$s6JD_value}
+	</td>
+{END s6JD_fieldcolumn}
+
+	{BEGIN s6JJ_fieldcolumn}
+	<td class="{$s6JJ_class}" {$s6JJ_style} {$recordattrs}>
+		{$s6JJ_value}
+	</td>
+{END s6JJ_fieldcolumn}
+
+	{BEGIN s6MZ_fieldcolumn}
+	<td class="{$s6MZ_class}" {$s6MZ_style} {$recordattrs}>
+		{$s6MZ_value}
+	</td>
+{END s6MZ_fieldcolumn}
+
+	{BEGIN s6lulus_fieldcolumn}
+	<td class="{$s6lulus_class}" {$s6lulus_style} {$recordattrs}>
+		{$s6lulus_value}
+	</td>
+{END s6lulus_fieldcolumn}
+
+	{BEGIN s6gagal_fieldcolumn}
+	<td class="{$s6gagal_class}" {$s6gagal_style} {$recordattrs}>
+		{$s6gagal_value}
+	</td>
+{END s6gagal_fieldcolumn}
+
+
+									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+									{BEGIN endrecord_block}
+									<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+									{END endrecord_block}
+																	
+									{END grid_record}
+
+								</tr>
+								{END grid_row}
+															
+						</tbody>
+					</table>
+					
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pagination} rnr-wrapper rnr-cbw-pagination">
+
+{BEGIN container_pagination}
+<div class="rnr-c rnr-ch rnr-c-pagination">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+
+</div>
+{END container_pagination}
+
+</div>
+
+
+</div>
+{END container_bigblock}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

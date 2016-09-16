@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<HTML {$html_attrs}><HEAD> 
+<META http-equiv="X-UA-Compatible" content="IE=Edge"> <TITLE>{$pagetitle} </TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<LINK href="styles/default.css" rel="stylesheet" type="text/css"> {BEGIN rtlCSS}<LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">{END rtlCSS} {BEGIN styleCSSFiles}<LINK href="{$stylepath}" rel="stylesheet" type="text/css">{END styleCSSFiles} {BEGIN pageCSSFiles}<LINK href="{$pagestylepath}" rel="stylesheet" type="text/css">{END pageCSSFiles} 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18125"></HEAD> 
+<BODY class="{$stylename} function-import" {$bodyattrs}>{BEGIN body}
+
+{$header} 
+<DIV class="rnr-page">
+<DIV class="rnr-top {$blockclass_top}">
+{BEGIN container_import}
+<DIV class="rnr-c rnr-cv rnr-c-import">
+<DIV class="rnr-brickcontents style2 rnr-b-importheader {$brickclass_importheader}"><SPAN>
+<H1>
+{$pagetitlelabel marking_BA import} </H1></SPAN> 
+</DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-errormessage {$brickclass_errormessage}">
+{$error_message} </DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_importfields} rnr-wrapper rnr-cbw-importfields">
+{BEGIN container_importfields}
+<DIV class="rnr-c rnr-cv rnr-c-importfields">
+<DIV class="rnr-brickcontents style1 rnr-b-importheader_text {$brickclass_importheader_text}"> 
+Nota: Semasa arahan pilihan kolum, ambil kolum No Kunci &amp; Subjek Sahaja 
+</DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-importfields {$brickclass_importfields}">
+<DIV class="import-dragndrop-area" id="importDropzone{$id}" style="display: none;">
+<DIV class="import-dragtext"> Drag files here </DIV></DIV>
+<DIV class="rnr-import-settings"><A class="rnr-button" id="switchToTextInsertion{$id}" href="#"> Copy and paste text </A> 
+</DIV></DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-import_rawtext_control {$brickclass_import_rawtext_control}">
+<DIV id="copyAndPasteText{$id}">
+<DIV> Copy and Paste your text data here: </DIV><TEXTAREA class="rnr-import-textarea" id="importText{$id}"></TEXTAREA> 
+</DIV></DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-import_preview {$brickclass_import_preview}">
+<DIV>
+<DIV class="rnr-import-settings" id="importSettings{$id}">
+<DIV class="rnr-is-control"><INPUT name="columnsInFirstLine" class="rnr-checkbox" id="columnsInFirstLine{$id}" type="checkbox" checked="checked"> 
+<LABEL> Column headers in the first line </LABEL> </DIV>
+<DIV class="rnr-is-control" id="delimiterSettings{$id}" style="display: none;"><INPUT name="importDelimiter" class="importDelimiters" type="radio" value=","> <LABEL> Comma </LABEL> <INPUT name="importDelimiter" class="importDelimiters" type="radio" value="&#9;"> <LABEL> Tab </LABEL> <INPUT name="importDelimiter" class="importDelimiters" type="radio" value="other"> <LABEL> Other </LABEL> 
+<INPUT id="customDelimiter{$id}" type="text" value=";"> 
+</DIV>
+<DIV class="rnr-is-control" id="dateFormatSettings{$id}" style="display: none;"><LABEL> Date format: </LABEL> <INPUT id="importDateFormat{$id}" type="text"> </DIV></DIV>
+<DIV class="rnr-import-head-preview" id="importGridHead{$id}"></DIV>
+<DIV class="rnr-import-body-preview" id="importGridBody{$id}">
+<TABLE id="importPreviewBodyTable{$id}"></TABLE></DIV>
+<DIV class="rnr-error" id="importErrorMessage{$id}" style="display: none;"></DIV></DIV></DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-import_process {$brickclass_import_process}">
+<DIV class="rnr-import-progress" id="importProgress{$id}"></DIV></DIV>
+<DIV class="rnr-brickcontents style1 rnr-b-import_results {$brickclass_import_results}">
+<DIV class="rnr-import-report" id="reportText{$id}"></DIV></DIV>
+<DIV class="rnr-brickcontents style2 rnr-b-importbuttons {$brickclass_importbuttons}">
+<DIV class="rnr-buttons-right"><A class="rnr-button button" id="CLOSE_WINDOW" href="#" typeid="ib">CLOSE&nbsp;WINDOW</A> <A class="rnr-button" id="newImport{$id}" style="display: none;" href="#"> New import </A> </DIV>
+<DIV class="rnr-buttons-left"><A class="rnr-button disabled main" id="continueTextImport{$id}" style="display: none;" href="#"> 
+Continue </A> <A class="rnr-button" id="importButton{$id}" style="display: none;" href="#"> Import Data </A> <A class="rnr-button" id="backTo{$id}" style="display: none;" href="#"> Back </A> <A class="rnr-button errorReportButtons{$id}" id="saveUnprocessedData{$id}" style="display: none;" href="#"> 
+Download unprocessed data </A> <A class="rnr-button errorReportButtons{$id}" id="saveErrorReport{$id}" style="display: none;" href="#"> 
+Download error log </A> </DIV></DIV></DIV>{END container_importfields}</DIV></DIV> {END container_import}</DIV>
+<DIV class="rnr-middle">
+<DIV class="rnr-left {$blockclass_left}"></DIV>
+<DIV class="rnr-center {$blockclass_center}"></DIV>
+<DIV class="rnr-right {$blockclass_right}"></DIV></DIV>
+<DIV class="rnr-bottom {$blockclass_bottom}"></DIV></DIV>
+{$footer}{END body} </BODY></HTML>

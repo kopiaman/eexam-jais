@@ -1,0 +1,312 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+{BEGIN container_search}
+<div class="rnr-c rnr-cv rnr-c-search">
+
+{BEGIN searchheader}
+<div  class="rnr-brickcontents style2 rnr-b-srchheader {$brickclass_srchheader}"><span>	<h1>{$pagetitlelabel analisa_subjek_psra_daerah search}</h1>
+</span></div>{END searchheader}
+
+
+{BEGIN conditions_block}
+<div  class="rnr-brickcontents style1 rnr-b-srchconditions {$brickclass_srchconditions}">	<center>
+	<span class=fieldname>Criteria:&nbsp;</span>	
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$all_checkbox}><label for="all_checkbox"> All conditions</label>
+	&nbsp;&nbsp;&nbsp;
+	<input type="radio" class="rnr-radio-button" name="srchType{$id}" {$any_checkbox}><label for="any_checkbox"> Any condition</label>
+	</center></div>{END conditions_block}
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_fields} rnr-wrapper rnr-cbw-fields">
+
+{BEGIN container_fields}
+<div class="rnr-c rnr-cv rnr-c-fields">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-srchfields {$brickclass_srchfields}"><table class="fieldGrid">
+	<tr>
+		<td>&nbsp;</td>
+		<td>NOT</td>
+		<td colspan=3>&nbsp; </td>
+	</tr>
+	<tr class="{$fielddispclass_s6JD}">
+	{BEGIN s6JD_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6JD}
+	</td>
+	<td>
+		<input type="checkbox" {$s6JD_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6JD}
+	</td>
+	<td>
+		{$s6JD_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6JD_editcontrol1}&nbsp;
+	</td>
+{END s6JD_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6lulus}">
+	{BEGIN s6lulus_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6lulus}
+	</td>
+	<td>
+		<input type="checkbox" {$s6lulus_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6lulus}
+	</td>
+	<td>
+		{$s6lulus_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6lulus_editcontrol1}&nbsp;
+	</td>
+{END s6lulus_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6TH}">
+	{BEGIN s6TH_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6TH}
+	</td>
+	<td>
+		<input type="checkbox" {$s6TH_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6TH}
+	</td>
+	<td>
+		{$s6TH_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6TH_editcontrol1}&nbsp;
+	</td>
+{END s6TH_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6DF}">
+	{BEGIN s6DF_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6DF}
+	</td>
+	<td>
+		<input type="checkbox" {$s6DF_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6DF}
+	</td>
+	<td>
+		{$s6DF_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6DF_editcontrol1}&nbsp;
+	</td>
+{END s6DF_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6MQ}">
+	{BEGIN s6MQ_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6MQ}
+	</td>
+	<td>
+		<input type="checkbox" {$s6MQ_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6MQ}
+	</td>
+	<td>
+		{$s6MQ_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6MQ_editcontrol1}&nbsp;
+	</td>
+{END s6MQ_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6gagal}">
+	{BEGIN s6gagal_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6gagal}
+	</td>
+	<td>
+		<input type="checkbox" {$s6gagal_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6gagal}
+	</td>
+	<td>
+		{$s6gagal_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6gagal_editcontrol1}&nbsp;
+	</td>
+{END s6gagal_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6JJ}">
+	{BEGIN s6JJ_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6JJ}
+	</td>
+	<td>
+		<input type="checkbox" {$s6JJ_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6JJ}
+	</td>
+	<td>
+		{$s6JJ_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6JJ_editcontrol1}&nbsp;
+	</td>
+{END s6JJ_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6MZ}">
+	{BEGIN s6MZ_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6MZ}
+	</td>
+	<td>
+		<input type="checkbox" {$s6MZ_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6MZ}
+	</td>
+	<td>
+		{$s6MZ_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6MZ_editcontrol1}&nbsp;
+	</td>
+{END s6MZ_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_s6calon}">
+	{BEGIN s6calon_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah s6calon}
+	</td>
+	<td>
+		<input type="checkbox" {$s6calon_notbox}>
+	</td>
+	<td>
+		{$searchtype_s6calon}
+	</td>
+	<td>
+		{$s6calon_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$s6calon_editcontrol1}&nbsp;
+	</td>
+{END s6calon_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_sZone}">
+	{BEGIN sZone_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah sZone}
+	</td>
+	<td>
+		<input type="checkbox" {$sZone_notbox}>
+	</td>
+	<td>
+		{$searchtype_sZone}
+	</td>
+	<td>
+		{$sZone_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$sZone_editcontrol1}&nbsp;
+	</td>
+{END sZone_fieldblock}
+	</tr>
+	<tr class="{$fielddispclass_eYear}">
+	{BEGIN eYear_fieldblock}		
+	<td>
+		{$label analisa_subjek_psra_daerah eYear}
+	</td>
+	<td>
+		<input type="checkbox" {$eYear_notbox}>
+	</td>
+	<td>
+		{$searchtype_eYear}
+	</td>
+	<td>
+		{$eYear_editcontrol}&nbsp;
+	</td>
+	<td>
+		{$eYear_editcontrol1}&nbsp;
+	</td>
+{END eYear_fieldblock}
+	</tr>
+
+</table></div>
+
+
+{BEGIN searchbuttons}
+<div  class="rnr-brickcontents style2 rnr-b-srchbuttons {$brickclass_srchbuttons}">{BEGIN search_button}
+<a href="#" class="rnr-button main" {$searchbutton_attrs}>Search</a>
+{END search_button} 
+{BEGIN reset_button}
+<a href="#" class="rnr-button" {$resetbutton_attrs}>Reset</a>
+{END reset_button}
+{BEGIN back_button}
+<a href="#" class="rnr-button" {$backbutton_attrs}>Back to list</a>
+{END back_button}</div>{END searchbuttons}
+
+
+</div>
+{END container_fields}
+
+</div>
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

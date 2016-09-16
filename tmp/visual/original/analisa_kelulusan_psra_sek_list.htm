@@ -1,0 +1,700 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+
+
+{BEGIN container_toplinks}
+<div class="rnr-c rnr-ch rnr-c-toplinks">
+
+{BEGIN security_block}
+<div  class="style1 rnr-bl rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message} 
+	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+	{BEGIN adminarea_link}
+	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
+	{END adminarea_link}
+
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
+</div></div>
+{END security_block}
+
+
+{BEGIN asearch_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}">	<a href="analisa_kelulusan_psra_sek_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
+</div>
+{END asearch_link}
+
+
+
+{BEGIN export_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_export {$brickclass_toplinks_export}">	<a target="_blank" href="analisa_kelulusan_psra_sek_export.php" class="rnr-button" {$exportlink_attrs}>Export results</a>
+</div>
+{END export_link}
+
+
+
+
+<div  class="style1 rnr-bl rnr-b-printpanel {$brickclass_printpanel}"></div>
+
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_toplinks}
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+
+{BEGIN menu_block}
+{$menu main horizontal}{END menu_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_hmenu}
+
+
+
+{BEGIN container_search}
+<div class="rnr-c rnr-ch rnr-c-search">
+
+{BEGIN searchform_block}
+<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		{BEGIN searchform_search}
+			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
+		{END searchform_search}
+		{BEGIN searchform_showall}	
+		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
+		{END searchform_showall}
+	</span>
+</div>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+{BEGIN searchsaving_block}
+<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
+{END searchsaving_block}
+
+<div class="rnr-hfiller"></div>
+{BEGIN details_block}
+<div  class="style1 rnr-br rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Page <b>{$page}</b> of <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Records Per Page:&nbsp;{$recsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+{BEGIN searchPanel}
+<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criteria:&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="rnr-buttons-group">
+			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
+		</span>
+		
+		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+	</div>
+	
+
+	<table class="controlsBlock {$controls_block_class}">
+				{BEGIN searchCtrlBlock}
+		<tr class="srchPanelRow" {$filterRow_attrs}>
+			<td class="srchPanelCell">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+				<div class="rnr-searchtype">{$searchtype}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock}
+		{BEGIN searchCtrlBlock_sZone}
+		<tr class="srchPanelRow {$filterRow_class_sZone}" {$filterRow_attrs_sZone}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label analisa_kelulusan_psra_sek sZone}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_sZone}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_sZone}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_sZone}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_sZone}
+		{BEGIN searchCtrlBlock_sCode}
+		<tr class="srchPanelRow {$filterRow_class_sCode}" {$filterRow_attrs_sCode}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label analisa_kelulusan_psra_sek sCode}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_sCode}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_sCode}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_sCode}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_sCode}
+		{BEGIN searchCtrlBlock_eYear}
+		<tr class="srchPanelRow {$filterRow_class_eYear}" {$filterRow_attrs_eYear}>
+						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$label analisa_kelulusan_psra_sek eYear}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+								<div class="rnr-searchtype">{$searchtype_eYear}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol_eYear}</div>
+								<div class="rnr-searchcontrol">{$searchcontrol1_eYear}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock_eYear}
+	</table>	
+
+
+	
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	</div>
+</div>
+
+</div></div>{END searchPanel}
+
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_bigblock}
+<div class="rnr-c rnr-cv rnr-c-bigblock">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_recordcontrols} rnr-wrapper rnr-cbw-recordcontrols">
+
+{BEGIN container_recordcontrols}
+<div class="rnr-c rnr-ch rnr-c-recordcontrols">
+<div class="rnr-hfiller"></div>
+
+{BEGIN record_controls_block}
+<div  class="style1 rnr-br rnr-b-recordcontrol {$brickclass_recordcontrol}">	
+	
+	
+		{BEGIN exportselected_link}
+		<a href="#" class="rnr-button" {$exportselectedlink_attrs} {$exportselectedlink_span}>Export selected</a>
+	{END exportselected_link}
+
+</div>
+{END record_controls_block}
+
+
+</div>
+{END container_recordcontrols}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_message} rnr-wrapper rnr-cbw-message">
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_grid} rnr-wrapper rnr-cbw-grid">
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+						<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
+						<thead>
+															{BEGIN grid_header}
+								<tr class="rnr-toprow style1 {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<th class="rnr-bc">
+										<input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																																			{BEGIN sName_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$sName_class}">
+									{BEGIN sName_fieldheader}
+																				<span {$sName_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek sName}
+										</span>
+									{END sName_fieldheader}
+									</th>
+									{END sName_fieldheadercolumn}
+
+																	{BEGIN sCode_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$sCode_class}">
+									{BEGIN sCode_fieldheader}
+																				<span {$sCode_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek sCode}
+										</span>
+									{END sCode_fieldheader}
+									</th>
+									{END sCode_fieldheadercolumn}
+
+																	{BEGIN eYear_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$eYear_class}">
+									{BEGIN eYear_fieldheader}
+																				<span {$eYear_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek eYear}
+										</span>
+									{END eYear_fieldheader}
+									</th>
+									{END eYear_fieldheadercolumn}
+
+																	{BEGIN mumtaz_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mumtaz_class}">
+									{BEGIN mumtaz_fieldheader}
+																				<span {$mumtaz_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek mumtaz}
+										</span>
+									{END mumtaz_fieldheader}
+									</th>
+									{END mumtaz_fieldheadercolumn}
+
+																	{BEGIN Mpercent_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Mpercent_class}">
+									{BEGIN Mpercent_fieldheader}
+																				<span {$Mpercent_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek Mpercent}
+										</span>
+									{END Mpercent_fieldheader}
+									</th>
+									{END Mpercent_fieldheadercolumn}
+
+																	{BEGIN JJ_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$JJ_class}">
+									{BEGIN JJ_fieldheader}
+																				<span {$JJ_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek JJ}
+										</span>
+									{END JJ_fieldheader}
+									</th>
+									{END JJ_fieldheadercolumn}
+
+																	{BEGIN JJpercent_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$JJpercent_class}">
+									{BEGIN JJpercent_fieldheader}
+																				<span {$JJpercent_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek JJpercent}
+										</span>
+									{END JJpercent_fieldheader}
+									</th>
+									{END JJpercent_fieldheadercolumn}
+
+																	{BEGIN jidan_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$jidan_class}">
+									{BEGIN jidan_fieldheader}
+																				<span {$jidan_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek jidan}
+										</span>
+									{END jidan_fieldheader}
+									</th>
+									{END jidan_fieldheadercolumn}
+
+																	{BEGIN Jpercent_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$Jpercent_class}">
+									{BEGIN Jpercent_fieldheader}
+																				<span {$Jpercent_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek Jpercent}
+										</span>
+									{END Jpercent_fieldheader}
+									</th>
+									{END Jpercent_fieldheadercolumn}
+
+																	{BEGIN maqbul_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$maqbul_class}">
+									{BEGIN maqbul_fieldheader}
+																				<span {$maqbul_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek maqbul}
+										</span>
+									{END maqbul_fieldheader}
+									</th>
+									{END maqbul_fieldheadercolumn}
+
+																	{BEGIN MQpercent_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$MQpercent_class}">
+									{BEGIN MQpercent_fieldheader}
+																				<span {$MQpercent_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek MQpercent}
+										</span>
+									{END MQpercent_fieldheader}
+									</th>
+									{END MQpercent_fieldheadercolumn}
+
+																	{BEGIN bilCalon_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$bilCalon_class}">
+									{BEGIN bilCalon_fieldheader}
+																				<span {$bilCalon_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek bilCalon}
+										</span>
+									{END bilCalon_fieldheader}
+									</th>
+									{END bilCalon_fieldheadercolumn}
+
+																	{BEGIN calonHadir_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$calonHadir_class}">
+									{BEGIN calonHadir_fieldheader}
+																				<span {$calonHadir_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek calonHadir}
+										</span>
+									{END calonHadir_fieldheader}
+									</th>
+									{END calonHadir_fieldheadercolumn}
+
+																	{BEGIN calonTakHadir_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$calonTakHadir_class}">
+									{BEGIN calonTakHadir_fieldheader}
+																				<span {$calonTakHadir_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek calonTakHadir}
+										</span>
+									{END calonTakHadir_fieldheader}
+									</th>
+									{END calonTakHadir_fieldheadercolumn}
+
+																	{BEGIN calonLulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$calonLulus_class}">
+									{BEGIN calonLulus_fieldheader}
+																				<span {$calonLulus_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek calonLulus}
+										</span>
+									{END calonLulus_fieldheader}
+									</th>
+									{END calonLulus_fieldheadercolumn}
+
+																	{BEGIN peratusLulus_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$peratusLulus_class}">
+									{BEGIN peratusLulus_fieldheader}
+																				<span {$peratusLulus_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek peratusLulus}
+										</span>
+									{END peratusLulus_fieldheader}
+									</th>
+									{END peratusLulus_fieldheadercolumn}
+
+																	{BEGIN calonDhaif_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$calonDhaif_class}">
+									{BEGIN calonDhaif_fieldheader}
+																				<span {$calonDhaif_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek calonDhaif}
+										</span>
+									{END calonDhaif_fieldheader}
+									</th>
+									{END calonDhaif_fieldheadercolumn}
+
+																	{BEGIN peratusGagal_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$peratusGagal_class}">
+									{BEGIN peratusGagal_fieldheader}
+																				<span {$peratusGagal_orderlinkattrs}>
+											{$label analisa_kelulusan_psra_sek peratusGagal}
+										</span>
+									{END peratusGagal_fieldheader}
+									</th>
+									{END peratusGagal_fieldheadercolumn}
+
+
+									
+									<th class="rnr-edge">&nbsp;</th>
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+						</thead>
+						<tbody>	
+															{BEGIN grid_row}
+								<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+									{BEGIN grid_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
+									
+									
+									
+																		</td>	
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="rnr-bc" iEditCont="checkBox" {$rowstyle} {$recordattrs}>
+									{BEGIN checkbox}
+									<input type="checkbox" {$checkbox_attrs}>
+									{END checkbox}
+									</td>
+									{END checkbox_column}
+
+									
+										{BEGIN sName_fieldcolumn}
+	<td class="{$sName_class}" {$sName_style} {$recordattrs}>
+		{$sName_value}
+	</td>
+{END sName_fieldcolumn}
+
+	{BEGIN sCode_fieldcolumn}
+	<td class="{$sCode_class}" {$sCode_style} {$recordattrs}>
+		{$sCode_value}
+	</td>
+{END sCode_fieldcolumn}
+
+	{BEGIN eYear_fieldcolumn}
+	<td class="{$eYear_class}" {$eYear_style} {$recordattrs}>
+		{$eYear_value}
+	</td>
+{END eYear_fieldcolumn}
+
+	{BEGIN mumtaz_fieldcolumn}
+	<td class="{$mumtaz_class}" {$mumtaz_style} {$recordattrs}>
+		{$mumtaz_value}
+	</td>
+{END mumtaz_fieldcolumn}
+
+	{BEGIN Mpercent_fieldcolumn}
+	<td class="{$Mpercent_class}" {$Mpercent_style} {$recordattrs}>
+		{$Mpercent_value}
+	</td>
+{END Mpercent_fieldcolumn}
+
+	{BEGIN JJ_fieldcolumn}
+	<td class="{$JJ_class}" {$JJ_style} {$recordattrs}>
+		{$JJ_value}
+	</td>
+{END JJ_fieldcolumn}
+
+	{BEGIN JJpercent_fieldcolumn}
+	<td class="{$JJpercent_class}" {$JJpercent_style} {$recordattrs}>
+		{$JJpercent_value}
+	</td>
+{END JJpercent_fieldcolumn}
+
+	{BEGIN jidan_fieldcolumn}
+	<td class="{$jidan_class}" {$jidan_style} {$recordattrs}>
+		{$jidan_value}
+	</td>
+{END jidan_fieldcolumn}
+
+	{BEGIN Jpercent_fieldcolumn}
+	<td class="{$Jpercent_class}" {$Jpercent_style} {$recordattrs}>
+		{$Jpercent_value}
+	</td>
+{END Jpercent_fieldcolumn}
+
+	{BEGIN maqbul_fieldcolumn}
+	<td class="{$maqbul_class}" {$maqbul_style} {$recordattrs}>
+		{$maqbul_value}
+	</td>
+{END maqbul_fieldcolumn}
+
+	{BEGIN MQpercent_fieldcolumn}
+	<td class="{$MQpercent_class}" {$MQpercent_style} {$recordattrs}>
+		{$MQpercent_value}
+	</td>
+{END MQpercent_fieldcolumn}
+
+	{BEGIN bilCalon_fieldcolumn}
+	<td class="{$bilCalon_class}" {$bilCalon_style} {$recordattrs}>
+		{$bilCalon_value}
+	</td>
+{END bilCalon_fieldcolumn}
+
+	{BEGIN calonHadir_fieldcolumn}
+	<td class="{$calonHadir_class}" {$calonHadir_style} {$recordattrs}>
+		{$calonHadir_value}
+	</td>
+{END calonHadir_fieldcolumn}
+
+	{BEGIN calonTakHadir_fieldcolumn}
+	<td class="{$calonTakHadir_class}" {$calonTakHadir_style} {$recordattrs}>
+		{$calonTakHadir_value}
+	</td>
+{END calonTakHadir_fieldcolumn}
+
+	{BEGIN calonLulus_fieldcolumn}
+	<td class="{$calonLulus_class}" {$calonLulus_style} {$recordattrs}>
+		{$calonLulus_value}
+	</td>
+{END calonLulus_fieldcolumn}
+
+	{BEGIN peratusLulus_fieldcolumn}
+	<td class="{$peratusLulus_class}" {$peratusLulus_style} {$recordattrs}>
+		{$peratusLulus_value}
+	</td>
+{END peratusLulus_fieldcolumn}
+
+	{BEGIN calonDhaif_fieldcolumn}
+	<td class="{$calonDhaif_class}" {$calonDhaif_style} {$recordattrs}>
+		{$calonDhaif_value}
+	</td>
+{END calonDhaif_fieldcolumn}
+
+	{BEGIN peratusGagal_fieldcolumn}
+	<td class="{$peratusGagal_class}" {$peratusGagal_style} {$recordattrs}>
+		{$peratusGagal_value}
+	</td>
+{END peratusGagal_fieldcolumn}
+
+
+									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+									{BEGIN endrecord_block}
+									<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+									{END endrecord_block}
+																	
+									{END grid_record}
+
+								</tr>
+								{END grid_row}
+															
+						</tbody>
+					</table>
+					
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pagination} rnr-wrapper rnr-cbw-pagination">
+
+{BEGIN container_pagination}
+<div class="rnr-c rnr-ch rnr-c-pagination">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+
+</div>
+{END container_pagination}
+
+</div>
+
+
+</div>
+{END container_bigblock}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

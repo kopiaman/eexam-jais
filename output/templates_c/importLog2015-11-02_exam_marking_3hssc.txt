@@ -1,0 +1,6 @@
+Import into exam_marking
+02/11/2015 13:26:50
+
+75 out of 75 records processed successfully.
+75 records added.
+0 records updated.

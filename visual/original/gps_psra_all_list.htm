@@ -1,0 +1,431 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+
+
+{BEGIN container_toplinks}
+<div class="rnr-c rnr-ch rnr-c-toplinks">
+
+{BEGIN security_block}
+<div  class="style1 rnr-bl rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message} 
+	<span>Logged on as&nbsp;<b>{$username}</b>&nbsp;</span> 
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+		<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a href="#" class="rnr-button" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+	{BEGIN adminarea_link}
+	<a href="admin_rights_list.php" class="rnr-button" {$adminarealink_attrs}>Admin Area</a>
+	{END adminarea_link}
+
+	{BEGIN changepwd_link}
+	<a href="#" class="rnr-button" {$changepwdlink_attrs}>Change password</a>
+	{END changepwd_link}
+</div></div>
+{END security_block}
+
+
+
+
+{BEGIN export_link}
+<div  class="style1 rnr-bl rnr-b-toplinks_export {$brickclass_toplinks_export}">	<a target="_blank" href="gps_psra_all_export.php" class="rnr-button" {$exportlink_attrs}>Export results</a>
+</div>
+{END export_link}
+
+
+
+
+<div  class="style1 rnr-bl rnr-b-printpanel {$brickclass_printpanel}"></div>
+
+
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_toplinks}
+
+
+
+{BEGIN container_hmenu}
+<div class="rnr-c rnr-ch rnr-c-hmenu">
+
+{BEGIN menu_block}
+{$menu main horizontal}{END menu_block}
+
+<div class="rnr-hfiller"></div>
+</div>
+{END container_hmenu}
+
+
+
+{BEGIN container_search}
+<div class="rnr-c rnr-ch rnr-c-search">
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+<div class="rnr-hfiller"></div>
+{BEGIN details_block}
+<div  class="style1 rnr-br rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Page <b>{$page}</b> of <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Records Per Page:&nbsp;{$recsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+{BEGIN container_bigblock}
+<div class="rnr-c rnr-cv rnr-c-bigblock">
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_recordcontrols} rnr-wrapper rnr-cbw-recordcontrols">
+
+{BEGIN container_recordcontrols}
+<div class="rnr-c rnr-ch rnr-c-recordcontrols">
+<div class="rnr-hfiller"></div>
+
+{BEGIN record_controls_block}
+<div  class="style1 rnr-br rnr-b-recordcontrol {$brickclass_recordcontrol}">	
+	
+	
+		{BEGIN exportselected_link}
+		<a href="#" class="rnr-button" {$exportselectedlink_attrs} {$exportselectedlink_span}>Export selected</a>
+	{END exportselected_link}
+
+</div>
+{END record_controls_block}
+
+
+</div>
+{END container_recordcontrols}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_message} rnr-wrapper rnr-cbw-message">
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_grid} rnr-wrapper rnr-cbw-grid">
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+						<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
+						<thead>
+															{BEGIN grid_header}
+								<tr class="rnr-toprow style1 {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<th class="rnr-bc">
+										<input type="checkbox" {$checkboxheader_attrs}>
+									</th>
+									{END checkbox_column}
+
+																																			{BEGIN eYear_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$eYear_class}">
+									{BEGIN eYear_fieldheader}
+																				<span {$eYear_orderlinkattrs}>
+											{$label gps_psra_all eYear}
+										</span>
+									{END eYear_fieldheader}
+									</th>
+									{END eYear_fieldheadercolumn}
+
+																	{BEGIN GPSs1_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GPSs1_class}">
+									{BEGIN GPSs1_fieldheader}
+																				<span {$GPSs1_orderlinkattrs}>
+											{$label gps_psra_all GPSs1}
+										</span>
+									{END GPSs1_fieldheader}
+									</th>
+									{END GPSs1_fieldheadercolumn}
+
+																	{BEGIN GPSs2_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GPSs2_class}">
+									{BEGIN GPSs2_fieldheader}
+																				<span {$GPSs2_orderlinkattrs}>
+											{$label gps_psra_all GPSs2}
+										</span>
+									{END GPSs2_fieldheader}
+									</th>
+									{END GPSs2_fieldheadercolumn}
+
+																	{BEGIN GPSs3_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GPSs3_class}">
+									{BEGIN GPSs3_fieldheader}
+																				<span {$GPSs3_orderlinkattrs}>
+											{$label gps_psra_all GPSs3}
+										</span>
+									{END GPSs3_fieldheader}
+									</th>
+									{END GPSs3_fieldheadercolumn}
+
+																	{BEGIN GPSs4_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GPSs4_class}">
+									{BEGIN GPSs4_fieldheader}
+																				<span {$GPSs4_orderlinkattrs}>
+											{$label gps_psra_all GPSs4}
+										</span>
+									{END GPSs4_fieldheader}
+									</th>
+									{END GPSs4_fieldheadercolumn}
+
+																	{BEGIN GPSs5_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GPSs5_class}">
+									{BEGIN GPSs5_fieldheader}
+																				<span {$GPSs5_orderlinkattrs}>
+											{$label gps_psra_all GPSs5}
+										</span>
+									{END GPSs5_fieldheader}
+									</th>
+									{END GPSs5_fieldheadercolumn}
+
+																	{BEGIN GPSchool_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$GPSchool_class}">
+									{BEGIN GPSchool_fieldheader}
+																				<span {$GPSchool_orderlinkattrs}>
+											{$label gps_psra_all GPSchool}
+										</span>
+									{END GPSchool_fieldheader}
+									</th>
+									{END GPSchool_fieldheadercolumn}
+
+																	{BEGIN skor_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$skor_class}">
+									{BEGIN skor_fieldheader}
+																				<span {$skor_orderlinkattrs}>
+											{$label gps_psra_all skor}
+										</span>
+									{END skor_fieldheader}
+									</th>
+									{END skor_fieldheadercolumn}
+
+
+									
+									<th class="rnr-edge">&nbsp;</th>
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+						</thead>
+						<tbody>	
+															{BEGIN grid_row}
+								<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+									{BEGIN grid_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
+									
+									
+									
+																		</td>	
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="rnr-bc" iEditCont="checkBox" {$rowstyle} {$recordattrs}>
+									{BEGIN checkbox}
+									<input type="checkbox" {$checkbox_attrs}>
+									{END checkbox}
+									</td>
+									{END checkbox_column}
+
+									
+										{BEGIN eYear_fieldcolumn}
+	<td class="{$eYear_class}" {$eYear_style} {$recordattrs}>
+		{$eYear_value}
+	</td>
+{END eYear_fieldcolumn}
+
+	{BEGIN GPSs1_fieldcolumn}
+	<td class="{$GPSs1_class}" {$GPSs1_style} {$recordattrs}>
+		{$GPSs1_value}
+	</td>
+{END GPSs1_fieldcolumn}
+
+	{BEGIN GPSs2_fieldcolumn}
+	<td class="{$GPSs2_class}" {$GPSs2_style} {$recordattrs}>
+		{$GPSs2_value}
+	</td>
+{END GPSs2_fieldcolumn}
+
+	{BEGIN GPSs3_fieldcolumn}
+	<td class="{$GPSs3_class}" {$GPSs3_style} {$recordattrs}>
+		{$GPSs3_value}
+	</td>
+{END GPSs3_fieldcolumn}
+
+	{BEGIN GPSs4_fieldcolumn}
+	<td class="{$GPSs4_class}" {$GPSs4_style} {$recordattrs}>
+		{$GPSs4_value}
+	</td>
+{END GPSs4_fieldcolumn}
+
+	{BEGIN GPSs5_fieldcolumn}
+	<td class="{$GPSs5_class}" {$GPSs5_style} {$recordattrs}>
+		{$GPSs5_value}
+	</td>
+{END GPSs5_fieldcolumn}
+
+	{BEGIN GPSchool_fieldcolumn}
+	<td class="{$GPSchool_class}" {$GPSchool_style} {$recordattrs}>
+		{$GPSchool_value}
+	</td>
+{END GPSchool_fieldcolumn}
+
+	{BEGIN skor_fieldcolumn}
+	<td class="{$skor_class}" {$skor_style} {$recordattrs}>
+		{$skor_value}
+	</td>
+{END skor_fieldcolumn}
+
+
+									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+									{BEGIN endrecord_block}
+									<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+									{END endrecord_block}
+																	
+									{END grid_record}
+
+								</tr>
+								{END grid_row}
+															
+						</tbody>
+					</table>
+					
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+</div>
+
+
+
+<div  class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pagination} rnr-wrapper rnr-cbw-pagination">
+
+{BEGIN container_pagination}
+<div class="rnr-c rnr-ch rnr-c-pagination">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+
+</div>
+{END container_pagination}
+
+</div>
+
+
+</div>
+{END container_bigblock}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>

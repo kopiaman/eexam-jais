@@ -1,0 +1,88 @@
+Import into exam_marking
+31-Oct-15 3:15:01 AM
+
+0 out of 27 records processed successfully.
+0 records added.
+0 records updated.
+27 records processed with errors:
+
+Column count doesn't match value count at row 1
+"ADEEB FARHAN BIN MOHD ROSLAN","2002-03-20 00:00:00","AZ05432","L","1","93","80","90","76","73","73","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"AHMAD 'AQIL FAHIIM BIN AJUAN","2002-03-19 00:00:00","AZ44176","L","1","80","71","79","68","56","84","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"ANDIKA BIN MOHAMAD OSMAN","2002-03-08 00:00:00","AZ44989","L","1","83","74","74","53","41","70","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"ARIF FAKHRUL AZIM BIN HAMZAH","2002-01-07 00:00:00","AK99761","L","1","94","97","91","76","84","87","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"FAKHRULLAH AKMAL BIN NOR AZLI","2002-10-16 00:00:00","BA25613","L","1","86","78","80","69","56","83","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"MUHAMMAD AMIRUL ASRI BIN AZIZI","2002-02-21 00:00:00","AW05464","L","1","86","81","90","70","70","75","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"MUHAMMAD ZAHIN BIN MAHAT","2002-01-07 00:00:00","AK99780","L","1","90","74","80","78","73","86","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NAJMI BIN NAZARUDDIN","2002-04-30 00:00:00","AX93263","L","1","95","68","85","84","77","81","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"FATIN RAIHANAH BINTI RAMLAN","2002-03-20 00:00:00","AZ46123","P","1","93","80","90","73","93","87","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"INTAN ZULAIQA BINTI AZHAR","2002-03-06 00:00:00","AW05776","P","1","90","65","83","65","85","81","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"MARIA SUFIYYAH BINTI MAZLAN","2002-03-13 00:00:00","AZ57576","P","1","100","96","96","95","96","92","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NABILAH HUSNA BINTI RIFA'I","2002-11-11 00:00:00","BC22710","P","1","84","88","92","71","84","82","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NOOR SHAHIRA BINTI HUSSIN","2002-05-30 00:00:00","AZ55014","P","1","81","83","90","79","92","81","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NOR HAYATI BINTI ABD TALIB","2002-10-24 00:00:00","AZ55297","P","1","93","80","90","79","78","77","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NUR ALIAH BINTI SAMSUDIN","2002-02-03 00:00:00","AZ43755","P","1","90","78","84","72","84","84","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NUR FATIHAH BINTI MISJAB","2002-12-22 00:00:00","BB18871","P","1","93","77","90","81","79","80","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NUR NABILAH BINTI MOHMAD SHARI","2002-02-20 00:00:00","AZ44941","P","1","90","84","82","81","60","76","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NUR RAIHANA BINTI MOHD SALAM","2002-03-20 00:00:00","AZ46136","P","1","97","93","94","85","94","80","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NUR RAIHANI BINTI MOHD SALAM ","2002-03-20 00:00:00","AZ46137","P","1","93","76","84","79","86","75","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NURAIN MARDHIAH BINTI MD ZAKARIA","2002-07-30 00:00:00","AZ55122","P","1","98","92","93","98","100","91","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"NURUL AFINA SYABILA BINTI SUKHALI","2002-02-26 00:00:00","AW05619","P","1","90","79","90","74","74","85","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"PUTERI NUR AQEELAH BINTI JAMALUDDIN","2002-02-16 00:00:00","AZ43571","P","1","74","86","90","70","65","86","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"RAIHA YASMIEN BINTI MOHAMMAD NIZAM","2002-03-06 00:00:00","AW05665","P","1","92","90","95","90","97","87","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"SITI AISYAH FAQIHAH BINTI MOHD SABRI","2002-07-04 00:00:00","AX93917","P","1","96","97","90","91","94","90","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"SITI NURSYAHIRA BINTI EDEL","2002-08-09 00:00:00","AZ55171","P","1","98","93","96","80","100","91","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"SITI SHAHIRAH BINTI MOHD AMIN","2002-10-22 00:00:00","BB26859","P","1","87","83","83","67","67","84","LULUS","2015","PSRA","",""
+
+Column count doesn't match value count at row 1
+"UMIE RAIHANA BINTI KHAIRUR RAHMAN ","2002-03-06 00:00:00","AW05604","P","1","76","78","73","57","75","85","LULUS","2015","PSRA","",""
