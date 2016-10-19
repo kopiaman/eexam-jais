@@ -155,8 +155,7 @@ $tdataexam_marking[".allSearchFields"] = array();
 $tdataexam_marking[".filterFields"] = array();
 $tdataexam_marking[".requiredSearchFields"] = array();
 
-$tdataexam_marking[".allSearchFields"][] = "name";
-	$tdataexam_marking[".allSearchFields"][] = "eNo";
+$tdataexam_marking[".allSearchFields"][] = "eNo";
 	$tdataexam_marking[".allSearchFields"][] = "s1";
 	$tdataexam_marking[".allSearchFields"][] = "s2";
 	$tdataexam_marking[".allSearchFields"][] = "s3";
@@ -181,7 +180,6 @@ $tdataexam_marking[".panelSearchFields"][] = "name";
 	$tdataexam_marking[".panelSearchFields"][] = "eYear";
 	
 $tdataexam_marking[".advSearchFields"] = array();
-$tdataexam_marking[".advSearchFields"][] = "name";
 $tdataexam_marking[".advSearchFields"][] = "eNo";
 $tdataexam_marking[".advSearchFields"][] = "s1";
 $tdataexam_marking[".advSearchFields"][] = "s2";
@@ -214,7 +212,6 @@ $tdataexam_marking[".geocodingEnabled"] = false;
 
 
 
-$tdataexam_marking[".noRecordsFirstPage"] = true;
 
 // view page pdf
 
@@ -280,7 +277,6 @@ $tdataexam_marking[".Keys"] = $tableKeysexam_marking;
 
 $tdataexam_marking[".listFields"] = array();
 $tdataexam_marking[".listFields"][] = "sid";
-$tdataexam_marking[".listFields"][] = "name";
 $tdataexam_marking[".listFields"][] = "eNo";
 $tdataexam_marking[".listFields"][] = "s1";
 $tdataexam_marking[".listFields"][] = "s2";
@@ -474,15 +470,13 @@ $tdataexam_marking[".printFields"] = array();
 	
 	
 			
-		$fdata["bListPage"] = true;
-
 	
 	
 	
 	
 	
-		$fdata["bAdvancedSearch"] = true;
-
+	
+	
 	
 	
 		$fdata["strField"] = "name";
@@ -492,8 +486,7 @@ $tdataexam_marking[".printFields"] = array();
 
 	
 	
-				$fdata["FieldPermissions"] = true;
-
+			
 				$fdata["UploadFolder"] = "files";
 
 //  Begin View Formats
@@ -568,11 +561,6 @@ $tdataexam_marking[".printFields"] = array();
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
@@ -2943,9 +2931,8 @@ global $conn;
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1){
+if($zon!==NULL && $alevel==1 || $alevel==2){
 $query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-
 }else{
 $query->addWhere("eYear='".$year."'");
 };

@@ -313,10 +313,6 @@ function checkTableName($shortTName, $type=false)
 		return true;
 	if ("purata_psra_all" == $shortTName && ($type===false || ($type!==false && $type == 1)))
 		return true;
-	if ("carta_kelulusan_psra_all" == $shortTName && ($type===false || ($type!==false && $type == 3)))
-		return true;
-	if ("carta_pangkat_psra_all" == $shortTName && ($type===false || ($type!==false && $type == 3)))
-		return true;
 	if ("dashboard_utama" == $shortTName && ($type===false || ($type!==false && $type == 4)))
 		return true;
 	if ("archive_exam_marking" == $shortTName && ($type===false || ($type!==false && $type == 1)))
@@ -506,16 +502,6 @@ function GetTablesList($pdfMode = false)
 	{
 		$arr[]="purata_psra_all";
 	}
-	$strPerm = GetUserPermissions("carta_kelulusan_psra_all");
-	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
-	{
-		$arr[]="carta_kelulusan_psra_all";
-	}
-	$strPerm = GetUserPermissions("carta_pangkat_psra_all");
-	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
-	{
-		$arr[]="carta_pangkat_psra_all";
-	}
 	$strPerm = GetUserPermissions("dashboard_utama");
 	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
 	{
@@ -634,10 +620,6 @@ function GetFullFieldName($field, $table = "", $addAs = true, $connection = null
  */
 function GetChartType($shorttable)
 {
-	if($shorttable=="carta_kelulusan_psra_all")
-		return "2DColumn";
-	if($shorttable=="carta_pangkat_psra_all")
-		return "2DColumn";
 	return "";
 }
 
@@ -1334,10 +1316,6 @@ function guestHasPermissions()
 	if(array_key_exists("analisa_subjek_psra_all",$_SESSION["UserRights"]["Guest"]))
 		return true;
 	if(array_key_exists("purata_psra_all",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("carta_kelulusan_psra_all",$_SESSION["UserRights"]["Guest"]))
-		return true;
-	if(array_key_exists("carta_pangkat_psra_all",$_SESSION["UserRights"]["Guest"]))
 		return true;
 	if(array_key_exists("dashboard_utama",$_SESSION["UserRights"]["Guest"]))
 		return true;

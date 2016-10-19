@@ -499,10 +499,6 @@ class Chart
 			return true;
 		if("exam_marking" == $this->chrt_array['tables'][0])
 			return true;
-		if("exam_marking" == $this->chrt_array['tables'][0])
-			return true;
-		if("exam_marking" == $this->chrt_array['tables'][0])
-			return true;
 		if("" == $this->chrt_array['tables'][0])
 			return true;
 		if("exam_marking" == $this->chrt_array['tables'][0])

@@ -356,24 +356,6 @@ $tdatasemakan[".inlineEditFields"][] = "eType";
 $tdatasemakan[".exportFields"] = array();
 
 $tdatasemakan[".importFields"] = array();
-$tdatasemakan[".importFields"][] = "name";
-$tdatasemakan[".importFields"][] = "gender";
-$tdatasemakan[".importFields"][] = "birthdate";
-$tdatasemakan[".importFields"][] = "birthCert";
-$tdatasemakan[".importFields"][] = "nationality";
-$tdatasemakan[".importFields"][] = "sCode";
-$tdatasemakan[".importFields"][] = "eNo";
-$tdatasemakan[".importFields"][] = "eYear";
-$tdatasemakan[".importFields"][] = "eType";
-$tdatasemakan[".importFields"][] = "s1";
-$tdatasemakan[".importFields"][] = "s2";
-$tdatasemakan[".importFields"][] = "s3";
-$tdatasemakan[".importFields"][] = "s4";
-$tdatasemakan[".importFields"][] = "s5";
-$tdatasemakan[".importFields"][] = "s6";
-$tdatasemakan[".importFields"][] = "s7";
-$tdatasemakan[".importFields"][] = "sZone";
-$tdatasemakan[".importFields"][] = "sName";
 
 $tdatasemakan[".printFields"] = array();
 
@@ -3880,12 +3862,9 @@ global $conn;
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1){
+if($zon!==NULL && $alevel==1 || $alevel==2 ){
 $query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-
-}else if($alevel==2){
-$query->addWhere("eYear='".$year."'");
-}
+};
 ;
 unset($query);
 ?>

@@ -197,13 +197,13 @@ $tdatamarking_TJ[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "ORDER BY exam_marking.sid DESC";
+$tstrOrderBy = "ORDER BY exam_marking.eNo ASC";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
 $tdatamarking_TJ[".strOrderBy"] = $tstrOrderBy;
 
 $tdatamarking_TJ[".orderindexes"] = array();
-$tdatamarking_TJ[".orderindexes"][] = array(1, (0 ? "ASC" : "DESC"), "exam_marking.sid");
+$tdatamarking_TJ[".orderindexes"][] = array(4, (1 ? "ASC" : "DESC"), "exam_marking.eNo");
 
 $tdatamarking_TJ[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.name,  exam_marking.sCode,  exam_marking.eNo,  exam_marking.eYear,  exam_marking.eType,  exam_marking.s1,  exam_marking.s2,  exam_marking.s3,  exam_marking.s4,  exam_marking.s5,  exam_marking.s6,  exam_marking.s7,  school.sZone";
 $tdatamarking_TJ[".sqlFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode";
@@ -1939,7 +1939,7 @@ $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.name,  exam_marking.sCode,  exam_marking.eNo,  exam_marking.eYear,  exam_marking.eType,  exam_marking.s1,  exam_marking.s2,  exam_marking.s3,  exam_marking.s4,  exam_marking.s5,  exam_marking.s6,  exam_marking.s7,  school.sZone";
 $proto0["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "ORDER BY exam_marking.sid DESC";
+$proto0["m_strOrderBy"] = "ORDER BY exam_marking.eNo ASC";
 $proto0["m_strTail"] = "";
 			$proto0["cipherer"] = null;
 $proto1=array();
@@ -2263,13 +2263,13 @@ $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
 												$proto41=array();
 						$obj = new SQLField(array(
-	"m_strName" => "sid",
+	"m_strName" => "eNo",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "marking_TJ"
 ));
 
 $proto41["m_column"]=$obj;
-$proto41["m_bAsc"] = 0;
+$proto41["m_bAsc"] = 1;
 $proto41["m_nColumn"] = 0;
 $obj = new SQLOrderByItem($proto41);
 
@@ -2300,7 +2300,7 @@ global $conn;
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1){
+if($zon!==NULL && $alevel==1 || $alevel==2){
 $query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
 
 }else{

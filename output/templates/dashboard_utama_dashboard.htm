@@ -51,11 +51,6 @@
 {END security_block}
 
 
-{BEGIN asearch_link}
-<div  class="style1 rnr-bl rnr-b-toplinks_dashboard_advsearch {$brickclass_toplinks_dashboard_advsearch}">	<a href="dashboard_utama_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
-</div>
-{END asearch_link}
-
 
 <div class="rnr-hfiller"></div>
 </div>
@@ -82,23 +77,6 @@
 			<div class="rnr-center {$blockclass_center}">
 				
 
-{BEGIN container_search}
-<div class="rnr-c rnr-ch rnr-c-search">
-
-
-<div  class="style1 rnr-bl rnr-b-search_dashboard {$brickclass_search_dashboard}">	<span>
-		<input type="text" {$searchfor_attrs} size="25">
-		<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
-		{BEGIN searchform_showall}	
-		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
-		{END searchform_showall}
-	</span></div>
-
-
-<div class="rnr-hfiller"></div>
-</div>
-{END container_search}
-
 
 
 {BEGIN container_dash}
@@ -119,15 +97,11 @@
 <td class="rnr-dbelement" colspan="1" rowspan="1">
 
 
-
-{$db_carta_kelulusan_psra_all_chart}
 </td>
 
 <td class="rnr-dbelement" colspan="1" rowspan="1">
 
 
-
-{$db_carta_pangkat_psra_all_chart}
 </td>
 </tr>
 

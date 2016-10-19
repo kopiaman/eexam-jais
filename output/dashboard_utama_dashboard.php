@@ -20,11 +20,6 @@ if( !Security::processPageSecurity( $strtablename, 'S' ) )
 $layout = new TLayout("dashboard", "Coral1Coral1", "MobileCoral1");
 $layout->version = 2;
 $layout->blocks["center"] = array();
-$layout->containers["search"] = array();
-$layout->container_properties["search"] = array(  );
-$layout->containers["search"][] = array("name"=>"search_dashboard", 
-	"block"=>"", "substyle"=>1  );
-
 $layout->skins["search"] = "1";
 
 $layout->blocks["center"][] = "search";
@@ -41,9 +36,6 @@ $layout->containers["toplinks"] = array();
 $layout->container_properties["toplinks"] = array(  );
 $layout->containers["toplinks"][] = array("name"=>"loggedas", 
 	"block"=>"security_block", "substyle"=>1  );
-
-$layout->containers["toplinks"][] = array("name"=>"toplinks_dashboard_advsearch", 
-	"block"=>"asearch_link", "substyle"=>1  );
 
 $layout->skins["toplinks"] = "empty";
 

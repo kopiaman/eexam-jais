@@ -152,18 +152,6 @@ $mask .= "P";
 
 $pageMask[$table] = $mask;
 $tables[$table] = array("purata_psra_all", " " . "Purata Psra All");
-$table = "carta_kelulusan_psra_all";
-$mask="";
-	$mask .= "S";
-
-$pageMask[$table] = $mask;
-$tables[$table] = array("carta_kelulusan_psra_all", " " . "Carta Kelulusan Psra All");
-$table = "carta_pangkat_psra_all";
-$mask="";
-	$mask .= "S";
-
-$pageMask[$table] = $mask;
-$tables[$table] = array("carta_pangkat_psra_all", " " . "Carta Pangkat Psra All");
 $table = "dashboard_utama";
 $mask="";
 				$mask .= "S";

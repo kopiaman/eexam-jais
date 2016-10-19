@@ -2537,10 +2537,6 @@ function GetTableURL($table = "")
 		return "analisa_subjek_psra_all";
 	if("purata_psra_all" == $table)
 		return "purata_psra_all";
-	if("carta_kelulusan_psra_all" == $table)
-		return "carta_kelulusan_psra_all";
-	if("carta_pangkat_psra_all" == $table)
-		return "carta_pangkat_psra_all";
 	if("dashboard_utama" == $table)
 		return "dashboard_utama";
 	if("archive_exam_marking" == $table)
@@ -2625,10 +2621,6 @@ function GetTableByShort($shortTName = "")
 		return "analisa_subjek_psra_all";
 	if("purata_psra_all" == $shortTName)
 		return "purata_psra_all";
-	if("carta_kelulusan_psra_all" == $shortTName)
-		return "carta_kelulusan_psra_all";
-	if("carta_pangkat_psra_all" == $shortTName)
-		return "carta_pangkat_psra_all";
 	if("dashboard_utama" == $shortTName)
 		return "dashboard_utama";
 	if("archive_exam_marking" == $shortTName)

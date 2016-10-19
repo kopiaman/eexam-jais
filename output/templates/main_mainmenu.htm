@@ -61,9 +61,12 @@
 
 			</li>
 			{END item5_menulink}
-					{BEGIN item6_menulink}
-			<li  parent="group4" class="{$item6_current} menuLeaf">
-			<div>
+			</ul>
+	</li>
+	{END item4_menulink}
+	{BEGIN item6_menulink}
+	<li class="{$item6_current} menuGroup">
+		<div>
 <div>
 <a {$item6_menulink_attrs}>{$item6_title}</a>
 </div>
@@ -71,10 +74,9 @@
 
 
 
-			</li>
-			{END item6_menulink}
-					{BEGIN item7_menulink}
-			<li  parent="group4" class="{$item7_current} menuLeaf">
+			<ul >
+			{BEGIN item7_menulink}
+			<li  parent="group6" class="{$item7_current} menuLeaf">
 			<div>
 <div>
 <a {$item7_menulink_attrs}>{$item7_title}</a>
@@ -86,7 +88,7 @@
 			</li>
 			{END item7_menulink}
 					{BEGIN item8_menulink}
-			<li  parent="group4" class="{$item8_current} menuLeaf">
+			<li  parent="group6" class="{$item8_current} menuLeaf">
 			<div>
 <div>
 <a {$item8_menulink_attrs}>{$item8_title}</a>
@@ -97,9 +99,12 @@
 
 			</li>
 			{END item8_menulink}
-					{BEGIN item9_menulink}
-			<li  parent="group4" class="{$item9_current} menuLeaf">
-			<div>
+			</ul>
+	</li>
+	{END item6_menulink}
+	{BEGIN item9_menulink}
+	<li class="{$item9_current} menuGroup">
+		<div>
 <div>
 <a {$item9_menulink_attrs}>{$item9_title}</a>
 </div>
@@ -107,10 +112,9 @@
 
 
 
-			</li>
-			{END item9_menulink}
-					{BEGIN item10_menulink}
-			<li  parent="group4" class="{$item10_current} menuLeaf">
+			<ul >
+			{BEGIN item10_menulink}
+			<li  parent="group9" class="{$item10_current} menuLeaf">
 			<div>
 <div>
 <a {$item10_menulink_attrs}>{$item10_title}</a>
@@ -122,7 +126,7 @@
 			</li>
 			{END item10_menulink}
 					{BEGIN item11_menulink}
-			<li  parent="group4" class="{$item11_current} menuLeaf">
+			<li  parent="group9" class="{$item11_current} menuLeaf">
 			<div>
 <div>
 <a {$item11_menulink_attrs}>{$item11_title}</a>
@@ -135,7 +139,7 @@
 			{END item11_menulink}
 			</ul>
 	</li>
-	{END item4_menulink}
+	{END item9_menulink}
 	{BEGIN item12_menulink}
 	<li class="{$item12_current} menuGroup">
 		<div>
@@ -148,7 +152,7 @@
 
 			<ul >
 			{BEGIN item13_menulink}
-			<li  parent="group12" class="{$item13_current} menuLeaf">
+			<li  parent="group12" class="{$item13_current} menuGroup">
 			<div>
 <div>
 <a {$item13_menulink_attrs}>{$item13_title}</a>
@@ -157,11 +161,10 @@
 
 
 
-			</li>
-			{END item13_menulink}
+							<ul >
 					{BEGIN item14_menulink}
-			<li  parent="group12" class="{$item14_current} menuLeaf">
-			<div>
+					<li  parent="group13" class="{$item14_current} menuLeaf">
+					<div>
 <div>
 <a {$item14_menulink_attrs}>{$item14_title}</a>
 </div>
@@ -169,14 +172,11 @@
 
 
 
-			</li>
-			{END item14_menulink}
-			</ul>
-	</li>
-	{END item12_menulink}
-	{BEGIN item15_menulink}
-	<li class="{$item15_current} menuGroup">
-		<div>
+					</li>
+					{END item14_menulink}
+											{BEGIN item15_menulink}
+					<li  parent="group13" class="{$item15_current} menuLeaf">
+					<div>
 <div>
 <a {$item15_menulink_attrs}>{$item15_title}</a>
 </div>
@@ -184,10 +184,11 @@
 
 
 
-			<ul >
-			{BEGIN item16_menulink}
-			<li  parent="group15" class="{$item16_current} menuLeaf">
-			<div>
+					</li>
+					{END item15_menulink}
+											{BEGIN item16_menulink}
+					<li  parent="group13" class="{$item16_current} menuLeaf">
+					<div>
 <div>
 <a {$item16_menulink_attrs}>{$item16_title}</a>
 </div>
@@ -195,11 +196,11 @@
 
 
 
-			</li>
-			{END item16_menulink}
-					{BEGIN item17_menulink}
-			<li  parent="group15" class="{$item17_current} menuLeaf">
-			<div>
+					</li>
+					{END item16_menulink}
+											{BEGIN item17_menulink}
+					<li  parent="group13" class="{$item17_current} menuLeaf">
+					<div>
 <div>
 <a {$item17_menulink_attrs}>{$item17_title}</a>
 </div>
@@ -207,14 +208,11 @@
 
 
 
-			</li>
-			{END item17_menulink}
-			</ul>
-	</li>
-	{END item15_menulink}
-	{BEGIN item18_menulink}
-	<li class="{$item18_current} menuGroup">
-		<div>
+					</li>
+					{END item17_menulink}
+											{BEGIN item18_menulink}
+					<li  parent="group13" class="{$item18_current} menuLeaf">
+					<div>
 <div>
 <a {$item18_menulink_attrs}>{$item18_title}</a>
 </div>
@@ -222,9 +220,13 @@
 
 
 
-			<ul >
-			{BEGIN item19_menulink}
-			<li  parent="group18" class="{$item19_current} menuGroup">
+					</li>
+					{END item18_menulink}
+							</ul>
+			</li>
+			{END item13_menulink}
+					{BEGIN item19_menulink}
+			<li  parent="group12" class="{$item19_current} menuGroup">
 			<div>
 <div>
 <a {$item19_menulink_attrs}>{$item19_title}</a>
@@ -298,7 +300,7 @@
 			</li>
 			{END item19_menulink}
 					{BEGIN item25_menulink}
-			<li  parent="group18" class="{$item25_current} menuGroup">
+			<li  parent="group12" class="{$item25_current} menuGroup">
 			<div>
 <div>
 <a {$item25_menulink_attrs}>{$item25_title}</a>
@@ -371,9 +373,12 @@
 							</ul>
 			</li>
 			{END item25_menulink}
-					{BEGIN item31_menulink}
-			<li  parent="group18" class="{$item31_current} menuGroup">
-			<div>
+			</ul>
+	</li>
+	{END item12_menulink}
+	{BEGIN item31_menulink}
+	<li class="{$item31_current} menuGroup">
+		<div>
 <div>
 <a {$item31_menulink_attrs}>{$item31_title}</a>
 </div>
@@ -381,10 +386,10 @@
 
 
 
-							<ul >
-					{BEGIN item32_menulink}
-					<li  parent="group31" class="{$item32_current} menuLeaf">
-					<div>
+			<ul >
+			{BEGIN item32_menulink}
+			<li  parent="group31" class="{$item32_current} menuLeaf">
+			<div>
 <div>
 <a {$item32_menulink_attrs}>{$item32_title}</a>
 </div>
@@ -392,11 +397,11 @@
 
 
 
-					</li>
-					{END item32_menulink}
-											{BEGIN item33_menulink}
-					<li  parent="group31" class="{$item33_current} menuLeaf">
-					<div>
+			</li>
+			{END item32_menulink}
+					{BEGIN item33_menulink}
+			<li  parent="group31" class="{$item33_current} menuLeaf">
+			<div>
 <div>
 <a {$item33_menulink_attrs}>{$item33_title}</a>
 </div>
@@ -404,11 +409,11 @@
 
 
 
-					</li>
-					{END item33_menulink}
-											{BEGIN item34_menulink}
-					<li  parent="group31" class="{$item34_current} menuLeaf">
-					<div>
+			</li>
+			{END item33_menulink}
+					{BEGIN item34_menulink}
+			<li  parent="group31" class="{$item34_current} menuLeaf">
+			<div>
 <div>
 <a {$item34_menulink_attrs}>{$item34_title}</a>
 </div>
@@ -416,88 +421,11 @@
 
 
 
-					</li>
-					{END item34_menulink}
-											{BEGIN item35_menulink}
-					<li  parent="group31" class="{$item35_current} menuLeaf">
-					<div>
-<div>
-<a {$item35_menulink_attrs}>{$item35_title}</a>
-</div>
-</div>
-
-
-
-					</li>
-					{END item35_menulink}
-											{BEGIN item36_menulink}
-					<li  parent="group31" class="{$item36_current} menuLeaf">
-					<div>
-<div>
-<a {$item36_menulink_attrs}>{$item36_title}</a>
-</div>
-</div>
-
-
-
-					</li>
-					{END item36_menulink}
-							</ul>
 			</li>
-			{END item31_menulink}
+			{END item34_menulink}
 			</ul>
 	</li>
-	{END item18_menulink}
-	{BEGIN item37_menulink}
-	<li class="{$item37_current} menuGroup">
-		<div>
-<div>
-<a {$item37_menulink_attrs}>{$item37_title}</a>
-</div>
-</div>
-
-
-
-			<ul >
-			{BEGIN item38_menulink}
-			<li  parent="group37" class="{$item38_current} menuLeaf">
-			<div>
-<div>
-<a {$item38_menulink_attrs}>{$item38_title}</a>
-</div>
-</div>
-
-
-
-			</li>
-			{END item38_menulink}
-					{BEGIN item39_menulink}
-			<li  parent="group37" class="{$item39_current} menuLeaf">
-			<div>
-<div>
-<a {$item39_menulink_attrs}>{$item39_title}</a>
-</div>
-</div>
-
-
-
-			</li>
-			{END item39_menulink}
-					{BEGIN item40_menulink}
-			<li  parent="group37" class="{$item40_current} menuLeaf">
-			<div>
-<div>
-<a {$item40_menulink_attrs}>{$item40_title}</a>
-</div>
-</div>
-
-
-
-			</li>
-			{END item40_menulink}
-			</ul>
-	</li>
-	{END item37_menulink}
+	{END item31_menulink}
 </ul>
 {END mainmenu_block}
 

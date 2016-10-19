@@ -3457,10 +3457,7 @@ $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
 if($zon!==NULL && $alevel==1){
 $query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-
-}else if($alevel==2){
-$query->addWhere("eYear='".$year."'");
-}
+};
 ;
 unset($query);
 ?>

@@ -391,14 +391,6 @@ class AuditTrailTable
 		{
 			return false;
 		}
-		if($table=="carta_kelulusan_psra_all")
-		{
-			return false;
-		}
-		if($table=="carta_pangkat_psra_all")
-		{
-			return false;
-		}
 		if($table=="dashboard_utama")
 		{
 			return false;
@@ -843,14 +835,6 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="purata_psra_all")
-		{
-			return false;
-		}
-		if($table=="carta_kelulusan_psra_all")
-		{
-			return false;
-		}
-		if($table=="carta_pangkat_psra_all")
 		{
 			return false;
 		}

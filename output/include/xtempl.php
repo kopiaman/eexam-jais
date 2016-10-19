@@ -95,8 +95,6 @@ class XTempl
 		
 		if( !$hideAddedCharts ) //#9607 1. Temporary fix
 		{
-			$this->assign_function("carta_kelulusan_psra_all_chart","xt_showchart",array("chartname"=>"carta_kelulusan_psra_all","table"=>"carta_kelulusan_psra_all","ctype"=>"2DColumn"));
-			$this->assign_function("carta_pangkat_psra_all_chart","xt_showchart",array("chartname"=>"carta_pangkat_psra_all","table"=>"carta_pangkat_psra_all","ctype"=>"2DColumn"));
 		}
 		
 		$mlang_charsets=array();
