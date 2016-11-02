@@ -197,7 +197,7 @@ $tdatamarking_TF[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "ORDER BY exam_marking.eNo ASC";
+$tstrOrderBy = "ORDER BY exam_marking.eNo";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
 $tdatamarking_TF[".strOrderBy"] = $tstrOrderBy;
@@ -1939,7 +1939,7 @@ $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.name,  exam_marking.sCode,  exam_marking.eNo,  exam_marking.eYear,  exam_marking.eType,  exam_marking.s1,  exam_marking.s2,  exam_marking.s3,  exam_marking.s4,  exam_marking.s5,  exam_marking.s6,  exam_marking.s7,  school.sZone";
 $proto0["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "ORDER BY exam_marking.eNo ASC";
+$proto0["m_strOrderBy"] = "ORDER BY exam_marking.eNo";
 $proto0["m_strTail"] = "";
 			$proto0["cipherer"] = null;
 $proto1=array();

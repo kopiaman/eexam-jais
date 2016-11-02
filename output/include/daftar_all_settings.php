@@ -191,9 +191,9 @@ $tdatadaftar_all[".strOrderBy"] = $tstrOrderBy;
 $tdatadaftar_all[".orderindexes"] = array();
 $tdatadaftar_all[".orderindexes"][] = array(3, (0 ? "ASC" : "DESC"), "exam_marking.eYear");
 
-$tdatadaftar_all[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender='L', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender='P', exam_marking.sid, NULL)) AS perempuan";
-$tdatadaftar_all[".sqlFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$tdatadaftar_all[".sqlWhereExpr"] = "exam_marking.eType ='PSRA'";
+$tdatadaftar_all[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL)) AS perempuan";
+$tdatadaftar_all[".sqlFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$tdatadaftar_all[".sqlWhereExpr"] = "";
 $tdatadaftar_all[".sqlTail"] = "";
 
 
@@ -868,7 +868,7 @@ $tdatadaftar_all[".printFields"] = array();
 		$fdata["strField"] = "lelaki";
 
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "COUNT(if(exam_marking.gender='L', exam_marking.sid, NULL))";
+	$fdata["FullName"] = "COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL))";
 
 	
 	
@@ -989,7 +989,7 @@ $tdatadaftar_all[".printFields"] = array();
 		$fdata["strField"] = "perempuan";
 
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "COUNT(if(exam_marking.gender='P', exam_marking.sid, NULL))";
+	$fdata["FullName"] = "COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL))";
 
 	
 	
@@ -1113,24 +1113,22 @@ function createSqlQuery_daftar_all()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender='L', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender='P', exam_marking.sid, NULL)) AS perempuan";
-$proto0["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$proto0["m_strWhere"] = "exam_marking.eType ='PSRA'";
+$proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL)) AS perempuan";
+$proto0["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY exam_marking.eYear DESC";
 $proto0["m_strTail"] = "";
 			$proto0["cipherer"] = null;
 $proto1=array();
-$proto1["m_sql"] = "exam_marking.eType ='PSRA'";
+$proto1["m_sql"] = "";
 $proto1["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "daftar_all"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
 ));
 
 $proto1["m_column"]=$obj;
 $proto1["m_contained"] = array();
-$proto1["m_strCase"] = "='PSRA'";
+$proto1["m_strCase"] = "";
 $proto1["m_havingmode"] = false;
 $proto1["m_inBrackets"] = false;
 $proto1["m_useAlias"] = false;
@@ -1239,7 +1237,7 @@ $proto17["m_arguments"] = array();
 $proto18["m_functiontype"] = "SQLF_CUSTOM";
 $proto18["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.gender='L'"
+	"m_sql" => "exam_marking.gender LIKE '%L%'"
 ));
 
 $proto18["m_arguments"][]=$obj;
@@ -1260,7 +1258,7 @@ $proto17["m_arguments"][]=$obj;
 $proto17["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto17);
 
-$proto16["m_sql"] = "COUNT(if(exam_marking.gender='L', exam_marking.sid, NULL))";
+$proto16["m_sql"] = "COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL))";
 $proto16["m_srcTableName"] = "daftar_all";
 $proto16["m_expr"]=$obj;
 $proto16["m_alias"] = "lelaki";
@@ -1275,7 +1273,7 @@ $proto23["m_arguments"] = array();
 $proto24["m_functiontype"] = "SQLF_CUSTOM";
 $proto24["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.gender='P'"
+	"m_sql" => "exam_marking.gender LIKE '%P%'"
 ));
 
 $proto24["m_arguments"][]=$obj;
@@ -1296,7 +1294,7 @@ $proto23["m_arguments"][]=$obj;
 $proto23["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto23);
 
-$proto22["m_sql"] = "COUNT(if(exam_marking.gender='P', exam_marking.sid, NULL))";
+$proto22["m_sql"] = "COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL))";
 $proto22["m_srcTableName"] = "daftar_all";
 $proto22["m_expr"]=$obj;
 $proto22["m_alias"] = "perempuan";
@@ -1353,7 +1351,7 @@ $obj = new SQLFromListItem($proto28);
 
 $proto0["m_fromlist"][]=$obj;
 												$proto32=array();
-$proto32["m_link"] = "SQLL_INNERJOIN";
+$proto32["m_link"] = "SQLL_LEFTJOIN";
 			$proto33=array();
 $proto33["m_strName"] = "school";
 $proto33["m_srcTableName"] = "daftar_all";
@@ -1367,7 +1365,7 @@ $proto33["m_columns"][] = "sType";
 $obj = new SQLTable($proto33);
 
 $proto32["m_table"] = $obj;
-$proto32["m_sql"] = "INNER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$proto32["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
 $proto32["m_alias"] = "";
 $proto32["m_srcTableName"] = "daftar_all";
 $proto34=array();
