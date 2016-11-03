@@ -73,7 +73,7 @@ $row=mysql_fetch_array($query_at);
         <th valign="top" scope="row"><table width="100%" border="0" cellpadding="0">
           <tr>
             <td width="15%"><img src="images/JATASELANGOR.GIF" width="64" height="84" /></td>
-            <td width="80%" align="center" valign="top"><h3 class="jawi"><span dir="rtl">جابتن اڬام اسلام سلاڠور </span></h3>
+            <td width="80%" align="center" valign="top"><h3 class="jawi"><span dir="rtl">جابتن اڬام إسلام سلاڠور </span></h3>
               <h5>UNIT PEPERIKSAAN DAN PENILAIAN <br />
                 BAHAGIAN PENDIDIKAN ISLAM</h5></td>
             <td width="5%"><img src="images/JAIS.GIF" alt="" width="83" height="78" /></td>

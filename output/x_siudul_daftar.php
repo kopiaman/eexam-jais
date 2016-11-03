@@ -194,10 +194,10 @@ $all=mysql_fetch_array($query_all);
     <table width="100%" border="0" cellpadding="0">
       <tr>
         <td width="15%"><img src="images/JATASELANGOR.GIF" width="144" height="190" /></td>
-        <td width="80%" valign="top"><span dir="rtl"><h1 class="jawi">جابتن اڬام اسلام سلاڠور  <br />بهاڬين ڤنديديقن اسلام <BR /> ڤنيلاين سكوله رنده اڬام كراجأن نڬري سلاڠور <BR /> تاهون ٢٠<?php echo noArab($tahun1).noArab($tahun2) ?>
-          
-          </h1> 
-          </span></td>
+    <td width="80%" valign="top"><span dir="rtl"><h1 class="jawi">جابتن اڬام إسلام سلاڠور  <br />بهاڬين ڤنديديقن إسلام <BR /> ڤنيلاين سكوله رنده اڬام كراجاءن نڬري سلاڠور <BR /> تاهون <?php echo date('Y') ?>
+      
+      </h1> 
+      </span></td>
         <td width="5%"><img src="images/JAIS.GIF" alt="" width="131" height="129" /></td>
       </tr>
       </table>
