@@ -127,8 +127,8 @@ else
 $tdatamarking_JIK[".rowHighlite"] = true;
 
 
-														
-								$tdatamarking_JIK[".isUsebuttonHandlers"] = true;
+										
+											$tdatamarking_JIK[".isUsebuttonHandlers"] = true;
 
 $tdatamarking_JIK[".addPageEvents"] = false;
 

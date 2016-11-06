@@ -23,8 +23,6 @@ if(mlang_getcurrentlang()=="English")
 	$pageTitlesanalisa_subjek_psra_all["English"] = array();
 	$fieldLabelsanalisa_subjek_psra_all["English"]["eYear"] = "Tahun";
 	$fieldToolTipsanalisa_subjek_psra_all["English"]["eYear"] = "";
-	$fieldLabelsanalisa_subjek_psra_all["English"]["eType"] = "Peperiksaan";
-	$fieldToolTipsanalisa_subjek_psra_all["English"]["eType"] = "";
 	$fieldLabelsanalisa_subjek_psra_all["English"]["s1TH"] = "TH";
 	$fieldToolTipsanalisa_subjek_psra_all["English"]["s1TH"] = "";
 	$fieldLabelsanalisa_subjek_psra_all["English"]["s1DF"] = "MS";
@@ -209,7 +207,7 @@ else
 $tdataanalisa_subjek_psra_all[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdataanalisa_subjek_psra_all[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -326,8 +324,8 @@ $tdataanalisa_subjek_psra_all[".strOrderBy"] = $tstrOrderBy;
 
 $tdataanalisa_subjek_psra_all[".orderindexes"] = array();
 
-$tdataanalisa_subjek_psra_all[".sqlHead"] = "SELECT eYear,  eType,  s1TH,  s1DF,  s1MQ,  s1JD,  s1JJ,  s1MZ,  (s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1calon,  (s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1lulus,  1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1gagal,  s2TH,  s2DF,  s2MQ,  s2JD,  s2JJ,  s2MZ,  (s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2calon,  (s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2lulus,  1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2gagal,  s3TH,  s3DF,  s3MQ,  s3JD,  s3JJ,  s3MZ,  (s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3calon,  (s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3lulus,  1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3gagal,  s4TH,  s4DF,  s4MQ,  s4JD,  s4JJ,  s4MZ,  (s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4calon,  (s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4lulus,  1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4gagal,  s5TH,  s5DF,  s5MQ,  s5JD,  s5JJ,  s5MZ,  (s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5calon,  (s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5lulus,  1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5gagal,  s6TH,  s6DF,  s6MQ,  s6JD,  s6JJ,  s6MZ,  (s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6calon,  (s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6lulus,  1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6gagal";
-$tdataanalisa_subjek_psra_all[".sqlFrom"] = "FROM (  		SELECT  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode  GROUP BY eYear  ) AS Sub1";
+$tdataanalisa_subjek_psra_all[".sqlHead"] = "SELECT eYear,  s1TH,  s1DF,  s1MQ,  s1JD,  s1JJ,  s1MZ,  (s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1calon,  (s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1lulus,  1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1gagal,  s2TH,  s2DF,  s2MQ,  s2JD,  s2JJ,  s2MZ,  (s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2calon,  (s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2lulus,  1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2gagal,  s3TH,  s3DF,  s3MQ,  s3JD,  s3JJ,  s3MZ,  (s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3calon,  (s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3lulus,  1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3gagal,  s4TH,  s4DF,  s4MQ,  s4JD,  s4JJ,  s4MZ,  (s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4calon,  (s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4lulus,  1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4gagal,  s5TH,  s5DF,  s5MQ,  s5JD,  s5JJ,  s5MZ,  (s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5calon,  (s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5lulus,  1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5gagal,  s6TH,  s6DF,  s6MQ,  s6JD,  s6JJ,  s6MZ,  (s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6calon,  (s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6lulus,  1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6gagal";
+$tdataanalisa_subjek_psra_all[".sqlFrom"] = "FROM (  		SELECT  eYear,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY eYear  ORDER BY eYear DESC  ) AS Sub1";
 $tdataanalisa_subjek_psra_all[".sqlWhereExpr"] = "";
 $tdataanalisa_subjek_psra_all[".sqlTail"] = "";
 
@@ -483,7 +481,6 @@ $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s5gagal";
 $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s6calon";
 $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s6TH";
 $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s6DF";
-$tdataanalisa_subjek_psra_all[".masterListFields"][] = "eType";
 $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s6MQ";
 $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s6JD";
 $tdataanalisa_subjek_psra_all[".masterListFields"][] = "s6JJ";
@@ -671,120 +668,10 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 
 
 	$tdataanalisa_subjek_psra_all["eYear"] = $fdata;
-//	eType
-//	Custom field settings
-	$fdata = array();
-	$fdata["Index"] = 2;
-	$fdata["strName"] = "eType";
-	$fdata["GoodName"] = "eType";
-	$fdata["ownerTable"] = "";
-	$fdata["Label"] = GetFieldLabel("analisa_subjek_psra_all","eType");
-	$fdata["FieldType"] = 200;
-
-	
-	
-	
-			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$fdata["strField"] = "eType";
-
-		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "eType";
-
-	
-	
-			
-				$fdata["UploadFolder"] = "files";
-
-//  Begin View Formats
-	$fdata["ViewFormats"] = array();
-
-	$vdata = array("ViewFormat" => "");
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		$vdata["NeedEncode"] = true;
-
-	$fdata["ViewFormats"]["view"] = $vdata;
-//  End View Formats
-
-//	Begin Edit Formats
-	$fdata["EditFormats"] = array();
-
-	$edata = array("EditFormat" => "Text field");
-
-	
-	
-
-
-
-	
-	
-	
-	
-			$edata["acceptFileTypes"] = ".+$";
-
-		$edata["maxNumberOfFiles"] = 1;
-
-	
-	
-	
-	
-			$edata["HTML5InuptType"] = "text";
-
-		$edata["EditParams"] = "";
-			$edata["EditParams"].= " maxlength=8";
-
-		$edata["controlWidth"] = 40;
-
-//	Begin validation
-	$edata["validateAs"] = array();
-	$edata["validateAs"]["basicValidate"] = array();
-	$edata["validateAs"]["customMessages"] = array();
-	
-	
-	//	End validation
-
-	
-			
-	
-	
-	
-	$fdata["EditFormats"]["edit"] = $edata;
-//	End Edit Formats
-
-
-	$fdata["isSeparate"] = false;
-
-
-
-
-
-
-
-
-	$tdataanalisa_subjek_psra_all["eType"] = $fdata;
 //	s1TH
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 3;
+	$fdata["Index"] = 2;
 	$fdata["strName"] = "s1TH";
 	$fdata["GoodName"] = "s1TH";
 	$fdata["ownerTable"] = "";
@@ -899,7 +786,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1DF
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 4;
+	$fdata["Index"] = 3;
 	$fdata["strName"] = "s1DF";
 	$fdata["GoodName"] = "s1DF";
 	$fdata["ownerTable"] = "";
@@ -1014,7 +901,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1MQ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 5;
+	$fdata["Index"] = 4;
 	$fdata["strName"] = "s1MQ";
 	$fdata["GoodName"] = "s1MQ";
 	$fdata["ownerTable"] = "";
@@ -1129,7 +1016,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1JD
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 6;
+	$fdata["Index"] = 5;
 	$fdata["strName"] = "s1JD";
 	$fdata["GoodName"] = "s1JD";
 	$fdata["ownerTable"] = "";
@@ -1244,7 +1131,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1JJ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 7;
+	$fdata["Index"] = 6;
 	$fdata["strName"] = "s1JJ";
 	$fdata["GoodName"] = "s1JJ";
 	$fdata["ownerTable"] = "";
@@ -1359,7 +1246,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1MZ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 8;
+	$fdata["Index"] = 7;
 	$fdata["strName"] = "s1MZ";
 	$fdata["GoodName"] = "s1MZ";
 	$fdata["ownerTable"] = "";
@@ -1474,7 +1361,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1calon
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 9;
+	$fdata["Index"] = 8;
 	$fdata["strName"] = "s1calon";
 	$fdata["GoodName"] = "s1calon";
 	$fdata["ownerTable"] = "";
@@ -1589,7 +1476,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1lulus
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 10;
+	$fdata["Index"] = 9;
 	$fdata["strName"] = "s1lulus";
 	$fdata["GoodName"] = "s1lulus";
 	$fdata["ownerTable"] = "";
@@ -1704,7 +1591,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s1gagal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 11;
+	$fdata["Index"] = 10;
 	$fdata["strName"] = "s1gagal";
 	$fdata["GoodName"] = "s1gagal";
 	$fdata["ownerTable"] = "";
@@ -1819,7 +1706,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2TH
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 12;
+	$fdata["Index"] = 11;
 	$fdata["strName"] = "s2TH";
 	$fdata["GoodName"] = "s2TH";
 	$fdata["ownerTable"] = "";
@@ -1934,7 +1821,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2DF
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 13;
+	$fdata["Index"] = 12;
 	$fdata["strName"] = "s2DF";
 	$fdata["GoodName"] = "s2DF";
 	$fdata["ownerTable"] = "";
@@ -2049,7 +1936,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2MQ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 14;
+	$fdata["Index"] = 13;
 	$fdata["strName"] = "s2MQ";
 	$fdata["GoodName"] = "s2MQ";
 	$fdata["ownerTable"] = "";
@@ -2164,7 +2051,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2JD
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 15;
+	$fdata["Index"] = 14;
 	$fdata["strName"] = "s2JD";
 	$fdata["GoodName"] = "s2JD";
 	$fdata["ownerTable"] = "";
@@ -2279,7 +2166,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2JJ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 16;
+	$fdata["Index"] = 15;
 	$fdata["strName"] = "s2JJ";
 	$fdata["GoodName"] = "s2JJ";
 	$fdata["ownerTable"] = "";
@@ -2394,7 +2281,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2MZ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 17;
+	$fdata["Index"] = 16;
 	$fdata["strName"] = "s2MZ";
 	$fdata["GoodName"] = "s2MZ";
 	$fdata["ownerTable"] = "";
@@ -2509,7 +2396,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2calon
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 18;
+	$fdata["Index"] = 17;
 	$fdata["strName"] = "s2calon";
 	$fdata["GoodName"] = "s2calon";
 	$fdata["ownerTable"] = "";
@@ -2624,7 +2511,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2lulus
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 19;
+	$fdata["Index"] = 18;
 	$fdata["strName"] = "s2lulus";
 	$fdata["GoodName"] = "s2lulus";
 	$fdata["ownerTable"] = "";
@@ -2739,7 +2626,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s2gagal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 20;
+	$fdata["Index"] = 19;
 	$fdata["strName"] = "s2gagal";
 	$fdata["GoodName"] = "s2gagal";
 	$fdata["ownerTable"] = "";
@@ -2854,7 +2741,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3TH
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 21;
+	$fdata["Index"] = 20;
 	$fdata["strName"] = "s3TH";
 	$fdata["GoodName"] = "s3TH";
 	$fdata["ownerTable"] = "";
@@ -2969,7 +2856,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3DF
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 22;
+	$fdata["Index"] = 21;
 	$fdata["strName"] = "s3DF";
 	$fdata["GoodName"] = "s3DF";
 	$fdata["ownerTable"] = "";
@@ -3084,7 +2971,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3MQ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 23;
+	$fdata["Index"] = 22;
 	$fdata["strName"] = "s3MQ";
 	$fdata["GoodName"] = "s3MQ";
 	$fdata["ownerTable"] = "";
@@ -3199,7 +3086,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3JD
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 24;
+	$fdata["Index"] = 23;
 	$fdata["strName"] = "s3JD";
 	$fdata["GoodName"] = "s3JD";
 	$fdata["ownerTable"] = "";
@@ -3314,7 +3201,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3JJ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 25;
+	$fdata["Index"] = 24;
 	$fdata["strName"] = "s3JJ";
 	$fdata["GoodName"] = "s3JJ";
 	$fdata["ownerTable"] = "";
@@ -3429,7 +3316,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3MZ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 26;
+	$fdata["Index"] = 25;
 	$fdata["strName"] = "s3MZ";
 	$fdata["GoodName"] = "s3MZ";
 	$fdata["ownerTable"] = "";
@@ -3544,7 +3431,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3calon
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 27;
+	$fdata["Index"] = 26;
 	$fdata["strName"] = "s3calon";
 	$fdata["GoodName"] = "s3calon";
 	$fdata["ownerTable"] = "";
@@ -3659,7 +3546,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3lulus
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 28;
+	$fdata["Index"] = 27;
 	$fdata["strName"] = "s3lulus";
 	$fdata["GoodName"] = "s3lulus";
 	$fdata["ownerTable"] = "";
@@ -3774,7 +3661,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s3gagal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 29;
+	$fdata["Index"] = 28;
 	$fdata["strName"] = "s3gagal";
 	$fdata["GoodName"] = "s3gagal";
 	$fdata["ownerTable"] = "";
@@ -3890,7 +3777,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4TH
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 30;
+	$fdata["Index"] = 29;
 	$fdata["strName"] = "s4TH";
 	$fdata["GoodName"] = "s4TH";
 	$fdata["ownerTable"] = "";
@@ -4005,7 +3892,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4DF
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 31;
+	$fdata["Index"] = 30;
 	$fdata["strName"] = "s4DF";
 	$fdata["GoodName"] = "s4DF";
 	$fdata["ownerTable"] = "";
@@ -4120,7 +4007,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4MQ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 32;
+	$fdata["Index"] = 31;
 	$fdata["strName"] = "s4MQ";
 	$fdata["GoodName"] = "s4MQ";
 	$fdata["ownerTable"] = "";
@@ -4235,7 +4122,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4JD
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 33;
+	$fdata["Index"] = 32;
 	$fdata["strName"] = "s4JD";
 	$fdata["GoodName"] = "s4JD";
 	$fdata["ownerTable"] = "";
@@ -4350,7 +4237,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4JJ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 34;
+	$fdata["Index"] = 33;
 	$fdata["strName"] = "s4JJ";
 	$fdata["GoodName"] = "s4JJ";
 	$fdata["ownerTable"] = "";
@@ -4465,7 +4352,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4MZ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 35;
+	$fdata["Index"] = 34;
 	$fdata["strName"] = "s4MZ";
 	$fdata["GoodName"] = "s4MZ";
 	$fdata["ownerTable"] = "";
@@ -4580,7 +4467,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4calon
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 36;
+	$fdata["Index"] = 35;
 	$fdata["strName"] = "s4calon";
 	$fdata["GoodName"] = "s4calon";
 	$fdata["ownerTable"] = "";
@@ -4695,7 +4582,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4lulus
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 37;
+	$fdata["Index"] = 36;
 	$fdata["strName"] = "s4lulus";
 	$fdata["GoodName"] = "s4lulus";
 	$fdata["ownerTable"] = "";
@@ -4810,7 +4697,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s4gagal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 38;
+	$fdata["Index"] = 37;
 	$fdata["strName"] = "s4gagal";
 	$fdata["GoodName"] = "s4gagal";
 	$fdata["ownerTable"] = "";
@@ -4925,7 +4812,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5TH
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 39;
+	$fdata["Index"] = 38;
 	$fdata["strName"] = "s5TH";
 	$fdata["GoodName"] = "s5TH";
 	$fdata["ownerTable"] = "";
@@ -5040,7 +4927,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5DF
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 40;
+	$fdata["Index"] = 39;
 	$fdata["strName"] = "s5DF";
 	$fdata["GoodName"] = "s5DF";
 	$fdata["ownerTable"] = "";
@@ -5155,7 +5042,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5MQ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 41;
+	$fdata["Index"] = 40;
 	$fdata["strName"] = "s5MQ";
 	$fdata["GoodName"] = "s5MQ";
 	$fdata["ownerTable"] = "";
@@ -5270,7 +5157,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5JD
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 42;
+	$fdata["Index"] = 41;
 	$fdata["strName"] = "s5JD";
 	$fdata["GoodName"] = "s5JD";
 	$fdata["ownerTable"] = "";
@@ -5385,7 +5272,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5JJ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 43;
+	$fdata["Index"] = 42;
 	$fdata["strName"] = "s5JJ";
 	$fdata["GoodName"] = "s5JJ";
 	$fdata["ownerTable"] = "";
@@ -5500,7 +5387,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5MZ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 44;
+	$fdata["Index"] = 43;
 	$fdata["strName"] = "s5MZ";
 	$fdata["GoodName"] = "s5MZ";
 	$fdata["ownerTable"] = "";
@@ -5615,7 +5502,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5calon
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 45;
+	$fdata["Index"] = 44;
 	$fdata["strName"] = "s5calon";
 	$fdata["GoodName"] = "s5calon";
 	$fdata["ownerTable"] = "";
@@ -5730,7 +5617,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5lulus
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 46;
+	$fdata["Index"] = 45;
 	$fdata["strName"] = "s5lulus";
 	$fdata["GoodName"] = "s5lulus";
 	$fdata["ownerTable"] = "";
@@ -5845,7 +5732,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s5gagal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 47;
+	$fdata["Index"] = 46;
 	$fdata["strName"] = "s5gagal";
 	$fdata["GoodName"] = "s5gagal";
 	$fdata["ownerTable"] = "";
@@ -5960,7 +5847,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6TH
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 48;
+	$fdata["Index"] = 47;
 	$fdata["strName"] = "s6TH";
 	$fdata["GoodName"] = "s6TH";
 	$fdata["ownerTable"] = "";
@@ -6075,7 +5962,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6DF
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 49;
+	$fdata["Index"] = 48;
 	$fdata["strName"] = "s6DF";
 	$fdata["GoodName"] = "s6DF";
 	$fdata["ownerTable"] = "";
@@ -6190,7 +6077,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6MQ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 50;
+	$fdata["Index"] = 49;
 	$fdata["strName"] = "s6MQ";
 	$fdata["GoodName"] = "s6MQ";
 	$fdata["ownerTable"] = "";
@@ -6305,7 +6192,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6JD
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 51;
+	$fdata["Index"] = 50;
 	$fdata["strName"] = "s6JD";
 	$fdata["GoodName"] = "s6JD";
 	$fdata["ownerTable"] = "";
@@ -6420,7 +6307,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6JJ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 52;
+	$fdata["Index"] = 51;
 	$fdata["strName"] = "s6JJ";
 	$fdata["GoodName"] = "s6JJ";
 	$fdata["ownerTable"] = "";
@@ -6535,7 +6422,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6MZ
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 53;
+	$fdata["Index"] = 52;
 	$fdata["strName"] = "s6MZ";
 	$fdata["GoodName"] = "s6MZ";
 	$fdata["ownerTable"] = "";
@@ -6650,7 +6537,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6calon
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 54;
+	$fdata["Index"] = 53;
 	$fdata["strName"] = "s6calon";
 	$fdata["GoodName"] = "s6calon";
 	$fdata["ownerTable"] = "";
@@ -6765,7 +6652,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6lulus
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 55;
+	$fdata["Index"] = 54;
 	$fdata["strName"] = "s6lulus";
 	$fdata["GoodName"] = "s6lulus";
 	$fdata["ownerTable"] = "";
@@ -6880,7 +6767,7 @@ $tdataanalisa_subjek_psra_all[".printFields"] = array();
 //	s6gagal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 56;
+	$fdata["Index"] = 55;
 	$fdata["strName"] = "s6gagal";
 	$fdata["GoodName"] = "s6gagal";
 	$fdata["ownerTable"] = "";
@@ -7024,8 +6911,8 @@ function createSqlQuery_analisa_subjek_psra_all()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "eYear,  eType,  s1TH,  s1DF,  s1MQ,  s1JD,  s1JJ,  s1MZ,  (s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1calon,  (s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1lulus,  1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1gagal,  s2TH,  s2DF,  s2MQ,  s2JD,  s2JJ,  s2MZ,  (s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2calon,  (s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2lulus,  1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2gagal,  s3TH,  s3DF,  s3MQ,  s3JD,  s3JJ,  s3MZ,  (s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3calon,  (s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3lulus,  1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3gagal,  s4TH,  s4DF,  s4MQ,  s4JD,  s4JJ,  s4MZ,  (s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4calon,  (s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4lulus,  1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4gagal,  s5TH,  s5DF,  s5MQ,  s5JD,  s5JJ,  s5MZ,  (s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5calon,  (s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5lulus,  1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5gagal,  s6TH,  s6DF,  s6MQ,  s6JD,  s6JJ,  s6MZ,  (s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6calon,  (s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6lulus,  1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6gagal";
-$proto0["m_strFrom"] = "FROM (  		SELECT  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode  GROUP BY eYear  ) AS Sub1";
+$proto0["m_strFieldList"] = "eYear,  s1TH,  s1DF,  s1MQ,  s1JD,  s1JJ,  s1MZ,  (s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1calon,  (s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1lulus,  1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1gagal,  s2TH,  s2DF,  s2MQ,  s2JD,  s2JJ,  s2MZ,  (s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2calon,  (s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2lulus,  1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2gagal,  s3TH,  s3DF,  s3MQ,  s3JD,  s3JJ,  s3MZ,  (s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3calon,  (s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3lulus,  1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3gagal,  s4TH,  s4DF,  s4MQ,  s4JD,  s4JJ,  s4MZ,  (s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4calon,  (s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4lulus,  1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4gagal,  s5TH,  s5DF,  s5MQ,  s5JD,  s5JJ,  s5MZ,  (s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5calon,  (s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5lulus,  1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5gagal,  s6TH,  s6DF,  s6MQ,  s6JD,  s6JJ,  s6MZ,  (s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6calon,  (s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6lulus,  1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6gagal";
+$proto0["m_strFrom"] = "FROM (  		SELECT  eYear,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY eYear  ORDER BY eYear DESC  ) AS Sub1";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
 $proto0["m_strTail"] = "";
@@ -7079,12 +6966,12 @@ $obj = new SQLFieldListItem($proto5);
 $proto0["m_fieldlist"][]=$obj;
 						$proto7=array();
 			$obj = new SQLField(array(
-	"m_strName" => "eType",
+	"m_strName" => "s1TH",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto7["m_sql"] = "eType";
+$proto7["m_sql"] = "s1TH";
 $proto7["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto7["m_expr"]=$obj;
 $proto7["m_alias"] = "";
@@ -7093,12 +6980,12 @@ $obj = new SQLFieldListItem($proto7);
 $proto0["m_fieldlist"][]=$obj;
 						$proto9=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s1TH",
+	"m_strName" => "s1DF",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto9["m_sql"] = "s1TH";
+$proto9["m_sql"] = "s1DF";
 $proto9["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto9["m_expr"]=$obj;
 $proto9["m_alias"] = "";
@@ -7107,12 +6994,12 @@ $obj = new SQLFieldListItem($proto9);
 $proto0["m_fieldlist"][]=$obj;
 						$proto11=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s1DF",
+	"m_strName" => "s1MQ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto11["m_sql"] = "s1DF";
+$proto11["m_sql"] = "s1MQ";
 $proto11["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto11["m_expr"]=$obj;
 $proto11["m_alias"] = "";
@@ -7121,12 +7008,12 @@ $obj = new SQLFieldListItem($proto11);
 $proto0["m_fieldlist"][]=$obj;
 						$proto13=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s1MQ",
+	"m_strName" => "s1JD",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto13["m_sql"] = "s1MQ";
+$proto13["m_sql"] = "s1JD";
 $proto13["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto13["m_expr"]=$obj;
 $proto13["m_alias"] = "";
@@ -7135,12 +7022,12 @@ $obj = new SQLFieldListItem($proto13);
 $proto0["m_fieldlist"][]=$obj;
 						$proto15=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s1JD",
+	"m_strName" => "s1JJ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto15["m_sql"] = "s1JD";
+$proto15["m_sql"] = "s1JJ";
 $proto15["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto15["m_expr"]=$obj;
 $proto15["m_alias"] = "";
@@ -7149,12 +7036,12 @@ $obj = new SQLFieldListItem($proto15);
 $proto0["m_fieldlist"][]=$obj;
 						$proto17=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s1JJ",
+	"m_strName" => "s1MZ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto17["m_sql"] = "s1JJ";
+$proto17["m_sql"] = "s1MZ";
 $proto17["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto17["m_expr"]=$obj;
 $proto17["m_alias"] = "";
@@ -7162,63 +7049,63 @@ $obj = new SQLFieldListItem($proto17);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto19=array();
-			$obj = new SQLField(array(
-	"m_strName" => "s1MZ",
-	"m_strTable" => "Sub1",
-	"m_srcTableName" => "analisa_subjek_psra_all"
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "(s1DF+s1MQ+s1JD+s1JJ+s1MZ)"
 ));
 
-$proto19["m_sql"] = "s1MZ";
+$proto19["m_sql"] = "(s1DF+s1MQ+s1JD+s1JJ+s1MZ)";
 $proto19["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto19["m_expr"]=$obj;
-$proto19["m_alias"] = "";
+$proto19["m_alias"] = "s1calon";
 $obj = new SQLFieldListItem($proto19);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto21=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s1DF+s1MQ+s1JD+s1JJ+s1MZ)"
+	"m_sql" => "(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)"
 ));
 
-$proto21["m_sql"] = "(s1DF+s1MQ+s1JD+s1JJ+s1MZ)";
+$proto21["m_sql"] = "(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)";
 $proto21["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto21["m_expr"]=$obj;
-$proto21["m_alias"] = "s1calon";
+$proto21["m_alias"] = "s1lulus";
 $obj = new SQLFieldListItem($proto21);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto23=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)"
+	"m_sql" => "1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)"
 ));
 
-$proto23["m_sql"] = "(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)";
+$proto23["m_sql"] = "1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)";
 $proto23["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto23["m_expr"]=$obj;
-$proto23["m_alias"] = "s1lulus";
+$proto23["m_alias"] = "s1gagal";
 $obj = new SQLFieldListItem($proto23);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto25=array();
-			$obj = new SQLNonParsed(array(
-	"m_sql" => "1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)"
-));
-
-$proto25["m_sql"] = "1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ)";
-$proto25["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto25["m_expr"]=$obj;
-$proto25["m_alias"] = "s1gagal";
-$obj = new SQLFieldListItem($proto25);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto27=array();
 			$obj = new SQLField(array(
 	"m_strName" => "s2TH",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto27["m_sql"] = "s2TH";
+$proto25["m_sql"] = "s2TH";
+$proto25["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto25["m_expr"]=$obj;
+$proto25["m_alias"] = "";
+$obj = new SQLFieldListItem($proto25);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto27=array();
+			$obj = new SQLField(array(
+	"m_strName" => "s2DF",
+	"m_strTable" => "Sub1",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
+
+$proto27["m_sql"] = "s2DF";
 $proto27["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto27["m_expr"]=$obj;
 $proto27["m_alias"] = "";
@@ -7227,12 +7114,12 @@ $obj = new SQLFieldListItem($proto27);
 $proto0["m_fieldlist"][]=$obj;
 						$proto29=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s2DF",
+	"m_strName" => "s2MQ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto29["m_sql"] = "s2DF";
+$proto29["m_sql"] = "s2MQ";
 $proto29["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto29["m_expr"]=$obj;
 $proto29["m_alias"] = "";
@@ -7241,12 +7128,12 @@ $obj = new SQLFieldListItem($proto29);
 $proto0["m_fieldlist"][]=$obj;
 						$proto31=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s2MQ",
+	"m_strName" => "s2JD",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto31["m_sql"] = "s2MQ";
+$proto31["m_sql"] = "s2JD";
 $proto31["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto31["m_expr"]=$obj;
 $proto31["m_alias"] = "";
@@ -7255,12 +7142,12 @@ $obj = new SQLFieldListItem($proto31);
 $proto0["m_fieldlist"][]=$obj;
 						$proto33=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s2JD",
+	"m_strName" => "s2JJ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto33["m_sql"] = "s2JD";
+$proto33["m_sql"] = "s2JJ";
 $proto33["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto33["m_expr"]=$obj;
 $proto33["m_alias"] = "";
@@ -7269,12 +7156,12 @@ $obj = new SQLFieldListItem($proto33);
 $proto0["m_fieldlist"][]=$obj;
 						$proto35=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s2JJ",
+	"m_strName" => "s2MZ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto35["m_sql"] = "s2JJ";
+$proto35["m_sql"] = "s2MZ";
 $proto35["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto35["m_expr"]=$obj;
 $proto35["m_alias"] = "";
@@ -7282,63 +7169,63 @@ $obj = new SQLFieldListItem($proto35);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto37=array();
-			$obj = new SQLField(array(
-	"m_strName" => "s2MZ",
-	"m_strTable" => "Sub1",
-	"m_srcTableName" => "analisa_subjek_psra_all"
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "(s2DF+s2MQ+s2JD+s2JJ+s2MZ)"
 ));
 
-$proto37["m_sql"] = "s2MZ";
+$proto37["m_sql"] = "(s2DF+s2MQ+s2JD+s2JJ+s2MZ)";
 $proto37["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto37["m_expr"]=$obj;
-$proto37["m_alias"] = "";
+$proto37["m_alias"] = "s2calon";
 $obj = new SQLFieldListItem($proto37);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto39=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s2DF+s2MQ+s2JD+s2JJ+s2MZ)"
+	"m_sql" => "(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)"
 ));
 
-$proto39["m_sql"] = "(s2DF+s2MQ+s2JD+s2JJ+s2MZ)";
+$proto39["m_sql"] = "(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)";
 $proto39["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto39["m_expr"]=$obj;
-$proto39["m_alias"] = "s2calon";
+$proto39["m_alias"] = "s2lulus";
 $obj = new SQLFieldListItem($proto39);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto41=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)"
+	"m_sql" => "1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)"
 ));
 
-$proto41["m_sql"] = "(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)";
+$proto41["m_sql"] = "1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)";
 $proto41["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto41["m_expr"]=$obj;
-$proto41["m_alias"] = "s2lulus";
+$proto41["m_alias"] = "s2gagal";
 $obj = new SQLFieldListItem($proto41);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto43=array();
-			$obj = new SQLNonParsed(array(
-	"m_sql" => "1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)"
-));
-
-$proto43["m_sql"] = "1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ)";
-$proto43["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto43["m_expr"]=$obj;
-$proto43["m_alias"] = "s2gagal";
-$obj = new SQLFieldListItem($proto43);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto45=array();
 			$obj = new SQLField(array(
 	"m_strName" => "s3TH",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto45["m_sql"] = "s3TH";
+$proto43["m_sql"] = "s3TH";
+$proto43["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto43["m_expr"]=$obj;
+$proto43["m_alias"] = "";
+$obj = new SQLFieldListItem($proto43);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto45=array();
+			$obj = new SQLField(array(
+	"m_strName" => "s3DF",
+	"m_strTable" => "Sub1",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
+
+$proto45["m_sql"] = "s3DF";
 $proto45["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto45["m_expr"]=$obj;
 $proto45["m_alias"] = "";
@@ -7347,12 +7234,12 @@ $obj = new SQLFieldListItem($proto45);
 $proto0["m_fieldlist"][]=$obj;
 						$proto47=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s3DF",
+	"m_strName" => "s3MQ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto47["m_sql"] = "s3DF";
+$proto47["m_sql"] = "s3MQ";
 $proto47["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto47["m_expr"]=$obj;
 $proto47["m_alias"] = "";
@@ -7361,12 +7248,12 @@ $obj = new SQLFieldListItem($proto47);
 $proto0["m_fieldlist"][]=$obj;
 						$proto49=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s3MQ",
+	"m_strName" => "s3JD",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto49["m_sql"] = "s3MQ";
+$proto49["m_sql"] = "s3JD";
 $proto49["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto49["m_expr"]=$obj;
 $proto49["m_alias"] = "";
@@ -7375,12 +7262,12 @@ $obj = new SQLFieldListItem($proto49);
 $proto0["m_fieldlist"][]=$obj;
 						$proto51=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s3JD",
+	"m_strName" => "s3JJ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto51["m_sql"] = "s3JD";
+$proto51["m_sql"] = "s3JJ";
 $proto51["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto51["m_expr"]=$obj;
 $proto51["m_alias"] = "";
@@ -7389,12 +7276,12 @@ $obj = new SQLFieldListItem($proto51);
 $proto0["m_fieldlist"][]=$obj;
 						$proto53=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s3JJ",
+	"m_strName" => "s3MZ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto53["m_sql"] = "s3JJ";
+$proto53["m_sql"] = "s3MZ";
 $proto53["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto53["m_expr"]=$obj;
 $proto53["m_alias"] = "";
@@ -7402,63 +7289,63 @@ $obj = new SQLFieldListItem($proto53);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto55=array();
-			$obj = new SQLField(array(
-	"m_strName" => "s3MZ",
-	"m_strTable" => "Sub1",
-	"m_srcTableName" => "analisa_subjek_psra_all"
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "(s3DF+s3MQ+s3JD+s3JJ+s3MZ)"
 ));
 
-$proto55["m_sql"] = "s3MZ";
+$proto55["m_sql"] = "(s3DF+s3MQ+s3JD+s3JJ+s3MZ)";
 $proto55["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto55["m_expr"]=$obj;
-$proto55["m_alias"] = "";
+$proto55["m_alias"] = "s3calon";
 $obj = new SQLFieldListItem($proto55);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto57=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s3DF+s3MQ+s3JD+s3JJ+s3MZ)"
+	"m_sql" => "(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)"
 ));
 
-$proto57["m_sql"] = "(s3DF+s3MQ+s3JD+s3JJ+s3MZ)";
+$proto57["m_sql"] = "(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)";
 $proto57["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto57["m_expr"]=$obj;
-$proto57["m_alias"] = "s3calon";
+$proto57["m_alias"] = "s3lulus";
 $obj = new SQLFieldListItem($proto57);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto59=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)"
+	"m_sql" => "1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)"
 ));
 
-$proto59["m_sql"] = "(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)";
+$proto59["m_sql"] = "1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)";
 $proto59["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto59["m_expr"]=$obj;
-$proto59["m_alias"] = "s3lulus";
+$proto59["m_alias"] = "s3gagal";
 $obj = new SQLFieldListItem($proto59);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto61=array();
-			$obj = new SQLNonParsed(array(
-	"m_sql" => "1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)"
-));
-
-$proto61["m_sql"] = "1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ)";
-$proto61["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto61["m_expr"]=$obj;
-$proto61["m_alias"] = "s3gagal";
-$obj = new SQLFieldListItem($proto61);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto63=array();
 			$obj = new SQLField(array(
 	"m_strName" => "s4TH",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto63["m_sql"] = "s4TH";
+$proto61["m_sql"] = "s4TH";
+$proto61["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto61["m_expr"]=$obj;
+$proto61["m_alias"] = "";
+$obj = new SQLFieldListItem($proto61);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto63=array();
+			$obj = new SQLField(array(
+	"m_strName" => "s4DF",
+	"m_strTable" => "Sub1",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
+
+$proto63["m_sql"] = "s4DF";
 $proto63["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto63["m_expr"]=$obj;
 $proto63["m_alias"] = "";
@@ -7467,12 +7354,12 @@ $obj = new SQLFieldListItem($proto63);
 $proto0["m_fieldlist"][]=$obj;
 						$proto65=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s4DF",
+	"m_strName" => "s4MQ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto65["m_sql"] = "s4DF";
+$proto65["m_sql"] = "s4MQ";
 $proto65["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto65["m_expr"]=$obj;
 $proto65["m_alias"] = "";
@@ -7481,12 +7368,12 @@ $obj = new SQLFieldListItem($proto65);
 $proto0["m_fieldlist"][]=$obj;
 						$proto67=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s4MQ",
+	"m_strName" => "s4JD",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto67["m_sql"] = "s4MQ";
+$proto67["m_sql"] = "s4JD";
 $proto67["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto67["m_expr"]=$obj;
 $proto67["m_alias"] = "";
@@ -7495,12 +7382,12 @@ $obj = new SQLFieldListItem($proto67);
 $proto0["m_fieldlist"][]=$obj;
 						$proto69=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s4JD",
+	"m_strName" => "s4JJ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto69["m_sql"] = "s4JD";
+$proto69["m_sql"] = "s4JJ";
 $proto69["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto69["m_expr"]=$obj;
 $proto69["m_alias"] = "";
@@ -7509,12 +7396,12 @@ $obj = new SQLFieldListItem($proto69);
 $proto0["m_fieldlist"][]=$obj;
 						$proto71=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s4JJ",
+	"m_strName" => "s4MZ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto71["m_sql"] = "s4JJ";
+$proto71["m_sql"] = "s4MZ";
 $proto71["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto71["m_expr"]=$obj;
 $proto71["m_alias"] = "";
@@ -7522,63 +7409,63 @@ $obj = new SQLFieldListItem($proto71);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto73=array();
-			$obj = new SQLField(array(
-	"m_strName" => "s4MZ",
-	"m_strTable" => "Sub1",
-	"m_srcTableName" => "analisa_subjek_psra_all"
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "(s4DF+s4MQ+s4JD+s4JJ+s4MZ)"
 ));
 
-$proto73["m_sql"] = "s4MZ";
+$proto73["m_sql"] = "(s4DF+s4MQ+s4JD+s4JJ+s4MZ)";
 $proto73["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto73["m_expr"]=$obj;
-$proto73["m_alias"] = "";
+$proto73["m_alias"] = "s4calon";
 $obj = new SQLFieldListItem($proto73);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto75=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s4DF+s4MQ+s4JD+s4JJ+s4MZ)"
+	"m_sql" => "(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)"
 ));
 
-$proto75["m_sql"] = "(s4DF+s4MQ+s4JD+s4JJ+s4MZ)";
+$proto75["m_sql"] = "(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)";
 $proto75["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto75["m_expr"]=$obj;
-$proto75["m_alias"] = "s4calon";
+$proto75["m_alias"] = "s4lulus";
 $obj = new SQLFieldListItem($proto75);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto77=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)"
+	"m_sql" => "1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)"
 ));
 
-$proto77["m_sql"] = "(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)";
+$proto77["m_sql"] = "1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)";
 $proto77["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto77["m_expr"]=$obj;
-$proto77["m_alias"] = "s4lulus";
+$proto77["m_alias"] = "s4gagal";
 $obj = new SQLFieldListItem($proto77);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto79=array();
-			$obj = new SQLNonParsed(array(
-	"m_sql" => "1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)"
-));
-
-$proto79["m_sql"] = "1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ)";
-$proto79["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto79["m_expr"]=$obj;
-$proto79["m_alias"] = "s4gagal";
-$obj = new SQLFieldListItem($proto79);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto81=array();
 			$obj = new SQLField(array(
 	"m_strName" => "s5TH",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto81["m_sql"] = "s5TH";
+$proto79["m_sql"] = "s5TH";
+$proto79["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto79["m_expr"]=$obj;
+$proto79["m_alias"] = "";
+$obj = new SQLFieldListItem($proto79);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto81=array();
+			$obj = new SQLField(array(
+	"m_strName" => "s5DF",
+	"m_strTable" => "Sub1",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
+
+$proto81["m_sql"] = "s5DF";
 $proto81["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto81["m_expr"]=$obj;
 $proto81["m_alias"] = "";
@@ -7587,12 +7474,12 @@ $obj = new SQLFieldListItem($proto81);
 $proto0["m_fieldlist"][]=$obj;
 						$proto83=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s5DF",
+	"m_strName" => "s5MQ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto83["m_sql"] = "s5DF";
+$proto83["m_sql"] = "s5MQ";
 $proto83["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto83["m_expr"]=$obj;
 $proto83["m_alias"] = "";
@@ -7601,12 +7488,12 @@ $obj = new SQLFieldListItem($proto83);
 $proto0["m_fieldlist"][]=$obj;
 						$proto85=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s5MQ",
+	"m_strName" => "s5JD",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto85["m_sql"] = "s5MQ";
+$proto85["m_sql"] = "s5JD";
 $proto85["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto85["m_expr"]=$obj;
 $proto85["m_alias"] = "";
@@ -7615,12 +7502,12 @@ $obj = new SQLFieldListItem($proto85);
 $proto0["m_fieldlist"][]=$obj;
 						$proto87=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s5JD",
+	"m_strName" => "s5JJ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto87["m_sql"] = "s5JD";
+$proto87["m_sql"] = "s5JJ";
 $proto87["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto87["m_expr"]=$obj;
 $proto87["m_alias"] = "";
@@ -7629,12 +7516,12 @@ $obj = new SQLFieldListItem($proto87);
 $proto0["m_fieldlist"][]=$obj;
 						$proto89=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s5JJ",
+	"m_strName" => "s5MZ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto89["m_sql"] = "s5JJ";
+$proto89["m_sql"] = "s5MZ";
 $proto89["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto89["m_expr"]=$obj;
 $proto89["m_alias"] = "";
@@ -7642,63 +7529,63 @@ $obj = new SQLFieldListItem($proto89);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto91=array();
-			$obj = new SQLField(array(
-	"m_strName" => "s5MZ",
-	"m_strTable" => "Sub1",
-	"m_srcTableName" => "analisa_subjek_psra_all"
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "(s5DF+s5MQ+s5JD+s5JJ+s5MZ)"
 ));
 
-$proto91["m_sql"] = "s5MZ";
+$proto91["m_sql"] = "(s5DF+s5MQ+s5JD+s5JJ+s5MZ)";
 $proto91["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto91["m_expr"]=$obj;
-$proto91["m_alias"] = "";
+$proto91["m_alias"] = "s5calon";
 $obj = new SQLFieldListItem($proto91);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto93=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s5DF+s5MQ+s5JD+s5JJ+s5MZ)"
+	"m_sql" => "(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)"
 ));
 
-$proto93["m_sql"] = "(s5DF+s5MQ+s5JD+s5JJ+s5MZ)";
+$proto93["m_sql"] = "(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)";
 $proto93["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto93["m_expr"]=$obj;
-$proto93["m_alias"] = "s5calon";
+$proto93["m_alias"] = "s5lulus";
 $obj = new SQLFieldListItem($proto93);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto95=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)"
+	"m_sql" => "1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)"
 ));
 
-$proto95["m_sql"] = "(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)";
+$proto95["m_sql"] = "1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)";
 $proto95["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto95["m_expr"]=$obj;
-$proto95["m_alias"] = "s5lulus";
+$proto95["m_alias"] = "s5gagal";
 $obj = new SQLFieldListItem($proto95);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto97=array();
-			$obj = new SQLNonParsed(array(
-	"m_sql" => "1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)"
-));
-
-$proto97["m_sql"] = "1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ)";
-$proto97["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto97["m_expr"]=$obj;
-$proto97["m_alias"] = "s5gagal";
-$obj = new SQLFieldListItem($proto97);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto99=array();
 			$obj = new SQLField(array(
 	"m_strName" => "s6TH",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto99["m_sql"] = "s6TH";
+$proto97["m_sql"] = "s6TH";
+$proto97["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto97["m_expr"]=$obj;
+$proto97["m_alias"] = "";
+$obj = new SQLFieldListItem($proto97);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto99=array();
+			$obj = new SQLField(array(
+	"m_strName" => "s6DF",
+	"m_strTable" => "Sub1",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
+
+$proto99["m_sql"] = "s6DF";
 $proto99["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto99["m_expr"]=$obj;
 $proto99["m_alias"] = "";
@@ -7707,12 +7594,12 @@ $obj = new SQLFieldListItem($proto99);
 $proto0["m_fieldlist"][]=$obj;
 						$proto101=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s6DF",
+	"m_strName" => "s6MQ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto101["m_sql"] = "s6DF";
+$proto101["m_sql"] = "s6MQ";
 $proto101["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto101["m_expr"]=$obj;
 $proto101["m_alias"] = "";
@@ -7721,12 +7608,12 @@ $obj = new SQLFieldListItem($proto101);
 $proto0["m_fieldlist"][]=$obj;
 						$proto103=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s6MQ",
+	"m_strName" => "s6JD",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto103["m_sql"] = "s6MQ";
+$proto103["m_sql"] = "s6JD";
 $proto103["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto103["m_expr"]=$obj;
 $proto103["m_alias"] = "";
@@ -7735,12 +7622,12 @@ $obj = new SQLFieldListItem($proto103);
 $proto0["m_fieldlist"][]=$obj;
 						$proto105=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s6JD",
+	"m_strName" => "s6JJ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto105["m_sql"] = "s6JD";
+$proto105["m_sql"] = "s6JJ";
 $proto105["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto105["m_expr"]=$obj;
 $proto105["m_alias"] = "";
@@ -7749,12 +7636,12 @@ $obj = new SQLFieldListItem($proto105);
 $proto0["m_fieldlist"][]=$obj;
 						$proto107=array();
 			$obj = new SQLField(array(
-	"m_strName" => "s6JJ",
+	"m_strName" => "s6MZ",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto107["m_sql"] = "s6JJ";
+$proto107["m_sql"] = "s6MZ";
 $proto107["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto107["m_expr"]=$obj;
 $proto107["m_alias"] = "";
@@ -7762,66 +7649,68 @@ $obj = new SQLFieldListItem($proto107);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto109=array();
-			$obj = new SQLField(array(
-	"m_strName" => "s6MZ",
-	"m_strTable" => "Sub1",
-	"m_srcTableName" => "analisa_subjek_psra_all"
+			$obj = new SQLNonParsed(array(
+	"m_sql" => "(s6DF+s6MQ+s6JD+s6JJ+s6MZ)"
 ));
 
-$proto109["m_sql"] = "s6MZ";
+$proto109["m_sql"] = "(s6DF+s6MQ+s6JD+s6JJ+s6MZ)";
 $proto109["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto109["m_expr"]=$obj;
-$proto109["m_alias"] = "";
+$proto109["m_alias"] = "s6calon";
 $obj = new SQLFieldListItem($proto109);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto111=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s6DF+s6MQ+s6JD+s6JJ+s6MZ)"
+	"m_sql" => "(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)"
 ));
 
-$proto111["m_sql"] = "(s6DF+s6MQ+s6JD+s6JJ+s6MZ)";
+$proto111["m_sql"] = "(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)";
 $proto111["m_srcTableName"] = "analisa_subjek_psra_all";
 $proto111["m_expr"]=$obj;
-$proto111["m_alias"] = "s6calon";
+$proto111["m_alias"] = "s6lulus";
 $obj = new SQLFieldListItem($proto111);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto113=array();
 			$obj = new SQLNonParsed(array(
-	"m_sql" => "(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)"
-));
-
-$proto113["m_sql"] = "(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)";
-$proto113["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto113["m_expr"]=$obj;
-$proto113["m_alias"] = "s6lulus";
-$obj = new SQLFieldListItem($proto113);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto115=array();
-			$obj = new SQLNonParsed(array(
 	"m_sql" => "1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)"
 ));
 
-$proto115["m_sql"] = "1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)";
-$proto115["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto115["m_expr"]=$obj;
-$proto115["m_alias"] = "s6gagal";
-$obj = new SQLFieldListItem($proto115);
+$proto113["m_sql"] = "1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ)";
+$proto113["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto113["m_expr"]=$obj;
+$proto113["m_alias"] = "s6gagal";
+$obj = new SQLFieldListItem($proto113);
 
 $proto0["m_fieldlist"][]=$obj;
 $proto0["m_fromlist"] = array();
-												$proto117=array();
-$proto117["m_link"] = "SQLL_MAIN";
-			$proto118=array();
-$proto118["m_strHead"] = "  		SELECT";
-$proto118["m_strFieldList"] = "eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ";
-$proto118["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
-$proto118["m_strWhere"] = "";
-$proto118["m_strOrderBy"] = "";
-$proto118["m_strTail"] = "";
-			$proto118["cipherer"] = null;
+												$proto115=array();
+$proto115["m_link"] = "SQLL_MAIN";
+			$proto116=array();
+$proto116["m_strHead"] = "  		SELECT";
+$proto116["m_strFieldList"] = "eYear,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ";
+$proto116["m_strFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
+$proto116["m_strWhere"] = "";
+$proto116["m_strOrderBy"] = "ORDER BY eYear DESC";
+$proto116["m_strTail"] = "";
+			$proto116["cipherer"] = null;
+$proto117=array();
+$proto117["m_sql"] = "";
+$proto117["m_uniontype"] = "SQLL_UNKNOWN";
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
+));
+
+$proto117["m_column"]=$obj;
+$proto117["m_contained"] = array();
+$proto117["m_strCase"] = "";
+$proto117["m_havingmode"] = false;
+$proto117["m_inBrackets"] = false;
+$proto117["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto117);
+
+$proto116["m_where"] = $obj;
 $proto119=array();
 $proto119["m_sql"] = "";
 $proto119["m_uniontype"] = "SQLL_UNKNOWN";
@@ -7837,1409 +7726,1418 @@ $proto119["m_inBrackets"] = false;
 $proto119["m_useAlias"] = false;
 $obj = new SQLLogicalExpr($proto119);
 
-$proto118["m_where"] = $obj;
-$proto121=array();
-$proto121["m_sql"] = "";
-$proto121["m_uniontype"] = "SQLL_UNKNOWN";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => ""
-));
-
-$proto121["m_column"]=$obj;
-$proto121["m_contained"] = array();
-$proto121["m_strCase"] = "";
-$proto121["m_havingmode"] = false;
-$proto121["m_inBrackets"] = false;
-$proto121["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto121);
-
-$proto118["m_having"] = $obj;
-$proto118["m_fieldlist"] = array();
-						$proto123=array();
+$proto116["m_having"] = $obj;
+$proto116["m_fieldlist"] = array();
+						$proto121=array();
 			$obj = new SQLField(array(
 	"m_strName" => "eYear",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto123["m_sql"] = "eYear";
-$proto123["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto123["m_expr"]=$obj;
-$proto123["m_alias"] = "";
-$obj = new SQLFieldListItem($proto123);
+$proto121["m_sql"] = "eYear";
+$proto121["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto121["m_expr"]=$obj;
+$proto121["m_alias"] = "";
+$obj = new SQLFieldListItem($proto121);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto125=array();
-			$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "analisa_subjek_psra_all"
-));
-
-$proto125["m_sql"] = "eType";
-$proto125["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto125["m_expr"]=$obj;
-$proto125["m_alias"] = "";
-$obj = new SQLFieldListItem($proto125);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto127=array();
-			$proto128=array();
-$proto128["m_functiontype"] = "SQLF_COUNT";
-$proto128["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto123=array();
+			$proto124=array();
+$proto124["m_functiontype"] = "SQLF_COUNT";
+$proto124["m_arguments"] = array();
 						$obj = new SQLField(array(
 	"m_strName" => "sid",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
+$proto124["m_arguments"][]=$obj;
+$proto124["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto124);
+
+$proto123["m_sql"] = "COUNT(sid)";
+$proto123["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto123["m_expr"]=$obj;
+$proto123["m_alias"] = "totalCalon";
+$obj = new SQLFieldListItem($proto123);
+
+$proto116["m_fieldlist"][]=$obj;
+						$proto126=array();
+			$proto127=array();
+$proto127["m_functiontype"] = "SQLF_COUNT";
+$proto127["m_arguments"] = array();
+						$proto128=array();
+$proto128["m_functiontype"] = "SQLF_CUSTOM";
+$proto128["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.s1 LIKE '%TH%'"
+));
+
 $proto128["m_arguments"][]=$obj;
-$proto128["m_strFunctionName"] = "COUNT";
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.sid"
+));
+
+$proto128["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "NULL"
+));
+
+$proto128["m_arguments"][]=$obj;
+$proto128["m_strFunctionName"] = "if";
 $obj = new SQLFunctionCall($proto128);
 
-$proto127["m_sql"] = "COUNT(sid)";
-$proto127["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto127["m_expr"]=$obj;
-$proto127["m_alias"] = "totalCalon";
-$obj = new SQLFieldListItem($proto127);
+$proto127["m_arguments"][]=$obj;
+$proto127["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto127);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto130=array();
-			$proto131=array();
-$proto131["m_functiontype"] = "SQLF_COUNT";
-$proto131["m_arguments"] = array();
+$proto126["m_sql"] = "COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL))";
+$proto126["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto126["m_expr"]=$obj;
+$proto126["m_alias"] = "s1TH";
+$obj = new SQLFieldListItem($proto126);
+
+$proto116["m_fieldlist"][]=$obj;
 						$proto132=array();
-$proto132["m_functiontype"] = "SQLF_CUSTOM";
-$proto132["m_arguments"] = array();
+			$proto133=array();
+$proto133["m_functiontype"] = "SQLF_COUNT";
+$proto133["m_arguments"] = array();
+						$proto134=array();
+$proto134["m_functiontype"] = "SQLF_CUSTOM";
+$proto134["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s1='TH'"
+	"m_sql" => "exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40"
 ));
 
-$proto132["m_arguments"][]=$obj;
+$proto134["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto132["m_arguments"][]=$obj;
+$proto134["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto132["m_arguments"][]=$obj;
-$proto132["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto132);
+$proto134["m_arguments"][]=$obj;
+$proto134["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto134);
 
-$proto131["m_arguments"][]=$obj;
-$proto131["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto131);
+$proto133["m_arguments"][]=$obj;
+$proto133["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto133);
 
-$proto130["m_sql"] = "COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL))";
-$proto130["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto130["m_expr"]=$obj;
-$proto130["m_alias"] = "s1TH";
-$obj = new SQLFieldListItem($proto130);
+$proto132["m_sql"] = "COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL))";
+$proto132["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto132["m_expr"]=$obj;
+$proto132["m_alias"] = "s1DF";
+$obj = new SQLFieldListItem($proto132);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto136=array();
-			$proto137=array();
-$proto137["m_functiontype"] = "SQLF_COUNT";
-$proto137["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
 						$proto138=array();
-$proto138["m_functiontype"] = "SQLF_CUSTOM";
-$proto138["m_arguments"] = array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s1!='TH' AND exam_marking.s1<40"
-));
-
-$proto138["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sid"
-));
-
-$proto138["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "NULL"
-));
-
-$proto138["m_arguments"][]=$obj;
-$proto138["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto138);
-
-$proto137["m_arguments"][]=$obj;
-$proto137["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto137);
-
-$proto136["m_sql"] = "COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL))";
-$proto136["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto136["m_expr"]=$obj;
-$proto136["m_alias"] = "s1DF";
-$obj = new SQLFieldListItem($proto136);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto142=array();
-			$proto143=array();
-$proto143["m_functiontype"] = "SQLF_COUNT";
-$proto143["m_arguments"] = array();
-						$proto144=array();
-$proto144["m_functiontype"] = "SQLF_CUSTOM";
-$proto144["m_arguments"] = array();
+			$proto139=array();
+$proto139["m_functiontype"] = "SQLF_COUNT";
+$proto139["m_arguments"] = array();
+						$proto140=array();
+$proto140["m_functiontype"] = "SQLF_CUSTOM";
+$proto140["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s1>=40 AND exam_marking.s1<60"
 ));
 
-$proto144["m_arguments"][]=$obj;
+$proto140["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto144["m_arguments"][]=$obj;
+$proto140["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto144["m_arguments"][]=$obj;
-$proto144["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto144);
+$proto140["m_arguments"][]=$obj;
+$proto140["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto140);
 
-$proto143["m_arguments"][]=$obj;
-$proto143["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto143);
+$proto139["m_arguments"][]=$obj;
+$proto139["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto139);
 
-$proto142["m_sql"] = "COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL))";
-$proto142["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto142["m_expr"]=$obj;
-$proto142["m_alias"] = "s1MQ";
-$obj = new SQLFieldListItem($proto142);
+$proto138["m_sql"] = "COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL))";
+$proto138["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto138["m_expr"]=$obj;
+$proto138["m_alias"] = "s1MQ";
+$obj = new SQLFieldListItem($proto138);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto148=array();
-			$proto149=array();
-$proto149["m_functiontype"] = "SQLF_COUNT";
-$proto149["m_arguments"] = array();
-						$proto150=array();
-$proto150["m_functiontype"] = "SQLF_CUSTOM";
-$proto150["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto144=array();
+			$proto145=array();
+$proto145["m_functiontype"] = "SQLF_COUNT";
+$proto145["m_arguments"] = array();
+						$proto146=array();
+$proto146["m_functiontype"] = "SQLF_CUSTOM";
+$proto146["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s1>=60 AND exam_marking.s1<75"
 ));
 
-$proto150["m_arguments"][]=$obj;
+$proto146["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto150["m_arguments"][]=$obj;
+$proto146["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto150["m_arguments"][]=$obj;
-$proto150["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto150);
+$proto146["m_arguments"][]=$obj;
+$proto146["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto146);
 
-$proto149["m_arguments"][]=$obj;
-$proto149["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto149);
+$proto145["m_arguments"][]=$obj;
+$proto145["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto145);
 
-$proto148["m_sql"] = "COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL))";
-$proto148["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto148["m_expr"]=$obj;
-$proto148["m_alias"] = "s1JD";
-$obj = new SQLFieldListItem($proto148);
+$proto144["m_sql"] = "COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL))";
+$proto144["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto144["m_expr"]=$obj;
+$proto144["m_alias"] = "s1JD";
+$obj = new SQLFieldListItem($proto144);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto154=array();
-			$proto155=array();
-$proto155["m_functiontype"] = "SQLF_COUNT";
-$proto155["m_arguments"] = array();
-						$proto156=array();
-$proto156["m_functiontype"] = "SQLF_CUSTOM";
-$proto156["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto150=array();
+			$proto151=array();
+$proto151["m_functiontype"] = "SQLF_COUNT";
+$proto151["m_arguments"] = array();
+						$proto152=array();
+$proto152["m_functiontype"] = "SQLF_CUSTOM";
+$proto152["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s1>=75 AND exam_marking.s1<90"
 ));
 
-$proto156["m_arguments"][]=$obj;
+$proto152["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto156["m_arguments"][]=$obj;
+$proto152["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto156["m_arguments"][]=$obj;
-$proto156["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto156);
+$proto152["m_arguments"][]=$obj;
+$proto152["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto152);
 
-$proto155["m_arguments"][]=$obj;
-$proto155["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto155);
+$proto151["m_arguments"][]=$obj;
+$proto151["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto151);
 
-$proto154["m_sql"] = "COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL))";
-$proto154["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto154["m_expr"]=$obj;
-$proto154["m_alias"] = "s1JJ";
-$obj = new SQLFieldListItem($proto154);
+$proto150["m_sql"] = "COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL))";
+$proto150["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto150["m_expr"]=$obj;
+$proto150["m_alias"] = "s1JJ";
+$obj = new SQLFieldListItem($proto150);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto160=array();
-			$proto161=array();
-$proto161["m_functiontype"] = "SQLF_COUNT";
-$proto161["m_arguments"] = array();
-						$proto162=array();
-$proto162["m_functiontype"] = "SQLF_CUSTOM";
-$proto162["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto156=array();
+			$proto157=array();
+$proto157["m_functiontype"] = "SQLF_COUNT";
+$proto157["m_arguments"] = array();
+						$proto158=array();
+$proto158["m_functiontype"] = "SQLF_CUSTOM";
+$proto158["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s1>=90"
 ));
 
-$proto162["m_arguments"][]=$obj;
+$proto158["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto162["m_arguments"][]=$obj;
+$proto158["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto162["m_arguments"][]=$obj;
-$proto162["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto162);
+$proto158["m_arguments"][]=$obj;
+$proto158["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto158);
 
-$proto161["m_arguments"][]=$obj;
-$proto161["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto161);
+$proto157["m_arguments"][]=$obj;
+$proto157["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto157);
 
-$proto160["m_sql"] = "COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL))";
-$proto160["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto160["m_expr"]=$obj;
-$proto160["m_alias"] = "s1MZ";
-$obj = new SQLFieldListItem($proto160);
+$proto156["m_sql"] = "COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL))";
+$proto156["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto156["m_expr"]=$obj;
+$proto156["m_alias"] = "s1MZ";
+$obj = new SQLFieldListItem($proto156);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto166=array();
-			$proto167=array();
-$proto167["m_functiontype"] = "SQLF_COUNT";
-$proto167["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto162=array();
+			$proto163=array();
+$proto163["m_functiontype"] = "SQLF_COUNT";
+$proto163["m_arguments"] = array();
+						$proto164=array();
+$proto164["m_functiontype"] = "SQLF_CUSTOM";
+$proto164["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.s2 LIKE '%TH%'"
+));
+
+$proto164["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.sid"
+));
+
+$proto164["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "NULL"
+));
+
+$proto164["m_arguments"][]=$obj;
+$proto164["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto164);
+
+$proto163["m_arguments"][]=$obj;
+$proto163["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto163);
+
+$proto162["m_sql"] = "COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL))";
+$proto162["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto162["m_expr"]=$obj;
+$proto162["m_alias"] = "s2TH";
+$obj = new SQLFieldListItem($proto162);
+
+$proto116["m_fieldlist"][]=$obj;
 						$proto168=array();
-$proto168["m_functiontype"] = "SQLF_CUSTOM";
-$proto168["m_arguments"] = array();
+			$proto169=array();
+$proto169["m_functiontype"] = "SQLF_COUNT";
+$proto169["m_arguments"] = array();
+						$proto170=array();
+$proto170["m_functiontype"] = "SQLF_CUSTOM";
+$proto170["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s2='TH'"
+	"m_sql" => "exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40"
 ));
 
-$proto168["m_arguments"][]=$obj;
+$proto170["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto168["m_arguments"][]=$obj;
+$proto170["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto168["m_arguments"][]=$obj;
-$proto168["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto168);
+$proto170["m_arguments"][]=$obj;
+$proto170["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto170);
 
-$proto167["m_arguments"][]=$obj;
-$proto167["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto167);
+$proto169["m_arguments"][]=$obj;
+$proto169["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto169);
 
-$proto166["m_sql"] = "COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL))";
-$proto166["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto166["m_expr"]=$obj;
-$proto166["m_alias"] = "s2TH";
-$obj = new SQLFieldListItem($proto166);
+$proto168["m_sql"] = "COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL))";
+$proto168["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto168["m_expr"]=$obj;
+$proto168["m_alias"] = "s2DF";
+$obj = new SQLFieldListItem($proto168);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto172=array();
-			$proto173=array();
-$proto173["m_functiontype"] = "SQLF_COUNT";
-$proto173["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
 						$proto174=array();
-$proto174["m_functiontype"] = "SQLF_CUSTOM";
-$proto174["m_arguments"] = array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s2!='TH' AND exam_marking.s2<40"
-));
-
-$proto174["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sid"
-));
-
-$proto174["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "NULL"
-));
-
-$proto174["m_arguments"][]=$obj;
-$proto174["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto174);
-
-$proto173["m_arguments"][]=$obj;
-$proto173["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto173);
-
-$proto172["m_sql"] = "COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL))";
-$proto172["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto172["m_expr"]=$obj;
-$proto172["m_alias"] = "s2DF";
-$obj = new SQLFieldListItem($proto172);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto178=array();
-			$proto179=array();
-$proto179["m_functiontype"] = "SQLF_COUNT";
-$proto179["m_arguments"] = array();
-						$proto180=array();
-$proto180["m_functiontype"] = "SQLF_CUSTOM";
-$proto180["m_arguments"] = array();
+			$proto175=array();
+$proto175["m_functiontype"] = "SQLF_COUNT";
+$proto175["m_arguments"] = array();
+						$proto176=array();
+$proto176["m_functiontype"] = "SQLF_CUSTOM";
+$proto176["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s2>=40 AND exam_marking.s2<60"
 ));
 
-$proto180["m_arguments"][]=$obj;
+$proto176["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto180["m_arguments"][]=$obj;
+$proto176["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto180["m_arguments"][]=$obj;
-$proto180["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto180);
+$proto176["m_arguments"][]=$obj;
+$proto176["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto176);
 
-$proto179["m_arguments"][]=$obj;
-$proto179["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto179);
+$proto175["m_arguments"][]=$obj;
+$proto175["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto175);
 
-$proto178["m_sql"] = "COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL))";
-$proto178["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto178["m_expr"]=$obj;
-$proto178["m_alias"] = "s2MQ";
-$obj = new SQLFieldListItem($proto178);
+$proto174["m_sql"] = "COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL))";
+$proto174["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto174["m_expr"]=$obj;
+$proto174["m_alias"] = "s2MQ";
+$obj = new SQLFieldListItem($proto174);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto184=array();
-			$proto185=array();
-$proto185["m_functiontype"] = "SQLF_COUNT";
-$proto185["m_arguments"] = array();
-						$proto186=array();
-$proto186["m_functiontype"] = "SQLF_CUSTOM";
-$proto186["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto180=array();
+			$proto181=array();
+$proto181["m_functiontype"] = "SQLF_COUNT";
+$proto181["m_arguments"] = array();
+						$proto182=array();
+$proto182["m_functiontype"] = "SQLF_CUSTOM";
+$proto182["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s2>=60 AND exam_marking.s2<75"
 ));
 
-$proto186["m_arguments"][]=$obj;
+$proto182["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto186["m_arguments"][]=$obj;
+$proto182["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto186["m_arguments"][]=$obj;
-$proto186["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto186);
+$proto182["m_arguments"][]=$obj;
+$proto182["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto182);
 
-$proto185["m_arguments"][]=$obj;
-$proto185["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto185);
+$proto181["m_arguments"][]=$obj;
+$proto181["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto181);
 
-$proto184["m_sql"] = "COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL))";
-$proto184["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto184["m_expr"]=$obj;
-$proto184["m_alias"] = "s2JD";
-$obj = new SQLFieldListItem($proto184);
+$proto180["m_sql"] = "COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL))";
+$proto180["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto180["m_expr"]=$obj;
+$proto180["m_alias"] = "s2JD";
+$obj = new SQLFieldListItem($proto180);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto190=array();
-			$proto191=array();
-$proto191["m_functiontype"] = "SQLF_COUNT";
-$proto191["m_arguments"] = array();
-						$proto192=array();
-$proto192["m_functiontype"] = "SQLF_CUSTOM";
-$proto192["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto186=array();
+			$proto187=array();
+$proto187["m_functiontype"] = "SQLF_COUNT";
+$proto187["m_arguments"] = array();
+						$proto188=array();
+$proto188["m_functiontype"] = "SQLF_CUSTOM";
+$proto188["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s2>=75 AND exam_marking.s2<90"
 ));
 
-$proto192["m_arguments"][]=$obj;
+$proto188["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto192["m_arguments"][]=$obj;
+$proto188["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto192["m_arguments"][]=$obj;
-$proto192["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto192);
+$proto188["m_arguments"][]=$obj;
+$proto188["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto188);
 
-$proto191["m_arguments"][]=$obj;
-$proto191["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto191);
+$proto187["m_arguments"][]=$obj;
+$proto187["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto187);
 
-$proto190["m_sql"] = "COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL))";
-$proto190["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto190["m_expr"]=$obj;
-$proto190["m_alias"] = "s2JJ";
-$obj = new SQLFieldListItem($proto190);
+$proto186["m_sql"] = "COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL))";
+$proto186["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto186["m_expr"]=$obj;
+$proto186["m_alias"] = "s2JJ";
+$obj = new SQLFieldListItem($proto186);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto196=array();
-			$proto197=array();
-$proto197["m_functiontype"] = "SQLF_COUNT";
-$proto197["m_arguments"] = array();
-						$proto198=array();
-$proto198["m_functiontype"] = "SQLF_CUSTOM";
-$proto198["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto192=array();
+			$proto193=array();
+$proto193["m_functiontype"] = "SQLF_COUNT";
+$proto193["m_arguments"] = array();
+						$proto194=array();
+$proto194["m_functiontype"] = "SQLF_CUSTOM";
+$proto194["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s2>=90"
 ));
 
-$proto198["m_arguments"][]=$obj;
+$proto194["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto198["m_arguments"][]=$obj;
+$proto194["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto198["m_arguments"][]=$obj;
-$proto198["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto198);
+$proto194["m_arguments"][]=$obj;
+$proto194["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto194);
 
-$proto197["m_arguments"][]=$obj;
-$proto197["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto197);
+$proto193["m_arguments"][]=$obj;
+$proto193["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto193);
 
-$proto196["m_sql"] = "COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL))";
-$proto196["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto196["m_expr"]=$obj;
-$proto196["m_alias"] = "s2MZ";
-$obj = new SQLFieldListItem($proto196);
+$proto192["m_sql"] = "COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL))";
+$proto192["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto192["m_expr"]=$obj;
+$proto192["m_alias"] = "s2MZ";
+$obj = new SQLFieldListItem($proto192);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto202=array();
-			$proto203=array();
-$proto203["m_functiontype"] = "SQLF_COUNT";
-$proto203["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto198=array();
+			$proto199=array();
+$proto199["m_functiontype"] = "SQLF_COUNT";
+$proto199["m_arguments"] = array();
+						$proto200=array();
+$proto200["m_functiontype"] = "SQLF_CUSTOM";
+$proto200["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.s3 LIKE '%TH%'"
+));
+
+$proto200["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.sid"
+));
+
+$proto200["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "NULL"
+));
+
+$proto200["m_arguments"][]=$obj;
+$proto200["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto200);
+
+$proto199["m_arguments"][]=$obj;
+$proto199["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto199);
+
+$proto198["m_sql"] = "COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL))";
+$proto198["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto198["m_expr"]=$obj;
+$proto198["m_alias"] = "s3TH";
+$obj = new SQLFieldListItem($proto198);
+
+$proto116["m_fieldlist"][]=$obj;
 						$proto204=array();
-$proto204["m_functiontype"] = "SQLF_CUSTOM";
-$proto204["m_arguments"] = array();
+			$proto205=array();
+$proto205["m_functiontype"] = "SQLF_COUNT";
+$proto205["m_arguments"] = array();
+						$proto206=array();
+$proto206["m_functiontype"] = "SQLF_CUSTOM";
+$proto206["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s3='TH'"
+	"m_sql" => "exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40"
 ));
 
-$proto204["m_arguments"][]=$obj;
+$proto206["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto204["m_arguments"][]=$obj;
+$proto206["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto204["m_arguments"][]=$obj;
-$proto204["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto204);
+$proto206["m_arguments"][]=$obj;
+$proto206["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto206);
 
-$proto203["m_arguments"][]=$obj;
-$proto203["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto203);
+$proto205["m_arguments"][]=$obj;
+$proto205["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto205);
 
-$proto202["m_sql"] = "COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL))";
-$proto202["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto202["m_expr"]=$obj;
-$proto202["m_alias"] = "s3TH";
-$obj = new SQLFieldListItem($proto202);
+$proto204["m_sql"] = "COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL))";
+$proto204["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto204["m_expr"]=$obj;
+$proto204["m_alias"] = "s3DF";
+$obj = new SQLFieldListItem($proto204);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto208=array();
-			$proto209=array();
-$proto209["m_functiontype"] = "SQLF_COUNT";
-$proto209["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
 						$proto210=array();
-$proto210["m_functiontype"] = "SQLF_CUSTOM";
-$proto210["m_arguments"] = array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s3!='TH' AND exam_marking.s3<40"
-));
-
-$proto210["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sid"
-));
-
-$proto210["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "NULL"
-));
-
-$proto210["m_arguments"][]=$obj;
-$proto210["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto210);
-
-$proto209["m_arguments"][]=$obj;
-$proto209["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto209);
-
-$proto208["m_sql"] = "COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL))";
-$proto208["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto208["m_expr"]=$obj;
-$proto208["m_alias"] = "s3DF";
-$obj = new SQLFieldListItem($proto208);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto214=array();
-			$proto215=array();
-$proto215["m_functiontype"] = "SQLF_COUNT";
-$proto215["m_arguments"] = array();
-						$proto216=array();
-$proto216["m_functiontype"] = "SQLF_CUSTOM";
-$proto216["m_arguments"] = array();
+			$proto211=array();
+$proto211["m_functiontype"] = "SQLF_COUNT";
+$proto211["m_arguments"] = array();
+						$proto212=array();
+$proto212["m_functiontype"] = "SQLF_CUSTOM";
+$proto212["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s3>=40 AND exam_marking.s3<60"
 ));
 
-$proto216["m_arguments"][]=$obj;
+$proto212["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto216["m_arguments"][]=$obj;
+$proto212["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto216["m_arguments"][]=$obj;
-$proto216["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto216);
+$proto212["m_arguments"][]=$obj;
+$proto212["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto212);
 
-$proto215["m_arguments"][]=$obj;
-$proto215["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto215);
+$proto211["m_arguments"][]=$obj;
+$proto211["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto211);
 
-$proto214["m_sql"] = "COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL))";
-$proto214["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto214["m_expr"]=$obj;
-$proto214["m_alias"] = "s3MQ";
-$obj = new SQLFieldListItem($proto214);
+$proto210["m_sql"] = "COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL))";
+$proto210["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto210["m_expr"]=$obj;
+$proto210["m_alias"] = "s3MQ";
+$obj = new SQLFieldListItem($proto210);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto220=array();
-			$proto221=array();
-$proto221["m_functiontype"] = "SQLF_COUNT";
-$proto221["m_arguments"] = array();
-						$proto222=array();
-$proto222["m_functiontype"] = "SQLF_CUSTOM";
-$proto222["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto216=array();
+			$proto217=array();
+$proto217["m_functiontype"] = "SQLF_COUNT";
+$proto217["m_arguments"] = array();
+						$proto218=array();
+$proto218["m_functiontype"] = "SQLF_CUSTOM";
+$proto218["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s3>=60 AND exam_marking.s3<75"
 ));
 
-$proto222["m_arguments"][]=$obj;
+$proto218["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto222["m_arguments"][]=$obj;
+$proto218["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto222["m_arguments"][]=$obj;
-$proto222["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto222);
+$proto218["m_arguments"][]=$obj;
+$proto218["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto218);
 
-$proto221["m_arguments"][]=$obj;
-$proto221["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto221);
+$proto217["m_arguments"][]=$obj;
+$proto217["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto217);
 
-$proto220["m_sql"] = "COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL))";
-$proto220["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto220["m_expr"]=$obj;
-$proto220["m_alias"] = "s3JD";
-$obj = new SQLFieldListItem($proto220);
+$proto216["m_sql"] = "COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL))";
+$proto216["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto216["m_expr"]=$obj;
+$proto216["m_alias"] = "s3JD";
+$obj = new SQLFieldListItem($proto216);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto226=array();
-			$proto227=array();
-$proto227["m_functiontype"] = "SQLF_COUNT";
-$proto227["m_arguments"] = array();
-						$proto228=array();
-$proto228["m_functiontype"] = "SQLF_CUSTOM";
-$proto228["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto222=array();
+			$proto223=array();
+$proto223["m_functiontype"] = "SQLF_COUNT";
+$proto223["m_arguments"] = array();
+						$proto224=array();
+$proto224["m_functiontype"] = "SQLF_CUSTOM";
+$proto224["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s3>=75 AND exam_marking.s3<90"
 ));
 
-$proto228["m_arguments"][]=$obj;
+$proto224["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto228["m_arguments"][]=$obj;
+$proto224["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto228["m_arguments"][]=$obj;
-$proto228["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto228);
+$proto224["m_arguments"][]=$obj;
+$proto224["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto224);
 
-$proto227["m_arguments"][]=$obj;
-$proto227["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto227);
+$proto223["m_arguments"][]=$obj;
+$proto223["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto223);
 
-$proto226["m_sql"] = "COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL))";
-$proto226["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto226["m_expr"]=$obj;
-$proto226["m_alias"] = "s3JJ";
-$obj = new SQLFieldListItem($proto226);
+$proto222["m_sql"] = "COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL))";
+$proto222["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto222["m_expr"]=$obj;
+$proto222["m_alias"] = "s3JJ";
+$obj = new SQLFieldListItem($proto222);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto232=array();
-			$proto233=array();
-$proto233["m_functiontype"] = "SQLF_COUNT";
-$proto233["m_arguments"] = array();
-						$proto234=array();
-$proto234["m_functiontype"] = "SQLF_CUSTOM";
-$proto234["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto228=array();
+			$proto229=array();
+$proto229["m_functiontype"] = "SQLF_COUNT";
+$proto229["m_arguments"] = array();
+						$proto230=array();
+$proto230["m_functiontype"] = "SQLF_CUSTOM";
+$proto230["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s3>=90"
 ));
 
-$proto234["m_arguments"][]=$obj;
+$proto230["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto234["m_arguments"][]=$obj;
+$proto230["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto234["m_arguments"][]=$obj;
-$proto234["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto234);
+$proto230["m_arguments"][]=$obj;
+$proto230["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto230);
 
-$proto233["m_arguments"][]=$obj;
-$proto233["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto233);
+$proto229["m_arguments"][]=$obj;
+$proto229["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto229);
 
-$proto232["m_sql"] = "COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL))";
-$proto232["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto232["m_expr"]=$obj;
-$proto232["m_alias"] = "s3MZ";
-$obj = new SQLFieldListItem($proto232);
+$proto228["m_sql"] = "COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL))";
+$proto228["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto228["m_expr"]=$obj;
+$proto228["m_alias"] = "s3MZ";
+$obj = new SQLFieldListItem($proto228);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto238=array();
-			$proto239=array();
-$proto239["m_functiontype"] = "SQLF_COUNT";
-$proto239["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto234=array();
+			$proto235=array();
+$proto235["m_functiontype"] = "SQLF_COUNT";
+$proto235["m_arguments"] = array();
+						$proto236=array();
+$proto236["m_functiontype"] = "SQLF_CUSTOM";
+$proto236["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.s4 LIKE '%TH%'"
+));
+
+$proto236["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.sid"
+));
+
+$proto236["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "NULL"
+));
+
+$proto236["m_arguments"][]=$obj;
+$proto236["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto236);
+
+$proto235["m_arguments"][]=$obj;
+$proto235["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto235);
+
+$proto234["m_sql"] = "COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL))";
+$proto234["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto234["m_expr"]=$obj;
+$proto234["m_alias"] = "s4TH";
+$obj = new SQLFieldListItem($proto234);
+
+$proto116["m_fieldlist"][]=$obj;
 						$proto240=array();
-$proto240["m_functiontype"] = "SQLF_CUSTOM";
-$proto240["m_arguments"] = array();
+			$proto241=array();
+$proto241["m_functiontype"] = "SQLF_COUNT";
+$proto241["m_arguments"] = array();
+						$proto242=array();
+$proto242["m_functiontype"] = "SQLF_CUSTOM";
+$proto242["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s4='TH'"
+	"m_sql" => "exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40"
 ));
 
-$proto240["m_arguments"][]=$obj;
+$proto242["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto240["m_arguments"][]=$obj;
+$proto242["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto240["m_arguments"][]=$obj;
-$proto240["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto240);
+$proto242["m_arguments"][]=$obj;
+$proto242["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto242);
 
-$proto239["m_arguments"][]=$obj;
-$proto239["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto239);
+$proto241["m_arguments"][]=$obj;
+$proto241["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto241);
 
-$proto238["m_sql"] = "COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL))";
-$proto238["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto238["m_expr"]=$obj;
-$proto238["m_alias"] = "s4TH";
-$obj = new SQLFieldListItem($proto238);
+$proto240["m_sql"] = "COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL))";
+$proto240["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto240["m_expr"]=$obj;
+$proto240["m_alias"] = "s4DF";
+$obj = new SQLFieldListItem($proto240);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto244=array();
-			$proto245=array();
-$proto245["m_functiontype"] = "SQLF_COUNT";
-$proto245["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
 						$proto246=array();
-$proto246["m_functiontype"] = "SQLF_CUSTOM";
-$proto246["m_arguments"] = array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s4!='TH' AND exam_marking.s4<40"
-));
-
-$proto246["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sid"
-));
-
-$proto246["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "NULL"
-));
-
-$proto246["m_arguments"][]=$obj;
-$proto246["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto246);
-
-$proto245["m_arguments"][]=$obj;
-$proto245["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto245);
-
-$proto244["m_sql"] = "COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL))";
-$proto244["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto244["m_expr"]=$obj;
-$proto244["m_alias"] = "s4DF";
-$obj = new SQLFieldListItem($proto244);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto250=array();
-			$proto251=array();
-$proto251["m_functiontype"] = "SQLF_COUNT";
-$proto251["m_arguments"] = array();
-						$proto252=array();
-$proto252["m_functiontype"] = "SQLF_CUSTOM";
-$proto252["m_arguments"] = array();
+			$proto247=array();
+$proto247["m_functiontype"] = "SQLF_COUNT";
+$proto247["m_arguments"] = array();
+						$proto248=array();
+$proto248["m_functiontype"] = "SQLF_CUSTOM";
+$proto248["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s4>=40 AND exam_marking.s4<60"
 ));
 
-$proto252["m_arguments"][]=$obj;
+$proto248["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto252["m_arguments"][]=$obj;
+$proto248["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto252["m_arguments"][]=$obj;
-$proto252["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto252);
+$proto248["m_arguments"][]=$obj;
+$proto248["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto248);
 
-$proto251["m_arguments"][]=$obj;
-$proto251["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto251);
+$proto247["m_arguments"][]=$obj;
+$proto247["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto247);
 
-$proto250["m_sql"] = "COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL))";
-$proto250["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto250["m_expr"]=$obj;
-$proto250["m_alias"] = "s4MQ";
-$obj = new SQLFieldListItem($proto250);
+$proto246["m_sql"] = "COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL))";
+$proto246["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto246["m_expr"]=$obj;
+$proto246["m_alias"] = "s4MQ";
+$obj = new SQLFieldListItem($proto246);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto256=array();
-			$proto257=array();
-$proto257["m_functiontype"] = "SQLF_COUNT";
-$proto257["m_arguments"] = array();
-						$proto258=array();
-$proto258["m_functiontype"] = "SQLF_CUSTOM";
-$proto258["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto252=array();
+			$proto253=array();
+$proto253["m_functiontype"] = "SQLF_COUNT";
+$proto253["m_arguments"] = array();
+						$proto254=array();
+$proto254["m_functiontype"] = "SQLF_CUSTOM";
+$proto254["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s4>=60 AND exam_marking.s4<75"
 ));
 
-$proto258["m_arguments"][]=$obj;
+$proto254["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto258["m_arguments"][]=$obj;
+$proto254["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto258["m_arguments"][]=$obj;
-$proto258["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto258);
+$proto254["m_arguments"][]=$obj;
+$proto254["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto254);
 
-$proto257["m_arguments"][]=$obj;
-$proto257["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto257);
+$proto253["m_arguments"][]=$obj;
+$proto253["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto253);
 
-$proto256["m_sql"] = "COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL))";
-$proto256["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto256["m_expr"]=$obj;
-$proto256["m_alias"] = "s4JD";
-$obj = new SQLFieldListItem($proto256);
+$proto252["m_sql"] = "COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL))";
+$proto252["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto252["m_expr"]=$obj;
+$proto252["m_alias"] = "s4JD";
+$obj = new SQLFieldListItem($proto252);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto262=array();
-			$proto263=array();
-$proto263["m_functiontype"] = "SQLF_COUNT";
-$proto263["m_arguments"] = array();
-						$proto264=array();
-$proto264["m_functiontype"] = "SQLF_CUSTOM";
-$proto264["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto258=array();
+			$proto259=array();
+$proto259["m_functiontype"] = "SQLF_COUNT";
+$proto259["m_arguments"] = array();
+						$proto260=array();
+$proto260["m_functiontype"] = "SQLF_CUSTOM";
+$proto260["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s4>=75 AND exam_marking.s4<90"
 ));
 
-$proto264["m_arguments"][]=$obj;
+$proto260["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto264["m_arguments"][]=$obj;
+$proto260["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto264["m_arguments"][]=$obj;
-$proto264["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto264);
+$proto260["m_arguments"][]=$obj;
+$proto260["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto260);
 
-$proto263["m_arguments"][]=$obj;
-$proto263["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto263);
+$proto259["m_arguments"][]=$obj;
+$proto259["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto259);
 
-$proto262["m_sql"] = "COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL))";
-$proto262["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto262["m_expr"]=$obj;
-$proto262["m_alias"] = "s4JJ";
-$obj = new SQLFieldListItem($proto262);
+$proto258["m_sql"] = "COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL))";
+$proto258["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto258["m_expr"]=$obj;
+$proto258["m_alias"] = "s4JJ";
+$obj = new SQLFieldListItem($proto258);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto268=array();
-			$proto269=array();
-$proto269["m_functiontype"] = "SQLF_COUNT";
-$proto269["m_arguments"] = array();
-						$proto270=array();
-$proto270["m_functiontype"] = "SQLF_CUSTOM";
-$proto270["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto264=array();
+			$proto265=array();
+$proto265["m_functiontype"] = "SQLF_COUNT";
+$proto265["m_arguments"] = array();
+						$proto266=array();
+$proto266["m_functiontype"] = "SQLF_CUSTOM";
+$proto266["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s4>=90 AND exam_marking.s4<=100"
 ));
 
-$proto270["m_arguments"][]=$obj;
+$proto266["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto270["m_arguments"][]=$obj;
+$proto266["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto270["m_arguments"][]=$obj;
-$proto270["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto270);
+$proto266["m_arguments"][]=$obj;
+$proto266["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto266);
 
-$proto269["m_arguments"][]=$obj;
-$proto269["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto269);
+$proto265["m_arguments"][]=$obj;
+$proto265["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto265);
 
-$proto268["m_sql"] = "COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL))";
-$proto268["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto268["m_expr"]=$obj;
-$proto268["m_alias"] = "s4MZ";
-$obj = new SQLFieldListItem($proto268);
+$proto264["m_sql"] = "COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL))";
+$proto264["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto264["m_expr"]=$obj;
+$proto264["m_alias"] = "s4MZ";
+$obj = new SQLFieldListItem($proto264);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto274=array();
-			$proto275=array();
-$proto275["m_functiontype"] = "SQLF_COUNT";
-$proto275["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto270=array();
+			$proto271=array();
+$proto271["m_functiontype"] = "SQLF_COUNT";
+$proto271["m_arguments"] = array();
+						$proto272=array();
+$proto272["m_functiontype"] = "SQLF_CUSTOM";
+$proto272["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.s5 LIKE '%TH%'"
+));
+
+$proto272["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.sid"
+));
+
+$proto272["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "NULL"
+));
+
+$proto272["m_arguments"][]=$obj;
+$proto272["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto272);
+
+$proto271["m_arguments"][]=$obj;
+$proto271["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto271);
+
+$proto270["m_sql"] = "COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL))";
+$proto270["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto270["m_expr"]=$obj;
+$proto270["m_alias"] = "s5TH";
+$obj = new SQLFieldListItem($proto270);
+
+$proto116["m_fieldlist"][]=$obj;
 						$proto276=array();
-$proto276["m_functiontype"] = "SQLF_CUSTOM";
-$proto276["m_arguments"] = array();
+			$proto277=array();
+$proto277["m_functiontype"] = "SQLF_COUNT";
+$proto277["m_arguments"] = array();
+						$proto278=array();
+$proto278["m_functiontype"] = "SQLF_CUSTOM";
+$proto278["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s5='TH'"
+	"m_sql" => "exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40"
 ));
 
-$proto276["m_arguments"][]=$obj;
+$proto278["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto276["m_arguments"][]=$obj;
+$proto278["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto276["m_arguments"][]=$obj;
-$proto276["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto276);
+$proto278["m_arguments"][]=$obj;
+$proto278["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto278);
 
-$proto275["m_arguments"][]=$obj;
-$proto275["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto275);
+$proto277["m_arguments"][]=$obj;
+$proto277["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto277);
 
-$proto274["m_sql"] = "COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL))";
-$proto274["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto274["m_expr"]=$obj;
-$proto274["m_alias"] = "s5TH";
-$obj = new SQLFieldListItem($proto274);
+$proto276["m_sql"] = "COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL))";
+$proto276["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto276["m_expr"]=$obj;
+$proto276["m_alias"] = "s5DF";
+$obj = new SQLFieldListItem($proto276);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto280=array();
-			$proto281=array();
-$proto281["m_functiontype"] = "SQLF_COUNT";
-$proto281["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
 						$proto282=array();
-$proto282["m_functiontype"] = "SQLF_CUSTOM";
-$proto282["m_arguments"] = array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s5!='TH' AND exam_marking.s5<40"
-));
-
-$proto282["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sid"
-));
-
-$proto282["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "NULL"
-));
-
-$proto282["m_arguments"][]=$obj;
-$proto282["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto282);
-
-$proto281["m_arguments"][]=$obj;
-$proto281["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto281);
-
-$proto280["m_sql"] = "COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL))";
-$proto280["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto280["m_expr"]=$obj;
-$proto280["m_alias"] = "s5DF";
-$obj = new SQLFieldListItem($proto280);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto286=array();
-			$proto287=array();
-$proto287["m_functiontype"] = "SQLF_COUNT";
-$proto287["m_arguments"] = array();
-						$proto288=array();
-$proto288["m_functiontype"] = "SQLF_CUSTOM";
-$proto288["m_arguments"] = array();
+			$proto283=array();
+$proto283["m_functiontype"] = "SQLF_COUNT";
+$proto283["m_arguments"] = array();
+						$proto284=array();
+$proto284["m_functiontype"] = "SQLF_CUSTOM";
+$proto284["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s5>=40 AND exam_marking.s5<60"
 ));
 
-$proto288["m_arguments"][]=$obj;
+$proto284["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto288["m_arguments"][]=$obj;
+$proto284["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto288["m_arguments"][]=$obj;
-$proto288["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto288);
+$proto284["m_arguments"][]=$obj;
+$proto284["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto284);
 
-$proto287["m_arguments"][]=$obj;
-$proto287["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto287);
+$proto283["m_arguments"][]=$obj;
+$proto283["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto283);
 
-$proto286["m_sql"] = "COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL))";
-$proto286["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto286["m_expr"]=$obj;
-$proto286["m_alias"] = "s5MQ";
-$obj = new SQLFieldListItem($proto286);
+$proto282["m_sql"] = "COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL))";
+$proto282["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto282["m_expr"]=$obj;
+$proto282["m_alias"] = "s5MQ";
+$obj = new SQLFieldListItem($proto282);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto292=array();
-			$proto293=array();
-$proto293["m_functiontype"] = "SQLF_COUNT";
-$proto293["m_arguments"] = array();
-						$proto294=array();
-$proto294["m_functiontype"] = "SQLF_CUSTOM";
-$proto294["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto288=array();
+			$proto289=array();
+$proto289["m_functiontype"] = "SQLF_COUNT";
+$proto289["m_arguments"] = array();
+						$proto290=array();
+$proto290["m_functiontype"] = "SQLF_CUSTOM";
+$proto290["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s5>=60 AND exam_marking.s5<75"
 ));
 
-$proto294["m_arguments"][]=$obj;
+$proto290["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto294["m_arguments"][]=$obj;
+$proto290["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto294["m_arguments"][]=$obj;
-$proto294["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto294);
+$proto290["m_arguments"][]=$obj;
+$proto290["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto290);
 
-$proto293["m_arguments"][]=$obj;
-$proto293["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto293);
+$proto289["m_arguments"][]=$obj;
+$proto289["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto289);
 
-$proto292["m_sql"] = "COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL))";
-$proto292["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto292["m_expr"]=$obj;
-$proto292["m_alias"] = "s5JD";
-$obj = new SQLFieldListItem($proto292);
+$proto288["m_sql"] = "COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL))";
+$proto288["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto288["m_expr"]=$obj;
+$proto288["m_alias"] = "s5JD";
+$obj = new SQLFieldListItem($proto288);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto298=array();
-			$proto299=array();
-$proto299["m_functiontype"] = "SQLF_COUNT";
-$proto299["m_arguments"] = array();
-						$proto300=array();
-$proto300["m_functiontype"] = "SQLF_CUSTOM";
-$proto300["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto294=array();
+			$proto295=array();
+$proto295["m_functiontype"] = "SQLF_COUNT";
+$proto295["m_arguments"] = array();
+						$proto296=array();
+$proto296["m_functiontype"] = "SQLF_CUSTOM";
+$proto296["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s5>=75 AND exam_marking.s5<90"
 ));
 
-$proto300["m_arguments"][]=$obj;
+$proto296["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto300["m_arguments"][]=$obj;
+$proto296["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto300["m_arguments"][]=$obj;
-$proto300["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto300);
+$proto296["m_arguments"][]=$obj;
+$proto296["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto296);
 
-$proto299["m_arguments"][]=$obj;
-$proto299["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto299);
+$proto295["m_arguments"][]=$obj;
+$proto295["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto295);
 
-$proto298["m_sql"] = "COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL))";
-$proto298["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto298["m_expr"]=$obj;
-$proto298["m_alias"] = "s5JJ";
-$obj = new SQLFieldListItem($proto298);
+$proto294["m_sql"] = "COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL))";
+$proto294["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto294["m_expr"]=$obj;
+$proto294["m_alias"] = "s5JJ";
+$obj = new SQLFieldListItem($proto294);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto304=array();
-			$proto305=array();
-$proto305["m_functiontype"] = "SQLF_COUNT";
-$proto305["m_arguments"] = array();
-						$proto306=array();
-$proto306["m_functiontype"] = "SQLF_CUSTOM";
-$proto306["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto300=array();
+			$proto301=array();
+$proto301["m_functiontype"] = "SQLF_COUNT";
+$proto301["m_arguments"] = array();
+						$proto302=array();
+$proto302["m_functiontype"] = "SQLF_CUSTOM";
+$proto302["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s5>=90"
 ));
 
-$proto306["m_arguments"][]=$obj;
+$proto302["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto306["m_arguments"][]=$obj;
+$proto302["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto306["m_arguments"][]=$obj;
-$proto306["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto306);
+$proto302["m_arguments"][]=$obj;
+$proto302["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto302);
 
-$proto305["m_arguments"][]=$obj;
-$proto305["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto305);
+$proto301["m_arguments"][]=$obj;
+$proto301["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto301);
 
-$proto304["m_sql"] = "COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL))";
-$proto304["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto304["m_expr"]=$obj;
-$proto304["m_alias"] = "s5MZ";
-$obj = new SQLFieldListItem($proto304);
+$proto300["m_sql"] = "COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL))";
+$proto300["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto300["m_expr"]=$obj;
+$proto300["m_alias"] = "s5MZ";
+$obj = new SQLFieldListItem($proto300);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto310=array();
-			$proto311=array();
-$proto311["m_functiontype"] = "SQLF_COUNT";
-$proto311["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto306=array();
+			$proto307=array();
+$proto307["m_functiontype"] = "SQLF_COUNT";
+$proto307["m_arguments"] = array();
+						$proto308=array();
+$proto308["m_functiontype"] = "SQLF_CUSTOM";
+$proto308["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.s6 LIKE '%TH%'"
+));
+
+$proto308["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "exam_marking.sid"
+));
+
+$proto308["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "NULL"
+));
+
+$proto308["m_arguments"][]=$obj;
+$proto308["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto308);
+
+$proto307["m_arguments"][]=$obj;
+$proto307["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto307);
+
+$proto306["m_sql"] = "COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL))";
+$proto306["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto306["m_expr"]=$obj;
+$proto306["m_alias"] = "s6TH";
+$obj = new SQLFieldListItem($proto306);
+
+$proto116["m_fieldlist"][]=$obj;
 						$proto312=array();
-$proto312["m_functiontype"] = "SQLF_CUSTOM";
-$proto312["m_arguments"] = array();
+			$proto313=array();
+$proto313["m_functiontype"] = "SQLF_COUNT";
+$proto313["m_arguments"] = array();
+						$proto314=array();
+$proto314["m_functiontype"] = "SQLF_CUSTOM";
+$proto314["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s6='TH'"
+	"m_sql" => "exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40"
 ));
 
-$proto312["m_arguments"][]=$obj;
+$proto314["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto312["m_arguments"][]=$obj;
+$proto314["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto312["m_arguments"][]=$obj;
-$proto312["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto312);
+$proto314["m_arguments"][]=$obj;
+$proto314["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto314);
 
-$proto311["m_arguments"][]=$obj;
-$proto311["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto311);
+$proto313["m_arguments"][]=$obj;
+$proto313["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto313);
 
-$proto310["m_sql"] = "COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL))";
-$proto310["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto310["m_expr"]=$obj;
-$proto310["m_alias"] = "s6TH";
-$obj = new SQLFieldListItem($proto310);
+$proto312["m_sql"] = "COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL))";
+$proto312["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto312["m_expr"]=$obj;
+$proto312["m_alias"] = "s6DF";
+$obj = new SQLFieldListItem($proto312);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto316=array();
-			$proto317=array();
-$proto317["m_functiontype"] = "SQLF_COUNT";
-$proto317["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
 						$proto318=array();
-$proto318["m_functiontype"] = "SQLF_CUSTOM";
-$proto318["m_arguments"] = array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s6!='TH' AND exam_marking.s6<40"
-));
-
-$proto318["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sid"
-));
-
-$proto318["m_arguments"][]=$obj;
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "NULL"
-));
-
-$proto318["m_arguments"][]=$obj;
-$proto318["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto318);
-
-$proto317["m_arguments"][]=$obj;
-$proto317["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto317);
-
-$proto316["m_sql"] = "COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL))";
-$proto316["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto316["m_expr"]=$obj;
-$proto316["m_alias"] = "s6DF";
-$obj = new SQLFieldListItem($proto316);
-
-$proto118["m_fieldlist"][]=$obj;
-						$proto322=array();
-			$proto323=array();
-$proto323["m_functiontype"] = "SQLF_COUNT";
-$proto323["m_arguments"] = array();
-						$proto324=array();
-$proto324["m_functiontype"] = "SQLF_CUSTOM";
-$proto324["m_arguments"] = array();
+			$proto319=array();
+$proto319["m_functiontype"] = "SQLF_COUNT";
+$proto319["m_arguments"] = array();
+						$proto320=array();
+$proto320["m_functiontype"] = "SQLF_CUSTOM";
+$proto320["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s6>=40 AND exam_marking.s6<60"
 ));
 
-$proto324["m_arguments"][]=$obj;
+$proto320["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto324["m_arguments"][]=$obj;
+$proto320["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto324["m_arguments"][]=$obj;
-$proto324["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto324);
+$proto320["m_arguments"][]=$obj;
+$proto320["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto320);
 
-$proto323["m_arguments"][]=$obj;
-$proto323["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto323);
+$proto319["m_arguments"][]=$obj;
+$proto319["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto319);
 
-$proto322["m_sql"] = "COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL))";
-$proto322["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto322["m_expr"]=$obj;
-$proto322["m_alias"] = "s6MQ";
-$obj = new SQLFieldListItem($proto322);
+$proto318["m_sql"] = "COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL))";
+$proto318["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto318["m_expr"]=$obj;
+$proto318["m_alias"] = "s6MQ";
+$obj = new SQLFieldListItem($proto318);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto328=array();
-			$proto329=array();
-$proto329["m_functiontype"] = "SQLF_COUNT";
-$proto329["m_arguments"] = array();
-						$proto330=array();
-$proto330["m_functiontype"] = "SQLF_CUSTOM";
-$proto330["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto324=array();
+			$proto325=array();
+$proto325["m_functiontype"] = "SQLF_COUNT";
+$proto325["m_arguments"] = array();
+						$proto326=array();
+$proto326["m_functiontype"] = "SQLF_CUSTOM";
+$proto326["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s6>=60 AND exam_marking.s6<75"
 ));
 
-$proto330["m_arguments"][]=$obj;
+$proto326["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto330["m_arguments"][]=$obj;
+$proto326["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto330["m_arguments"][]=$obj;
-$proto330["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto330);
+$proto326["m_arguments"][]=$obj;
+$proto326["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto326);
 
-$proto329["m_arguments"][]=$obj;
-$proto329["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto329);
+$proto325["m_arguments"][]=$obj;
+$proto325["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto325);
 
-$proto328["m_sql"] = "COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL))";
-$proto328["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto328["m_expr"]=$obj;
-$proto328["m_alias"] = "s6JD";
-$obj = new SQLFieldListItem($proto328);
+$proto324["m_sql"] = "COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL))";
+$proto324["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto324["m_expr"]=$obj;
+$proto324["m_alias"] = "s6JD";
+$obj = new SQLFieldListItem($proto324);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto334=array();
-			$proto335=array();
-$proto335["m_functiontype"] = "SQLF_COUNT";
-$proto335["m_arguments"] = array();
-						$proto336=array();
-$proto336["m_functiontype"] = "SQLF_CUSTOM";
-$proto336["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto330=array();
+			$proto331=array();
+$proto331["m_functiontype"] = "SQLF_COUNT";
+$proto331["m_arguments"] = array();
+						$proto332=array();
+$proto332["m_functiontype"] = "SQLF_CUSTOM";
+$proto332["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s6>=75 AND exam_marking.s6<90"
 ));
 
-$proto336["m_arguments"][]=$obj;
+$proto332["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto336["m_arguments"][]=$obj;
+$proto332["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto336["m_arguments"][]=$obj;
-$proto336["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto336);
+$proto332["m_arguments"][]=$obj;
+$proto332["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto332);
 
-$proto335["m_arguments"][]=$obj;
-$proto335["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto335);
+$proto331["m_arguments"][]=$obj;
+$proto331["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto331);
 
-$proto334["m_sql"] = "COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL))";
-$proto334["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto334["m_expr"]=$obj;
-$proto334["m_alias"] = "s6JJ";
-$obj = new SQLFieldListItem($proto334);
+$proto330["m_sql"] = "COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL))";
+$proto330["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto330["m_expr"]=$obj;
+$proto330["m_alias"] = "s6JJ";
+$obj = new SQLFieldListItem($proto330);
 
-$proto118["m_fieldlist"][]=$obj;
-						$proto340=array();
-			$proto341=array();
-$proto341["m_functiontype"] = "SQLF_COUNT";
-$proto341["m_arguments"] = array();
-						$proto342=array();
-$proto342["m_functiontype"] = "SQLF_CUSTOM";
-$proto342["m_arguments"] = array();
+$proto116["m_fieldlist"][]=$obj;
+						$proto336=array();
+			$proto337=array();
+$proto337["m_functiontype"] = "SQLF_COUNT";
+$proto337["m_arguments"] = array();
+						$proto338=array();
+$proto338["m_functiontype"] = "SQLF_CUSTOM";
+$proto338["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.s6>=90"
 ));
 
-$proto342["m_arguments"][]=$obj;
+$proto338["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "exam_marking.sid"
 ));
 
-$proto342["m_arguments"][]=$obj;
+$proto338["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "NULL"
 ));
 
-$proto342["m_arguments"][]=$obj;
-$proto342["m_strFunctionName"] = "if";
-$obj = new SQLFunctionCall($proto342);
+$proto338["m_arguments"][]=$obj;
+$proto338["m_strFunctionName"] = "if";
+$obj = new SQLFunctionCall($proto338);
 
-$proto341["m_arguments"][]=$obj;
-$proto341["m_strFunctionName"] = "COUNT";
-$obj = new SQLFunctionCall($proto341);
+$proto337["m_arguments"][]=$obj;
+$proto337["m_strFunctionName"] = "COUNT";
+$obj = new SQLFunctionCall($proto337);
 
-$proto340["m_sql"] = "COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL))";
-$proto340["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto340["m_expr"]=$obj;
-$proto340["m_alias"] = "s6MZ";
-$obj = new SQLFieldListItem($proto340);
+$proto336["m_sql"] = "COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL))";
+$proto336["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto336["m_expr"]=$obj;
+$proto336["m_alias"] = "s6MZ";
+$obj = new SQLFieldListItem($proto336);
 
-$proto118["m_fieldlist"][]=$obj;
-$proto118["m_fromlist"] = array();
-												$proto346=array();
-$proto346["m_link"] = "SQLL_MAIN";
-			$proto347=array();
-$proto347["m_strName"] = "exam_marking";
-$proto347["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto347["m_columns"] = array();
-$proto347["m_columns"][] = "sid";
-$proto347["m_columns"][] = "name";
-$proto347["m_columns"][] = "gender";
-$proto347["m_columns"][] = "birthdate";
-$proto347["m_columns"][] = "birthCert";
-$proto347["m_columns"][] = "nationality";
-$proto347["m_columns"][] = "sCode";
-$proto347["m_columns"][] = "eNo";
-$proto347["m_columns"][] = "eYear";
-$proto347["m_columns"][] = "eType";
-$proto347["m_columns"][] = "s1";
-$proto347["m_columns"][] = "s2";
-$proto347["m_columns"][] = "s3";
-$proto347["m_columns"][] = "s4";
-$proto347["m_columns"][] = "s5";
-$proto347["m_columns"][] = "s6";
-$proto347["m_columns"][] = "s7";
-$obj = new SQLTable($proto347);
+$proto116["m_fieldlist"][]=$obj;
+$proto116["m_fromlist"] = array();
+												$proto342=array();
+$proto342["m_link"] = "SQLL_MAIN";
+			$proto343=array();
+$proto343["m_strName"] = "exam_marking";
+$proto343["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto343["m_columns"] = array();
+$proto343["m_columns"][] = "sid";
+$proto343["m_columns"][] = "name";
+$proto343["m_columns"][] = "gender";
+$proto343["m_columns"][] = "birthdate";
+$proto343["m_columns"][] = "birthCert";
+$proto343["m_columns"][] = "nationality";
+$proto343["m_columns"][] = "sCode";
+$proto343["m_columns"][] = "eNo";
+$proto343["m_columns"][] = "eYear";
+$proto343["m_columns"][] = "eType";
+$proto343["m_columns"][] = "s1";
+$proto343["m_columns"][] = "s2";
+$proto343["m_columns"][] = "s3";
+$proto343["m_columns"][] = "s4";
+$proto343["m_columns"][] = "s5";
+$proto343["m_columns"][] = "s6";
+$proto343["m_columns"][] = "s7";
+$obj = new SQLTable($proto343);
 
-$proto346["m_table"] = $obj;
-$proto346["m_sql"] = "exam_marking";
-$proto346["m_alias"] = "";
-$proto346["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto348=array();
-$proto348["m_sql"] = "";
-$proto348["m_uniontype"] = "SQLL_UNKNOWN";
+$proto342["m_table"] = $obj;
+$proto342["m_sql"] = "exam_marking";
+$proto342["m_alias"] = "";
+$proto342["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto344=array();
+$proto344["m_sql"] = "";
+$proto344["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
+$proto344["m_column"]=$obj;
+$proto344["m_contained"] = array();
+$proto344["m_strCase"] = "";
+$proto344["m_havingmode"] = false;
+$proto344["m_inBrackets"] = false;
+$proto344["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto344);
+
+$proto342["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto342);
+
+$proto116["m_fromlist"][]=$obj;
+												$proto346=array();
+$proto346["m_link"] = "SQLL_LEFTJOIN";
+			$proto347=array();
+$proto347["m_strName"] = "school";
+$proto347["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto347["m_columns"] = array();
+$proto347["m_columns"][] = "sno";
+$proto347["m_columns"][] = "sName";
+$proto347["m_columns"][] = "sCenter";
+$proto347["m_columns"][] = "sCode";
+$proto347["m_columns"][] = "sZone";
+$proto347["m_columns"][] = "sType";
+$obj = new SQLTable($proto347);
+
+$proto346["m_table"] = $obj;
+$proto346["m_sql"] = "LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
+$proto346["m_alias"] = "";
+$proto346["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto348=array();
+$proto348["m_sql"] = "exam_marking.sCode = school.sCode";
+$proto348["m_uniontype"] = "SQLL_UNKNOWN";
+						$obj = new SQLField(array(
+	"m_strName" => "sCode",
+	"m_strTable" => "exam_marking",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
+
 $proto348["m_column"]=$obj;
 $proto348["m_contained"] = array();
-$proto348["m_strCase"] = "";
+$proto348["m_strCase"] = "= school.sCode";
 $proto348["m_havingmode"] = false;
 $proto348["m_inBrackets"] = false;
 $proto348["m_useAlias"] = false;
@@ -9248,83 +9146,57 @@ $obj = new SQLLogicalExpr($proto348);
 $proto346["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto346);
 
-$proto118["m_fromlist"][]=$obj;
+$proto116["m_fromlist"][]=$obj;
+$proto116["m_groupby"] = array();
 												$proto350=array();
-$proto350["m_link"] = "SQLL_LEFTJOIN";
-			$proto351=array();
-$proto351["m_strName"] = "school";
-$proto351["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto351["m_columns"] = array();
-$proto351["m_columns"][] = "sno";
-$proto351["m_columns"][] = "sName";
-$proto351["m_columns"][] = "sCenter";
-$proto351["m_columns"][] = "sCode";
-$proto351["m_columns"][] = "sZone";
-$proto351["m_columns"][] = "sType";
-$obj = new SQLTable($proto351);
-
-$proto350["m_table"] = $obj;
-$proto350["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode";
-$proto350["m_alias"] = "";
-$proto350["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto352=array();
-$proto352["m_sql"] = "exam_marking.sCode = school.sCode";
-$proto352["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "sCode",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "analisa_subjek_psra_all"
-));
-
-$proto352["m_column"]=$obj;
-$proto352["m_contained"] = array();
-$proto352["m_strCase"] = "= school.sCode";
-$proto352["m_havingmode"] = false;
-$proto352["m_inBrackets"] = false;
-$proto352["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto352);
-
-$proto350["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto350);
-
-$proto118["m_fromlist"][]=$obj;
-$proto118["m_groupby"] = array();
-												$proto354=array();
 						$obj = new SQLField(array(
 	"m_strName" => "eYear",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "analisa_subjek_psra_all"
 ));
 
-$proto354["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto354);
+$proto350["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto350);
 
-$proto118["m_groupby"][]=$obj;
-$proto118["m_orderby"] = array();
-$proto118["m_srcTableName"]="analisa_subjek_psra_all";		
-$obj = new SQLQuery($proto118);
+$proto116["m_groupby"][]=$obj;
+$proto116["m_orderby"] = array();
+												$proto352=array();
+						$obj = new SQLField(array(
+	"m_strName" => "eYear",
+	"m_strTable" => "exam_marking",
+	"m_srcTableName" => "analisa_subjek_psra_all"
+));
 
-$proto117["m_table"] = $obj;
-$proto117["m_sql"] = "(  		SELECT  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode  GROUP BY eYear  ) AS Sub1";
-$proto117["m_alias"] = "Sub1";
-$proto117["m_srcTableName"] = "analisa_subjek_psra_all";
-$proto356=array();
-$proto356["m_sql"] = "";
-$proto356["m_uniontype"] = "SQLL_UNKNOWN";
+$proto352["m_column"]=$obj;
+$proto352["m_bAsc"] = 0;
+$proto352["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto352);
+
+$proto116["m_orderby"][]=$obj;					
+$proto116["m_srcTableName"]="analisa_subjek_psra_all";		
+$obj = new SQLQuery($proto116);
+
+$proto115["m_table"] = $obj;
+$proto115["m_sql"] = "(  		SELECT  eYear,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY eYear  ORDER BY eYear DESC  ) AS Sub1";
+$proto115["m_alias"] = "Sub1";
+$proto115["m_srcTableName"] = "analisa_subjek_psra_all";
+$proto354=array();
+$proto354["m_sql"] = "";
+$proto354["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto356["m_column"]=$obj;
-$proto356["m_contained"] = array();
-$proto356["m_strCase"] = "";
-$proto356["m_havingmode"] = false;
-$proto356["m_inBrackets"] = false;
-$proto356["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto356);
+$proto354["m_column"]=$obj;
+$proto354["m_contained"] = array();
+$proto354["m_strCase"] = "";
+$proto354["m_havingmode"] = false;
+$proto354["m_inBrackets"] = false;
+$proto354["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto354);
 
-$proto117["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto117);
+$proto115["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto115);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -9338,7 +9210,7 @@ $queryData_analisa_subjek_psra_all = createSqlQuery_analisa_subjek_psra_all();
 
 
 
-																																																								
+																																																							
 
 $tdataanalisa_subjek_psra_all[".sqlquery"] = $queryData_analisa_subjek_psra_all;
 

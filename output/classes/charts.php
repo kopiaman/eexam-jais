@@ -459,8 +459,6 @@ class Chart
 			return true;
 		if("exam_marking" == $this->chrt_array['tables'][0])
 			return true;
-		if("exam_marking" == $this->chrt_array['tables'][0])
-			return true;
 		if("school" == $this->chrt_array['tables'][0])
 			return true;
 		if("setting" == $this->chrt_array['tables'][0])
@@ -516,6 +514,8 @@ class Chart
 		if("exam_marking" == $this->chrt_array['tables'][0])
 			return true;
 		if("school" == $this->chrt_array['tables'][0])
+			return true;
+		if("exam_marking" == $this->chrt_array['tables'][0])
 			return true;
 		if("exam_marking" == $this->chrt_array['tables'][0])
 			return true;

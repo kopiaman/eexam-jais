@@ -134,13 +134,13 @@ else
 $tdataexam_marking[".rowHighlite"] = true;
 
 
-											
+							
 									
 			
 			
 			
 			
-$tdataexam_marking[".isUsebuttonHandlers"] = true;
+			$tdataexam_marking[".isUsebuttonHandlers"] = true;
 
 $tdataexam_marking[".addPageEvents"] = false;
 

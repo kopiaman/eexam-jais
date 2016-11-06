@@ -189,6 +189,7 @@
 			</td>	
 		</tr>
 		{END searchCtrlBlock}
+		 
 		{BEGIN searchCtrlBlock_sZone}
 		<tr class="srchPanelRow {$filterRow_class_sZone}" {$filterRow_attrs_sZone}>
 						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
@@ -200,6 +201,7 @@
 			</td>	
 		</tr>
 		{END searchCtrlBlock_sZone}
+		 
 		{BEGIN searchCtrlBlock_eYear}
 		<tr class="srchPanelRow {$filterRow_class_eYear}" {$filterRow_attrs_eYear}>
 						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
@@ -616,7 +618,99 @@
 
 								</tr>
 								{END grid_row}
-															
+																							{BEGIN totals_row}
+								<tr class="rnr-bottomrow style1 {$gridFooter_class}">
+									{BEGIN totals_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc"></td>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="rnr-cc"></td>
+									{END checkbox_column}
+
+									
+										{BEGIN sZone_fieldfootercolumn}
+<td class="{$sZone_class}">
+</td>
+{END sZone_fieldfootercolumn}
+	{BEGIN eYear_fieldfootercolumn}
+<td class="{$eYear_class}">
+</td>
+{END eYear_fieldfootercolumn}
+	{BEGIN mumtaz_fieldfootercolumn}
+<td class="{$mumtaz_class}">
+</td>
+{END mumtaz_fieldfootercolumn}
+	{BEGIN Mpercent_fieldfootercolumn}
+<td class="{$Mpercent_class}">
+</td>
+{END Mpercent_fieldfootercolumn}
+	{BEGIN JJ_fieldfootercolumn}
+<td class="{$JJ_class}">
+</td>
+{END JJ_fieldfootercolumn}
+	{BEGIN JJpercent_fieldfootercolumn}
+<td class="{$JJpercent_class}">
+</td>
+{END JJpercent_fieldfootercolumn}
+	{BEGIN jidan_fieldfootercolumn}
+<td class="{$jidan_class}">
+</td>
+{END jidan_fieldfootercolumn}
+	{BEGIN Jpercent_fieldfootercolumn}
+<td class="{$Jpercent_class}">
+</td>
+{END Jpercent_fieldfootercolumn}
+	{BEGIN maqbul_fieldfootercolumn}
+<td class="{$maqbul_class}">
+</td>
+{END maqbul_fieldfootercolumn}
+	{BEGIN MQpercent_fieldfootercolumn}
+<td class="{$MQpercent_class}">
+</td>
+{END MQpercent_fieldfootercolumn}
+	{BEGIN bilCalon_fieldfootercolumn}
+<td class="{$bilCalon_class}">
+	{BEGIN bilCalon_showtotal}
+			Total:
+	{$bilCalon_total}
+	{END bilCalon_showtotal}
+</td>
+{END bilCalon_fieldfootercolumn}
+	{BEGIN calonHadir_fieldfootercolumn}
+<td class="{$calonHadir_class}">
+</td>
+{END calonHadir_fieldfootercolumn}
+	{BEGIN calonTakHadir_fieldfootercolumn}
+<td class="{$calonTakHadir_class}">
+</td>
+{END calonTakHadir_fieldfootercolumn}
+	{BEGIN calonLulus_fieldfootercolumn}
+<td class="{$calonLulus_class}">
+</td>
+{END calonLulus_fieldfootercolumn}
+	{BEGIN peratusLulus_fieldfootercolumn}
+<td class="{$peratusLulus_class}">
+</td>
+{END peratusLulus_fieldfootercolumn}
+	{BEGIN calonDhaif_fieldfootercolumn}
+<td class="{$calonDhaif_class}">
+</td>
+{END calonDhaif_fieldfootercolumn}
+	{BEGIN peratusGagal_fieldfootercolumn}
+<td class="{$peratusGagal_class}">
+</td>
+{END peratusGagal_fieldfootercolumn}
+
+									<td class="rnr-edge">&nbsp;</td>
+									{BEGIN endrecordtotals_block}
+									<td class="rnr-cs"></td>
+									{END endrecordtotals_block}
+									{END totals_record}
+								</tr>
+								{END totals_row}
+
 						</tbody>
 					</table>
 					

@@ -137,7 +137,7 @@ else
 $tdataanalisa_kelulusan_psra_sek[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdataanalisa_kelulusan_psra_sek[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -198,6 +198,12 @@ $tdataanalisa_kelulusan_psra_sek[".geocodingEnabled"] = false;
 
 // print page pdf
 
+$tdataanalisa_kelulusan_psra_sek[".totalsFields"] = array();
+$tdataanalisa_kelulusan_psra_sek[".totalsFields"][] = array(
+	"fName" => "bilCalon",
+	"numRows" => 0,
+	"totalsType" => "TOTAL",
+	"viewFormat" => '');
 
 $tdataanalisa_kelulusan_psra_sek[".pageSize"] = 20;
 
@@ -215,7 +221,7 @@ $tdataanalisa_kelulusan_psra_sek[".orderindexes"][] = array(5, (0 ? "ASC" : "DES
 $tdataanalisa_kelulusan_psra_sek[".orderindexes"][] = array(6, (0 ? "ASC" : "DESC"), "mumtaz");
 
 $tdataanalisa_kelulusan_psra_sek[".sqlHead"] = "SELECT sCode,  sid,  sName,  sZone,  eYear,  mumtaz,  Mpercent,  JJ,  JJpercent,  jidan,  Jpercent,  maqbul,  MQpercent,  bilCalon,  calonHadir,  calonTakHadir,  calonLulus,  (calonLulus/calonHadir) AS peratusLulus,  (1-(calonLulus/calonHadir)) AS peratusGagal,  calonDhaif";
-$tdataanalisa_kelulusan_psra_sek[".sqlFrom"] = "FROM (  SELECT  sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif  FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType  WHERE exam_marking.eType ='PSRA'  GROUP BY sid  ) AS Sub1  GROUP BY sCode, eYear  ) AS Sub2";
+$tdataanalisa_kelulusan_psra_sek[".sqlFrom"] = "FROM (  SELECT  sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif  FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  eYear,  eType,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sid  ) AS Sub1  GROUP BY sCode, eYear  ) AS Sub2";
 $tdataanalisa_kelulusan_psra_sek[".sqlWhereExpr"] = "";
 $tdataanalisa_kelulusan_psra_sek[".sqlTail"] = "";
 
@@ -2699,7 +2705,7 @@ function createSqlQuery_analisa_kelulusan_psra_sek()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "sCode,  sid,  sName,  sZone,  eYear,  mumtaz,  Mpercent,  JJ,  JJpercent,  jidan,  Jpercent,  maqbul,  MQpercent,  bilCalon,  calonHadir,  calonTakHadir,  calonLulus,  (calonLulus/calonHadir) AS peratusLulus,  (1-(calonLulus/calonHadir)) AS peratusGagal,  calonDhaif";
-$proto0["m_strFrom"] = "FROM (  SELECT  sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif  FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType  WHERE exam_marking.eType ='PSRA'  GROUP BY sid  ) AS Sub1  GROUP BY sCode, eYear  ) AS Sub2";
+$proto0["m_strFrom"] = "FROM (  SELECT  sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif  FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  eYear,  eType,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sid  ) AS Sub1  GROUP BY sCode, eYear  ) AS Sub2";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY eYear DESC, mumtaz DESC";
 $proto0["m_strTail"] = "";
@@ -3015,7 +3021,7 @@ $proto45["m_link"] = "SQLL_MAIN";
 			$proto46=array();
 $proto46["m_strHead"] = "  SELECT";
 $proto46["m_strFieldList"] = "sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif";
-$proto46["m_strFrom"] = "FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType  WHERE exam_marking.eType ='PSRA'  GROUP BY sid  ) AS Sub1";
+$proto46["m_strFrom"] = "FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  eYear,  eType,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sid  ) AS Sub1";
 $proto46["m_strWhere"] = "";
 $proto46["m_strOrderBy"] = "";
 $proto46["m_strTail"] = "";
@@ -3553,24 +3559,22 @@ $proto46["m_fromlist"] = array();
 $proto132["m_link"] = "SQLL_MAIN";
 			$proto133=array();
 $proto133["m_strHead"] = "  		SELECT";
-$proto133["m_strFieldList"] = "sid AS sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName";
-$proto133["m_strFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$proto133["m_strWhere"] = "exam_marking.eType ='PSRA'";
+$proto133["m_strFieldList"] = "sid AS sid,  exam_marking.sCode,  eYear,  eType,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName";
+$proto133["m_strFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
+$proto133["m_strWhere"] = "";
 $proto133["m_strOrderBy"] = "";
 $proto133["m_strTail"] = "";
 			$proto133["cipherer"] = null;
 $proto134=array();
-$proto134["m_sql"] = "exam_marking.eType ='PSRA'";
+$proto134["m_sql"] = "";
 $proto134["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "analisa_kelulusan_psra_sek"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
 ));
 
 $proto134["m_column"]=$obj;
 $proto134["m_contained"] = array();
-$proto134["m_strCase"] = "='PSRA'";
+$proto134["m_strCase"] = "";
 $proto134["m_havingmode"] = false;
 $proto134["m_inBrackets"] = false;
 $proto134["m_useAlias"] = false;
@@ -3629,7 +3633,7 @@ $proto133["m_fieldlist"][]=$obj;
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto142["m_sql"] = "exam_marking.eYear";
+$proto142["m_sql"] = "eYear";
 $proto142["m_srcTableName"] = "analisa_kelulusan_psra_sek";
 $proto142["m_expr"]=$obj;
 $proto142["m_alias"] = "";
@@ -3643,7 +3647,7 @@ $proto133["m_fieldlist"][]=$obj;
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto144["m_sql"] = "exam_marking.eType";
+$proto144["m_sql"] = "eType";
 $proto144["m_srcTableName"] = "analisa_kelulusan_psra_sek";
 $proto144["m_expr"]=$obj;
 $proto144["m_alias"] = "";
@@ -3658,7 +3662,7 @@ $proto147["m_arguments"] = array();
 $proto148["m_functiontype"] = "SQLF_CUSTOM";
 $proto148["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH'"
+	"m_sql" => "s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%'"
 ));
 
 $proto148["m_arguments"][]=$obj;
@@ -3679,7 +3683,7 @@ $proto147["m_arguments"][]=$obj;
 $proto147["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto147);
 
-$proto146["m_sql"] = "COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL))";
+$proto146["m_sql"] = "COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto146["m_srcTableName"] = "analisa_kelulusan_psra_sek";
 $proto146["m_expr"]=$obj;
 $proto146["m_alias"] = "takhadir";
@@ -3805,55 +3809,21 @@ $proto166["m_columns"][] = "sType";
 $obj = new SQLTable($proto166);
 
 $proto165["m_table"] = $obj;
-$proto165["m_sql"] = "LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$proto165["m_sql"] = "LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
 $proto165["m_alias"] = "";
 $proto165["m_srcTableName"] = "analisa_kelulusan_psra_sek";
 $proto167=array();
-$proto167["m_sql"] = "exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$proto167["m_uniontype"] = "SQLL_AND";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType"
-));
-
-$proto167["m_column"]=$obj;
-$proto167["m_contained"] = array();
-						$proto169=array();
-$proto169["m_sql"] = "exam_marking.sCode = school.sCode";
-$proto169["m_uniontype"] = "SQLL_UNKNOWN";
+$proto167["m_sql"] = "exam_marking.sCode = school.sCode";
+$proto167["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "sCode",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto169["m_column"]=$obj;
-$proto169["m_contained"] = array();
-$proto169["m_strCase"] = "= school.sCode";
-$proto169["m_havingmode"] = false;
-$proto169["m_inBrackets"] = false;
-$proto169["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto169);
-
-			$proto167["m_contained"][]=$obj;
-						$proto171=array();
-$proto171["m_sql"] = "exam_marking.eType = school.sType";
-$proto171["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "analisa_kelulusan_psra_sek"
-));
-
-$proto171["m_column"]=$obj;
-$proto171["m_contained"] = array();
-$proto171["m_strCase"] = "= school.sType";
-$proto171["m_havingmode"] = false;
-$proto171["m_inBrackets"] = false;
-$proto171["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto171);
-
-			$proto167["m_contained"][]=$obj;
-$proto167["m_strCase"] = "";
+$proto167["m_column"]=$obj;
+$proto167["m_contained"] = array();
+$proto167["m_strCase"] = "= school.sCode";
 $proto167["m_havingmode"] = false;
 $proto167["m_inBrackets"] = false;
 $proto167["m_useAlias"] = false;
@@ -3864,15 +3834,15 @@ $obj = new SQLFromListItem($proto165);
 
 $proto133["m_fromlist"][]=$obj;
 $proto133["m_groupby"] = array();
-												$proto173=array();
+												$proto169=array();
 						$obj = new SQLField(array(
 	"m_strName" => "sid",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto173["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto173);
+$proto169["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto169);
 
 $proto133["m_groupby"][]=$obj;
 $proto133["m_orderby"] = array();
@@ -3880,49 +3850,49 @@ $proto133["m_srcTableName"]="analisa_kelulusan_psra_sek";
 $obj = new SQLQuery($proto133);
 
 $proto132["m_table"] = $obj;
-$proto132["m_sql"] = "(  		SELECT  sid AS sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType  WHERE exam_marking.eType ='PSRA'  GROUP BY sid  ) AS Sub1";
+$proto132["m_sql"] = "(  		SELECT  sid AS sid,  exam_marking.sCode,  eYear,  eType,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sid  ) AS Sub1";
 $proto132["m_alias"] = "Sub1";
 $proto132["m_srcTableName"] = "analisa_kelulusan_psra_sek";
-$proto175=array();
-$proto175["m_sql"] = "";
-$proto175["m_uniontype"] = "SQLL_UNKNOWN";
+$proto171=array();
+$proto171["m_sql"] = "";
+$proto171["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto175["m_column"]=$obj;
-$proto175["m_contained"] = array();
-$proto175["m_strCase"] = "";
-$proto175["m_havingmode"] = false;
-$proto175["m_inBrackets"] = false;
-$proto175["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto175);
+$proto171["m_column"]=$obj;
+$proto171["m_contained"] = array();
+$proto171["m_strCase"] = "";
+$proto171["m_havingmode"] = false;
+$proto171["m_inBrackets"] = false;
+$proto171["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto171);
 
 $proto132["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto132);
 
 $proto46["m_fromlist"][]=$obj;
 $proto46["m_groupby"] = array();
-												$proto177=array();
+												$proto173=array();
 						$obj = new SQLField(array(
 	"m_strName" => "sCode",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto177["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto177);
+$proto173["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto173);
 
 $proto46["m_groupby"][]=$obj;
-												$proto179=array();
+												$proto175=array();
 						$obj = new SQLField(array(
 	"m_strName" => "eYear",
 	"m_strTable" => "Sub1",
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto179["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto179);
+$proto175["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto175);
 
 $proto46["m_groupby"][]=$obj;
 $proto46["m_orderby"] = array();
@@ -3930,23 +3900,23 @@ $proto46["m_srcTableName"]="analisa_kelulusan_psra_sek";
 $obj = new SQLQuery($proto46);
 
 $proto45["m_table"] = $obj;
-$proto45["m_sql"] = "(  SELECT  sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif  FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType  WHERE exam_marking.eType ='PSRA'  GROUP BY sid  ) AS Sub1  GROUP BY sCode, eYear  ) AS Sub2";
+$proto45["m_sql"] = "(  SELECT  sCode,  sid,  sName,  sZone,  eYear,  COUNT(sid) AS bilCalon,  COUNT(if(takhadir>0, sid, NULL)) AS calonTakHadir,  COUNT(sid) -  COUNT(if(takhadir>0,sid, NULL)) AS calonHadir,  COUNT(if(peratus>=0.4, sid, NULL)) AS calonLulus,  COUNT(if(peratus>=0.9, sid, NULL)) AS mumtaz,  COUNT(if(peratus>=0.9, sid, NULL)) AS Mpercent,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJ,  COUNT(if(peratus>=0.75 AND peratus<0.9, sid, NULL)) AS JJpercent,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS jidan,  COUNT(if(peratus>=0.6 AND peratus<0.75, sid, NULL)) AS Jpercent,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS maqbul,  COUNT(if(peratus>=0.4 AND peratus<0.6, sid, NULL)) AS MQpercent,  COUNT(if(peratus<0.4 AND takhadir=0, sid, NULL)) AS calonDhaif  FROM (  		SELECT  sid AS sid,  exam_marking.sCode,  eYear,  eType,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS takhadir,  SUM(s1+s2+s3+s4+s5) AS totalMark,  SUM(s1+s2+s3+s4+s5)/500 AS peratus,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sid  ) AS Sub1  GROUP BY sCode, eYear  ) AS Sub2";
 $proto45["m_alias"] = "Sub2";
 $proto45["m_srcTableName"] = "analisa_kelulusan_psra_sek";
-$proto181=array();
-$proto181["m_sql"] = "";
-$proto181["m_uniontype"] = "SQLL_UNKNOWN";
+$proto177=array();
+$proto177["m_sql"] = "";
+$proto177["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto181["m_column"]=$obj;
-$proto181["m_contained"] = array();
-$proto181["m_strCase"] = "";
-$proto181["m_havingmode"] = false;
-$proto181["m_inBrackets"] = false;
-$proto181["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto181);
+$proto177["m_column"]=$obj;
+$proto177["m_contained"] = array();
+$proto177["m_strCase"] = "";
+$proto177["m_havingmode"] = false;
+$proto177["m_inBrackets"] = false;
+$proto177["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto177);
 
 $proto45["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto45);
@@ -3954,30 +3924,30 @@ $obj = new SQLFromListItem($proto45);
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto183=array();
+												$proto179=array();
 						$obj = new SQLField(array(
 	"m_strName" => "eYear",
 	"m_strTable" => "Sub2",
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto183["m_column"]=$obj;
-$proto183["m_bAsc"] = 0;
-$proto183["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto183);
+$proto179["m_column"]=$obj;
+$proto179["m_bAsc"] = 0;
+$proto179["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto179);
 
 $proto0["m_orderby"][]=$obj;					
-												$proto185=array();
+												$proto181=array();
 						$obj = new SQLField(array(
 	"m_strName" => "mumtaz",
 	"m_strTable" => "Sub2",
 	"m_srcTableName" => "analisa_kelulusan_psra_sek"
 ));
 
-$proto185["m_column"]=$obj;
-$proto185["m_bAsc"] = 0;
-$proto185["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto185);
+$proto181["m_column"]=$obj;
+$proto181["m_bAsc"] = 0;
+$proto181["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto181);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="analisa_kelulusan_psra_sek";		

@@ -377,6 +377,16 @@
 									</th>
 									{END siudul_fieldheadercolumn}
 
+																	{BEGIN siudul_sek_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$siudul_sek_class}">
+									{BEGIN siudul_sek_fieldheader}
+																				<span {$siudul_sek_orderlinkattrs}>
+											{$label sijil_psra siudul_sek}
+										</span>
+									{END siudul_sek_fieldheader}
+									</th>
+									{END siudul_sek_fieldheadercolumn}
+
 
 									
 									<th class="rnr-edge">&nbsp;</th>
@@ -452,6 +462,12 @@
 		{$siudul_value}
 	</td>
 {END siudul_fieldcolumn}
+
+	{BEGIN siudul_sek_fieldcolumn}
+	<td class="{$siudul_sek_class}" {$siudul_sek_style} {$recordattrs}>
+		{$siudul_sek_value}
+	</td>
+{END siudul_sek_fieldcolumn}
 
 
 									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>

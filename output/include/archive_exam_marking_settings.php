@@ -135,7 +135,7 @@ else
 $tdataarchive_exam_marking[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdataarchive_exam_marking[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -3001,18 +3001,16 @@ $tdataarchive_exam_marking[".hasEvents"] = true;
 $query = &$queryData_archive_exam_marking;
 $table = "archive_exam_marking";
 // here goes EVENT_INIT_TABLE event
-
 global $conn;
 //only PPTAD zon can view their own zon
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1){
-$query->addWhere("sZone='".$zon."' AND eYear!='"  .$year."'");
-
-}else if($alevel==2){
-$query->addWhere("eYear!='".$year."'");
-}
+if($zon!==NULL && $alevel==1 || $alevel==2){
+$query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
+}else{
+$query->addWhere("eYear='".$year."'");
+};
 
 ;
 unset($query);

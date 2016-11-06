@@ -2497,8 +2497,6 @@ function GetTableURL($table = "")
 		return "exam_marking";
 	if("semakan" == $table)
 		return "semakan";
-	if("sijil_psra" == $table)
-		return "sijil_psra";
 	if("school" == $table)
 		return "school";
 	if("setting" == $table)
@@ -2567,6 +2565,8 @@ function GetTableURL($table = "")
 		return "marking_TJ";
 	if("marking_UTH" == $table)
 		return "marking_UTH";
+	if("sijil_psra1" == $table)
+		return "sijil_psra1";
 
 	return "";
 }
@@ -2581,8 +2581,6 @@ function GetTableByShort($shortTName = "")
 		return "exam_marking";
 	if("semakan" == $shortTName)
 		return "semakan";
-	if("sijil_psra" == $shortTName)
-		return "sijil_psra";
 	if("school" == $shortTName)
 		return "school";
 	if("setting" == $shortTName)
@@ -2651,6 +2649,8 @@ function GetTableByShort($shortTName = "")
 		return "marking_TJ";
 	if("marking_UTH" == $shortTName)
 		return "marking_UTH";
+	if("sijil_psra1" == $shortTName)
+		return "sijil_psra1";
 }
 
 //	A

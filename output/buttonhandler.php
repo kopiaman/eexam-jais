@@ -9,18 +9,6 @@ $params = (array)my_json_decode(postvalue('params'));
 $buttId = $params['buttId'];
 
 // proccess table events
-if($buttId=='Sijil')
-{
-	require_once("include/sijil_psra_variables.php");
-	$cipherer = new RunnerCipherer("sijil_psra");
-	buttonHandler_Sijil($params);
-}
-if($buttId=='Siudul')
-{
-	require_once("include/sijil_psra_variables.php");
-	$cipherer = new RunnerCipherer("sijil_psra");
-	buttonHandler_Siudul($params);
-}
 if($buttId=='IMPORT_PENDAFTARAN')
 {
 	require_once("include/pendaftaran_sekolah_variables.php");
@@ -117,51 +105,29 @@ if($buttId=='UTH')
 	$cipherer = new RunnerCipherer("exam_marking");
 	buttonHandler_UTH($params);
 }
+if($buttId=='SijilPsra1')
+{
+	require_once("include/sijil_psra1_variables.php");
+	$cipherer = new RunnerCipherer("sijil_psra1");
+	buttonHandler_SijilPsra1($params);
+}
+if($buttId=='SidulJbtn1')
+{
+	require_once("include/sijil_psra1_variables.php");
+	$cipherer = new RunnerCipherer("sijil_psra1");
+	buttonHandler_SidulJbtn1($params);
+}
+if($buttId=='SidulSek1')
+{
+	require_once("include/sijil_psra1_variables.php");
+	$cipherer = new RunnerCipherer("sijil_psra1");
+	buttonHandler_SidulSek1($params);
+}
 
 // proccess non table events
 
 
 // create table and non table handlers
-function buttonHandler_Sijil($params) 
-{
-	global $strTableName;
-	$result = array();
-		
-	// create new button object for get record data
-	$params["keys"] = (array)my_json_decode(postvalue('keys'));
-	$params["isManyKeys"] = postvalue('isManyKeys');
-	$params["location"] = postvalue('location');
-	
-	$button = new Button($params);
-	$keys = $button->getKeys();
-	
-	
-$data = $button->getCurrentRecord();
-$result['sCode']=$data['sCode'] ;
-$result['eYear']=$data['eYear'] ;
-;
-	echo my_json_encode($result);
-}
-function buttonHandler_Siudul($params) 
-{
-	global $strTableName;
-	$result = array();
-		
-	// create new button object for get record data
-	$params["keys"] = (array)my_json_decode(postvalue('keys'));
-	$params["isManyKeys"] = postvalue('isManyKeys');
-	$params["location"] = postvalue('location');
-	
-	$button = new Button($params);
-	$keys = $button->getKeys();
-	
-	
-$data = $button->getCurrentRecord();
-$result['sCode']=$data['sCode'] ;
-$result['eYear']=$data['eYear'] ;
-;
-	echo my_json_encode($result);
-}
 function buttonHandler_IMPORT_PENDAFTARAN($params) 
 {
 	global $strTableName;
@@ -431,6 +397,61 @@ function buttonHandler_UTH($params)
 	$keys = $button->getKeys();
 	
 	;
+	echo my_json_encode($result);
+}
+function buttonHandler_SijilPsra1($params) 
+{
+	global $strTableName;
+	$result = array();
+		
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+	
+	$button = new Button($params);
+	$keys = $button->getKeys();
+	
+	$data = $button->getCurrentRecord();
+$result['sCode']=$data['sCode'] ;
+$result['eYear']=$data['eYear'] ;
+;
+	echo my_json_encode($result);
+}
+function buttonHandler_SidulJbtn1($params) 
+{
+	global $strTableName;
+	$result = array();
+		
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+	
+	$button = new Button($params);
+	$keys = $button->getKeys();
+	
+	$data = $button->getCurrentRecord();
+$result['sCode']=$data['sCode'] ;
+$result['eYear']=$data['eYear'] ;;
+	echo my_json_encode($result);
+}
+function buttonHandler_SidulSek1($params) 
+{
+	global $strTableName;
+	$result = array();
+		
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+	
+	$button = new Button($params);
+	$keys = $button->getKeys();
+	
+	$data = $button->getCurrentRecord();
+$result['sCode']=$data['sCode'] ;
+$result['eYear']=$data['eYear'] ;;
 	echo my_json_encode($result);
 }
 ?>

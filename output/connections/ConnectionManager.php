@@ -251,14 +251,17 @@ class ConnectionManager
 		$data["DBPath"] = "db"; //currently unused	
 		$data["useServerMapPath"] = 1; //currently unused
 		
-		$data["connInfo"][0] = "localhost";
-		$data["connInfo"][1] = "root";
-		$data["connInfo"][2] = "";
-		$data["connInfo"][3] = "";
-		$data["connInfo"][4] = "eexam";
-		$data["connInfo"][5] = ""; //currently unused
-		$data["connInfo"][6] = "1"; //currently unused
-		$data["ODBCString"] = "DRIVER={MySQL ODBC 3.51 Driver};Server=localhost;Uid=root;Pwd=;Database=eexam;OPTION=3";
+$host="localhost";
+$user="kreatiwi_user";
+$pwd="gengmalay86";
+$port="";
+$sys_dbname="kreatiwi_eexam";
+$data["connInfo"][0] = $host;
+$data["connInfo"][1] = $user;
+$data["connInfo"][2] = $pwd;
+$data["connInfo"][3] = $port;
+$data["connInfo"][4] = $sys_dbname;
+;
 		$connectionsData["eexam_at_localhost"] = $data;
 		$this->_connectionsData = $connectionsData;
 	}
@@ -272,7 +275,6 @@ class ConnectionManager
 		$connectionsIds = array();
 		$connectionsIds["exam_marking"] = "eexam_at_localhost";
 		$connectionsIds["semakan"] = "eexam_at_localhost";
-		$connectionsIds["sijil_psra"] = "eexam_at_localhost";
 		$connectionsIds["school"] = "eexam_at_localhost";
 		$connectionsIds["setting"] = "eexam_at_localhost";
 		$connectionsIds["setting_category"] = "eexam_at_localhost";
@@ -306,6 +308,7 @@ class ConnectionManager
 		$connectionsIds["marking_TF"] = "eexam_at_localhost";
 		$connectionsIds["marking_TJ"] = "eexam_at_localhost";
 		$connectionsIds["marking_UTH"] = "eexam_at_localhost";
+		$connectionsIds["sijil_psra1"] = "eexam_at_localhost";
 		$this->_tablesConnectionIds = $connectionsIds;
 	}
 	

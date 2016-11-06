@@ -127,8 +127,8 @@ else
 $tdatamarking_UTH[".rowHighlite"] = true;
 
 
-																	
-					$tdatamarking_UTH[".isUsebuttonHandlers"] = true;
+													
+								$tdatamarking_UTH[".isUsebuttonHandlers"] = true;
 
 $tdatamarking_UTH[".addPageEvents"] = false;
 

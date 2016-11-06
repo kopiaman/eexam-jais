@@ -311,10 +311,6 @@ class AuditTrailTable
 		{
 			return false;
 		}
-		if($table=="sijil_psra")
-		{
-			return false;
-		}
 		if($table=="school")
 		{
 			return false;
@@ -448,6 +444,10 @@ class AuditTrailTable
 			return false;
 		}
 		if($table=="marking_UTH")
+		{
+			return false;
+		}
+		if($table=="sijil_psra1")
 		{
 			return false;
 		}
@@ -758,10 +758,6 @@ class AuditTrailFile
 		{
 			return false;
 		}
-		if($table=="sijil_psra")
-		{
-			return false;
-		}
 		if($table=="school")
 		{
 			return false;
@@ -895,6 +891,10 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="marking_UTH")
+		{
+			return false;
+		}
+		if($table=="sijil_psra1")
 		{
 			return false;
 		}

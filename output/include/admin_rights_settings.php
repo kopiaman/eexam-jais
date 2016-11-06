@@ -101,7 +101,7 @@ else
 $tdataadmin_rights[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdataadmin_rights[".addPageEvents"] = false;
 
 // use timepicker for search panel

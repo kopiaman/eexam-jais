@@ -1266,8 +1266,6 @@ class CrossTableReport
 			$isDB = true;
 		if("exam_marking" == $this->xml_array['tables'][0])
 			$isDB = true;
-		if("exam_marking" == $this->xml_array['tables'][0])
-			$isDB = true;
 		if("school" == $this->xml_array['tables'][0])
 			$isDB = true;
 		if("setting" == $this->xml_array['tables'][0])
@@ -1323,6 +1321,8 @@ class CrossTableReport
 		if("exam_marking" == $this->xml_array['tables'][0])
 			$isDB = true;
 		if("school" == $this->xml_array['tables'][0])
+			$isDB = true;
+		if("exam_marking" == $this->xml_array['tables'][0])
 			$isDB = true;
 		if("exam_marking" == $this->xml_array['tables'][0])
 			$isDB = true;

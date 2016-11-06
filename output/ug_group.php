@@ -17,7 +17,6 @@ if(!IsAdmin())
 $nonAdminTablesArr = array();
 $nonAdminTablesArr[] = "exam_marking";
 $nonAdminTablesArr[] = "semakan";
-$nonAdminTablesArr[] = "sijil_psra";
 $nonAdminTablesArr[] = "school";
 $nonAdminTablesArr[] = "setting";
 $nonAdminTablesArr[] = "setting_category";
@@ -49,6 +48,7 @@ $nonAdminTablesArr[] = "marking_JIK";
 $nonAdminTablesArr[] = "marking_TF";
 $nonAdminTablesArr[] = "marking_TJ";
 $nonAdminTablesArr[] = "marking_UTH";
+$nonAdminTablesArr[] = "sijil_psra1";
 
 $ug_connection = $cman->getForUserGroups();
 

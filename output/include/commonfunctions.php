@@ -273,8 +273,6 @@ function checkTableName($shortTName, $type=false)
 		return true;
 	if ("semakan" == $shortTName && ($type===false || ($type!==false && $type == 1)))
 		return true;
-	if ("sijil_psra" == $shortTName && ($type===false || ($type!==false && $type == 1)))
-		return true;
 	if ("school" == $shortTName && ($type===false || ($type!==false && $type == 0)))
 		return true;
 	if ("setting" == $shortTName && ($type===false || ($type!==false && $type == 0)))
@@ -343,6 +341,8 @@ function checkTableName($shortTName, $type=false)
 		return true;
 	if ("marking_UTH" == $shortTName && ($type===false || ($type!==false && $type == 1)))
 		return true;
+	if ("sijil_psra1" == $shortTName && ($type===false || ($type!==false && $type == 1)))
+		return true;
 	return false;
 }
 
@@ -401,11 +401,6 @@ function GetTablesList($pdfMode = false)
 	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
 	{
 		$arr[]="semakan";
-	}
-	$strPerm = GetUserPermissions("sijil_psra");
-	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
-	{
-		$arr[]="sijil_psra";
 	}
 	$strPerm = GetUserPermissions("school");
 	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
@@ -576,6 +571,11 @@ function GetTablesList($pdfMode = false)
 	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
 	{
 		$arr[]="marking_UTH";
+	}
+	$strPerm = GetUserPermissions("sijil_psra1");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
+		$arr[]="sijil_psra1";
 	}
 	return $arr;
 }
@@ -1277,8 +1277,6 @@ function guestHasPermissions()
 		return true;
 	if(array_key_exists("semakan",$_SESSION["UserRights"]["Guest"]))
 		return true;
-	if(array_key_exists("sijil_psra",$_SESSION["UserRights"]["Guest"]))
-		return true;
 	if(array_key_exists("school",$_SESSION["UserRights"]["Guest"]))
 		return true;
 	if(array_key_exists("setting",$_SESSION["UserRights"]["Guest"]))
@@ -1346,6 +1344,8 @@ function guestHasPermissions()
 	if(array_key_exists("marking_TJ",$_SESSION["UserRights"]["Guest"]))
 		return true;
 	if(array_key_exists("marking_UTH",$_SESSION["UserRights"]["Guest"]))
+		return true;
+	if(array_key_exists("sijil_psra1",$_SESSION["UserRights"]["Guest"]))
 		return true;
 	return false;
 }

@@ -28,12 +28,6 @@ $mask="";
 
 $pageMask[$table] = $mask;
 $tables[$table] = array("semakan", " " . "Semakan Markah");
-$table = "sijil_psra";
-$mask="";
-				$mask .= "S";
-
-$pageMask[$table] = $mask;
-$tables[$table] = array("sijil_psra", " " . "Sijil & Siudul");
 $table = "school";
 $mask="";
 	$mask .= "A";
@@ -276,6 +270,12 @@ $mask .= "I";
 
 $pageMask[$table] = $mask;
 $tables[$table] = array("marking_UTH", " " . "Marking UTH");
+$table = "sijil_psra1";
+$mask="";
+				$mask .= "S";
+
+$pageMask[$table] = $mask;
+$tables[$table] = array("sijil_psra1", " " . "Sijil Psra1");
 
 
 

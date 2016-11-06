@@ -160,7 +160,7 @@ function getMenuNodes_main($menuNodesObject)
 	$menuNode["name"] = "Cetakan";
 	$menuNode["href"] = "mypage.htm";
 	$menuNode["type"] = "Leaf";
-	$menuNode["table"] = "sijil_psra";
+	$menuNode["table"] = "sijil_psra1";
 	$menuNode["style"] = "";
 	$menuNode["params"] = "";
 	$menuNode["parent"] = "9";

@@ -115,7 +115,7 @@ else
 $tdatapurata_psra_daerah[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdatapurata_psra_daerah[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -176,6 +176,12 @@ $tdatapurata_psra_daerah[".geocodingEnabled"] = false;
 
 // print page pdf
 
+$tdatapurata_psra_daerah[".totalsFields"] = array();
+$tdatapurata_psra_daerah[".totalsFields"][] = array(
+	"fName" => "calonTotal",
+	"numRows" => 0,
+	"totalsType" => "TOTAL",
+	"viewFormat" => '');
 
 $tdatapurata_psra_daerah[".pageSize"] = 20;
 
@@ -183,7 +189,7 @@ $tdatapurata_psra_daerah[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "ORDER BY avg      DESC";
+$tstrOrderBy = "ORDER BY eYear DESC, avg DESC";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
 $tdatapurata_psra_daerah[".strOrderBy"] = $tstrOrderBy;
@@ -191,7 +197,7 @@ $tdatapurata_psra_daerah[".strOrderBy"] = $tstrOrderBy;
 $tdatapurata_psra_daerah[".orderindexes"] = array();
 
 $tdatapurata_psra_daerah[".sqlHead"] = "SELECT sZone,  eYear,  eType,  jumlahMarkah,  jumlahMarkah/(calonTotal-calonTakHadir) AS `avg`,  (jumlahMarkah/(calonTotal-calonTakHadir))/500*100 AS avgperatus,  calonTotal,  calonTakHadir,  calonTotal-calonTakHadir AS calonHadir";
-$tdatapurata_psra_daerah[".sqlFrom"] = "FROM (   SELECT  sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS calonTakHadir,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType  WHERE eType ='PSRA'  GROUP BY sZone, eYear  ) AS Sub2";
+$tdatapurata_psra_daerah[".sqlFrom"] = "FROM (   SELECT  sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS calonTakHadir,  sZone  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode   GROUP BY sZone, eYear  ) AS Sub2";
 $tdatapurata_psra_daerah[".sqlWhereExpr"] = "";
 $tdatapurata_psra_daerah[".sqlTail"] = "";
 
@@ -1375,9 +1381,9 @@ function createSqlQuery_purata_psra_daerah()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "sZone,  eYear,  eType,  jumlahMarkah,  jumlahMarkah/(calonTotal-calonTakHadir) AS `avg`,  (jumlahMarkah/(calonTotal-calonTakHadir))/500*100 AS avgperatus,  calonTotal,  calonTakHadir,  calonTotal-calonTakHadir AS calonHadir";
-$proto0["m_strFrom"] = "FROM (   SELECT  sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS calonTakHadir,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType  WHERE eType ='PSRA'  GROUP BY sZone, eYear  ) AS Sub2";
+$proto0["m_strFrom"] = "FROM (   SELECT  sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS calonTakHadir,  sZone  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode   GROUP BY sZone, eYear  ) AS Sub2";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "ORDER BY avg      DESC";
+$proto0["m_strOrderBy"] = "ORDER BY eYear DESC, avg DESC";
 $proto0["m_strTail"] = "";
 			$proto0["cipherer"] = null;
 $proto1=array();
@@ -1536,24 +1542,22 @@ $proto0["m_fromlist"] = array();
 $proto23["m_link"] = "SQLL_MAIN";
 			$proto24=array();
 $proto24["m_strHead"] = "   SELECT";
-$proto24["m_strFieldList"] = "sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS calonTakHadir,  sZone";
-$proto24["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType";
-$proto24["m_strWhere"] = "eType ='PSRA'";
+$proto24["m_strFieldList"] = "sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS calonTakHadir,  sZone";
+$proto24["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto24["m_strWhere"] = "";
 $proto24["m_strOrderBy"] = "";
 $proto24["m_strTail"] = "";
 			$proto24["cipherer"] = null;
 $proto25=array();
-$proto25["m_sql"] = "eType ='PSRA'";
+$proto25["m_sql"] = "";
 $proto25["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "purata_psra_daerah"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
 ));
 
 $proto25["m_column"]=$obj;
 $proto25["m_contained"] = array();
-$proto25["m_strCase"] = "='PSRA'";
+$proto25["m_strCase"] = "";
 $proto25["m_havingmode"] = false;
 $proto25["m_inBrackets"] = false;
 $proto25["m_useAlias"] = false;
@@ -1667,7 +1671,7 @@ $proto42["m_arguments"] = array();
 $proto43["m_functiontype"] = "SQLF_CUSTOM";
 $proto43["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH'"
+	"m_sql" => "s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%'"
 ));
 
 $proto43["m_arguments"][]=$obj;
@@ -1688,7 +1692,7 @@ $proto42["m_arguments"][]=$obj;
 $proto42["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto42);
 
-$proto41["m_sql"] = "COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL))";
+$proto41["m_sql"] = "COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto41["m_srcTableName"] = "purata_psra_daerah";
 $proto41["m_expr"]=$obj;
 $proto41["m_alias"] = "calonTakHadir";
@@ -1757,7 +1761,7 @@ $obj = new SQLFromListItem($proto49);
 
 $proto24["m_fromlist"][]=$obj;
 												$proto53=array();
-$proto53["m_link"] = "SQLL_INNERJOIN";
+$proto53["m_link"] = "SQLL_LEFTJOIN";
 			$proto54=array();
 $proto54["m_strName"] = "school";
 $proto54["m_srcTableName"] = "purata_psra_daerah";
@@ -1771,55 +1775,21 @@ $proto54["m_columns"][] = "sType";
 $obj = new SQLTable($proto54);
 
 $proto53["m_table"] = $obj;
-$proto53["m_sql"] = "INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType";
+$proto53["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode";
 $proto53["m_alias"] = "";
 $proto53["m_srcTableName"] = "purata_psra_daerah";
 $proto55=array();
-$proto55["m_sql"] = "exam_marking.sCode = school.sCode AND eType = school.sType";
-$proto55["m_uniontype"] = "SQLL_AND";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sCode = school.sCode AND eType = school.sType"
-));
-
-$proto55["m_column"]=$obj;
-$proto55["m_contained"] = array();
-						$proto57=array();
-$proto57["m_sql"] = "exam_marking.sCode = school.sCode";
-$proto57["m_uniontype"] = "SQLL_UNKNOWN";
+$proto55["m_sql"] = "exam_marking.sCode = school.sCode";
+$proto55["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "sCode",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "purata_psra_daerah"
 ));
 
-$proto57["m_column"]=$obj;
-$proto57["m_contained"] = array();
-$proto57["m_strCase"] = "= school.sCode";
-$proto57["m_havingmode"] = false;
-$proto57["m_inBrackets"] = false;
-$proto57["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto57);
-
-			$proto55["m_contained"][]=$obj;
-						$proto59=array();
-$proto59["m_sql"] = "eType = school.sType";
-$proto59["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "purata_psra_daerah"
-));
-
-$proto59["m_column"]=$obj;
-$proto59["m_contained"] = array();
-$proto59["m_strCase"] = "= school.sType";
-$proto59["m_havingmode"] = false;
-$proto59["m_inBrackets"] = false;
-$proto59["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto59);
-
-			$proto55["m_contained"][]=$obj;
-$proto55["m_strCase"] = "";
+$proto55["m_column"]=$obj;
+$proto55["m_contained"] = array();
+$proto55["m_strCase"] = "= school.sCode";
 $proto55["m_havingmode"] = false;
 $proto55["m_inBrackets"] = false;
 $proto55["m_useAlias"] = false;
@@ -1830,24 +1800,24 @@ $obj = new SQLFromListItem($proto53);
 
 $proto24["m_fromlist"][]=$obj;
 $proto24["m_groupby"] = array();
-												$proto61=array();
+												$proto57=array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "sZone"
 ));
 
-$proto61["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto61);
+$proto57["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto57);
 
 $proto24["m_groupby"][]=$obj;
-												$proto63=array();
+												$proto59=array();
 						$obj = new SQLField(array(
 	"m_strName" => "eYear",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "purata_psra_daerah"
 ));
 
-$proto63["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto63);
+$proto59["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto59);
 
 $proto24["m_groupby"][]=$obj;
 $proto24["m_orderby"] = array();
@@ -1855,23 +1825,23 @@ $proto24["m_srcTableName"]="purata_psra_daerah";
 $obj = new SQLQuery($proto24);
 
 $proto23["m_table"] = $obj;
-$proto23["m_sql"] = "(   SELECT  sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1='TH' AND s2='TH' AND s3='TH' AND s4='TH' AND s5='TH', exam_marking.sid, NULL)) AS calonTakHadir,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType  WHERE eType ='PSRA'  GROUP BY sZone, eYear  ) AS Sub2";
+$proto23["m_sql"] = "(   SELECT  sid,  eYear,  eType,  SUM(s1+s2+s3+s4+s5) AS jumlahMarkah,  COUNT(sid) AS calonTotal,  COUNT(if(s1 LIKE '%TH%' AND s2 LIKE '%TH%' AND s3 LIKE '%TH%' AND s4 LIKE '%TH%' AND s5 LIKE '%TH%', exam_marking.sid, NULL)) AS calonTakHadir,  sZone  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode   GROUP BY sZone, eYear  ) AS Sub2";
 $proto23["m_alias"] = "Sub2";
 $proto23["m_srcTableName"] = "purata_psra_daerah";
-$proto65=array();
-$proto65["m_sql"] = "";
-$proto65["m_uniontype"] = "SQLL_UNKNOWN";
+$proto61=array();
+$proto61["m_sql"] = "";
+$proto61["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto65["m_column"]=$obj;
-$proto65["m_contained"] = array();
-$proto65["m_strCase"] = "";
-$proto65["m_havingmode"] = false;
-$proto65["m_inBrackets"] = false;
-$proto65["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto65);
+$proto61["m_column"]=$obj;
+$proto61["m_contained"] = array();
+$proto61["m_strCase"] = "";
+$proto61["m_havingmode"] = false;
+$proto61["m_inBrackets"] = false;
+$proto61["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto61);
 
 $proto23["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto23);
@@ -1879,15 +1849,28 @@ $obj = new SQLFromListItem($proto23);
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto67=array();
-						$obj = new SQLNonParsed(array(
-	"m_sql" => "avg      "
+												$proto63=array();
+						$obj = new SQLField(array(
+	"m_strName" => "eYear",
+	"m_strTable" => "Sub2",
+	"m_srcTableName" => "purata_psra_daerah"
 ));
 
-$proto67["m_column"]=$obj;
-$proto67["m_bAsc"] = 0;
-$proto67["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto67);
+$proto63["m_column"]=$obj;
+$proto63["m_bAsc"] = 0;
+$proto63["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto63);
+
+$proto0["m_orderby"][]=$obj;					
+												$proto65=array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "avg "
+));
+
+$proto65["m_column"]=$obj;
+$proto65["m_bAsc"] = 0;
+$proto65["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto65);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="purata_psra_daerah";		

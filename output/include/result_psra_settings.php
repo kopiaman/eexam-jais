@@ -143,7 +143,7 @@ else
 $tdataresult_psra[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdataresult_psra[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -259,7 +259,7 @@ $tdataresult_psra[".orderindexes"][] = array(9, (1 ? "ASC" : "DESC"), "eYear");
 $tdataresult_psra[".orderindexes"][] = array(17, (0 ? "ASC" : "DESC"), "peratus");
 
 $tdataresult_psra[".sqlHead"] = "SELECT sid,  name,  gender,  birthdate,  birthCert,  nationality,  sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  jumlahMarkah,  peratus,  pangkat,  s6,  s7,  sCenter,  sName,  sZone";
-$tdataresult_psra[".sqlFrom"] = "FROM (   SELECT  sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType  WHERE eType ='PSRA'  GROUP BY sid  ) AS Sub2";
+$tdataresult_psra[".sqlFrom"] = "FROM (   SELECT  sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode   GROUP BY sid  ) AS Sub2";
 $tdataresult_psra[".sqlWhereExpr"] = "";
 $tdataresult_psra[".sqlTail"] = "";
 
@@ -3179,7 +3179,7 @@ function createSqlQuery_result_psra()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "sid,  name,  gender,  birthdate,  birthCert,  nationality,  sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  jumlahMarkah,  peratus,  pangkat,  s6,  s7,  sCenter,  sName,  sZone";
-$proto0["m_strFrom"] = "FROM (   SELECT  sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType  WHERE eType ='PSRA'  GROUP BY sid  ) AS Sub2";
+$proto0["m_strFrom"] = "FROM (   SELECT  sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode   GROUP BY sid  ) AS Sub2";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY eYear, peratus DESC";
 $proto0["m_strTail"] = "";
@@ -3539,23 +3539,21 @@ $proto51["m_link"] = "SQLL_MAIN";
 			$proto52=array();
 $proto52["m_strHead"] = "   SELECT";
 $proto52["m_strFieldList"] = "sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone";
-$proto52["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType";
-$proto52["m_strWhere"] = "eType ='PSRA'";
+$proto52["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode";
+$proto52["m_strWhere"] = "";
 $proto52["m_strOrderBy"] = "";
 $proto52["m_strTail"] = "";
 			$proto52["cipherer"] = null;
 $proto53=array();
-$proto53["m_sql"] = "eType ='PSRA'";
+$proto53["m_sql"] = "";
 $proto53["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "result_psra"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
 ));
 
 $proto53["m_column"]=$obj;
 $proto53["m_contained"] = array();
-$proto53["m_strCase"] = "='PSRA'";
+$proto53["m_strCase"] = "";
 $proto53["m_havingmode"] = false;
 $proto53["m_inBrackets"] = false;
 $proto53["m_useAlias"] = false;
@@ -3960,55 +3958,21 @@ $proto109["m_columns"][] = "sType";
 $obj = new SQLTable($proto109);
 
 $proto108["m_table"] = $obj;
-$proto108["m_sql"] = "INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType";
+$proto108["m_sql"] = "INNER JOIN school ON exam_marking.sCode = school.sCode";
 $proto108["m_alias"] = "";
 $proto108["m_srcTableName"] = "result_psra";
 $proto110=array();
-$proto110["m_sql"] = "exam_marking.sCode = school.sCode AND eType = school.sType";
-$proto110["m_uniontype"] = "SQLL_AND";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sCode = school.sCode AND eType = school.sType"
-));
-
-$proto110["m_column"]=$obj;
-$proto110["m_contained"] = array();
-						$proto112=array();
-$proto112["m_sql"] = "exam_marking.sCode = school.sCode";
-$proto112["m_uniontype"] = "SQLL_UNKNOWN";
+$proto110["m_sql"] = "exam_marking.sCode = school.sCode";
+$proto110["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "sCode",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "result_psra"
 ));
 
-$proto112["m_column"]=$obj;
-$proto112["m_contained"] = array();
-$proto112["m_strCase"] = "= school.sCode";
-$proto112["m_havingmode"] = false;
-$proto112["m_inBrackets"] = false;
-$proto112["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto112);
-
-			$proto110["m_contained"][]=$obj;
-						$proto114=array();
-$proto114["m_sql"] = "eType = school.sType";
-$proto114["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "result_psra"
-));
-
-$proto114["m_column"]=$obj;
-$proto114["m_contained"] = array();
-$proto114["m_strCase"] = "= school.sType";
-$proto114["m_havingmode"] = false;
-$proto114["m_inBrackets"] = false;
-$proto114["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto114);
-
-			$proto110["m_contained"][]=$obj;
-$proto110["m_strCase"] = "";
+$proto110["m_column"]=$obj;
+$proto110["m_contained"] = array();
+$proto110["m_strCase"] = "= school.sCode";
 $proto110["m_havingmode"] = false;
 $proto110["m_inBrackets"] = false;
 $proto110["m_useAlias"] = false;
@@ -4019,15 +3983,15 @@ $obj = new SQLFromListItem($proto108);
 
 $proto52["m_fromlist"][]=$obj;
 $proto52["m_groupby"] = array();
-												$proto116=array();
+												$proto112=array();
 						$obj = new SQLField(array(
 	"m_strName" => "sid",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "result_psra"
 ));
 
-$proto116["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto116);
+$proto112["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto112);
 
 $proto52["m_groupby"][]=$obj;
 $proto52["m_orderby"] = array();
@@ -4035,23 +3999,23 @@ $proto52["m_srcTableName"]="result_psra";
 $obj = new SQLQuery($proto52);
 
 $proto51["m_table"] = $obj;
-$proto51["m_sql"] = "(   SELECT  sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType  WHERE eType ='PSRA'  GROUP BY sid  ) AS Sub2";
+$proto51["m_sql"] = "(   SELECT  sid,  name,  gender,  birthdate,  birthCert,  nationality,  exam_marking.sCode,  eNo,  eYear,  eType,  s1,  s2,  s3,  s4,  s5,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5) AS jumlahMarkah,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500 AS peratus,  SUM(exam_marking.s1 + exam_marking.s2 + exam_marking.s3 + exam_marking.s4 + exam_marking.s5)/500*100 AS pangkat,  s6,  s7,  sCenter,  sName,  sZone  FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode   GROUP BY sid  ) AS Sub2";
 $proto51["m_alias"] = "Sub2";
 $proto51["m_srcTableName"] = "result_psra";
-$proto118=array();
-$proto118["m_sql"] = "";
-$proto118["m_uniontype"] = "SQLL_UNKNOWN";
+$proto114=array();
+$proto114["m_sql"] = "";
+$proto114["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto118["m_column"]=$obj;
-$proto118["m_contained"] = array();
-$proto118["m_strCase"] = "";
-$proto118["m_havingmode"] = false;
-$proto118["m_inBrackets"] = false;
-$proto118["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto118);
+$proto114["m_column"]=$obj;
+$proto114["m_contained"] = array();
+$proto114["m_strCase"] = "";
+$proto114["m_havingmode"] = false;
+$proto114["m_inBrackets"] = false;
+$proto114["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto114);
 
 $proto51["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto51);
@@ -4059,30 +4023,30 @@ $obj = new SQLFromListItem($proto51);
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto120=array();
+												$proto116=array();
 						$obj = new SQLField(array(
 	"m_strName" => "eYear",
 	"m_strTable" => "Sub2",
 	"m_srcTableName" => "result_psra"
 ));
 
-$proto120["m_column"]=$obj;
-$proto120["m_bAsc"] = 1;
-$proto120["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto120);
+$proto116["m_column"]=$obj;
+$proto116["m_bAsc"] = 1;
+$proto116["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto116);
 
 $proto0["m_orderby"][]=$obj;					
-												$proto122=array();
+												$proto118=array();
 						$obj = new SQLField(array(
 	"m_strName" => "peratus",
 	"m_strTable" => "Sub2",
 	"m_srcTableName" => "result_psra"
 ));
 
-$proto122["m_column"]=$obj;
-$proto122["m_bAsc"] = 0;
-$proto122["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto122);
+$proto118["m_column"]=$obj;
+$proto118["m_bAsc"] = 0;
+$proto118["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto118);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="result_psra";		
@@ -4106,18 +4070,17 @@ $query = &$queryData_result_psra;
 $table = "result_psra";
 // here goes EVENT_INIT_TABLE event
 
-
 global $conn;
 //only PPTAD zon can view their own zon
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1){
+if($zon!==NULL && $alevel==1 || $alevel==2){
 $query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-
-}else if($alevel==2){
+}else{
 $query->addWhere("eYear='".$year."'");
-}
+};
+
 ;
 unset($query);
 ?>

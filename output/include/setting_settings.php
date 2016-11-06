@@ -107,7 +107,7 @@ else
 $tdatasetting[".rowHighlite"] = true;
 
 
-																																																																																
+																																																																												
 $tdatasetting[".addPageEvents"] = false;
 
 // use timepicker for search panel

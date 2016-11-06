@@ -42,7 +42,6 @@ function InitLookupLinks()
 
 	$lookupTableLinks["setting"]["exam_marking.sZone"]["edit"] = array("table" => "exam_marking", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["semakan.sZone"]["edit"] = array("table" => "semakan", "field" => "sZone", "page" => "edit");
-	$lookupTableLinks["setting"]["sijil_psra.sZone"]["edit"] = array("table" => "sijil_psra", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["school.sZone"]["edit"] = array("table" => "school", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["school.sZone"]["add"] = array("table" => "school", "field" => "sZone", "page" => "add");
 	$lookupTableLinks["setting"]["school.sZone"]["search"] = array("table" => "school", "field" => "sZone", "page" => "search");
@@ -70,6 +69,7 @@ function InitLookupLinks()
 	$lookupTableLinks["setting"]["marking_TF.sZone"]["edit"] = array("table" => "marking_TF", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["marking_TJ.sZone"]["edit"] = array("table" => "marking_TJ", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["marking_UTH.sZone"]["edit"] = array("table" => "marking_UTH", "field" => "sZone", "page" => "edit");
+	$lookupTableLinks["setting"]["sijil_psra1.sZone"]["edit"] = array("table" => "sijil_psra1", "field" => "sZone", "page" => "edit");
 }
 
 ?>

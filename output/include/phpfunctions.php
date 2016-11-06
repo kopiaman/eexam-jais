@@ -862,26 +862,6 @@ $value="<font color=red><strong>E!!</strong></font>";
 ;
 		return $value;
 	}
-				if($table=="sijil_psra" && $field=="daftar")
-	{
-		$value="";;
-		return $value;
-	}
-				if($table=="sijil_psra" && $field=="slip")
-	{
-		$value="";;
-		return $value;
-	}
-				if($table=="sijil_psra" && $field=="jana")
-	{
-		$value="";;
-		return $value;
-	}
-				if($table=="sijil_psra" && $field=="siudul")
-	{
-		$value="";;
-		return $value;
-	}
 				if($table=="analisa_kelulusan_psra_sek" && $field=="Mpercent")
 	{
 		$gred=$data['mumtaz'];
@@ -1346,6 +1326,21 @@ $value=$count_row['bil'];;
 		$value="";;
 		return $value;
 	}
+				if($table=="sijil_psra1" && $field=="sijil")
+	{
+		$value="";;
+		return $value;
+	}
+				if($table=="sijil_psra1" && $field=="sidul_jbtn")
+	{
+		$value="";;
+		return $value;
+	}
+				if($table=="sijil_psra1" && $field=="sidul_sek")
+	{
+		$value="";;
+		return $value;
+	}
 	return $value;
 }
 
@@ -1377,10 +1372,6 @@ function GetLWWhere($field, $ptype, $table = "")
 		return "catID=2";
 	}
 				if($table=="semakan" && $field=="sZone")
-	{
-		return "catID=2";
-	}
-				if($table=="sijil_psra" && $field=="sZone")
 	{
 		return "catID=2";
 	}
@@ -1489,6 +1480,10 @@ function GetLWWhere($field, $ptype, $table = "")
 		return "catID=2";
 	}
 				if($table=="marking_UTH" && $field=="sZone")
+	{
+		return "catID=2";
+	}
+				if($table=="sijil_psra1" && $field=="sZone")
 	{
 		return "catID=2";
 	}

@@ -492,7 +492,63 @@
 
 								</tr>
 								{END grid_row}
-															
+																							{BEGIN totals_row}
+								<tr class="rnr-bottomrow style1 {$gridFooter_class}">
+									{BEGIN totals_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc"></td>
+									{END listIcons_column}	
+
+																		{BEGIN checkbox_column}
+									<td class="rnr-cc"></td>
+									{END checkbox_column}
+
+									
+										{BEGIN sName_fieldfootercolumn}
+<td class="{$sName_class}">
+</td>
+{END sName_fieldfootercolumn}
+	{BEGIN sCode_fieldfootercolumn}
+<td class="{$sCode_class}">
+</td>
+{END sCode_fieldfootercolumn}
+	{BEGIN eYear_fieldfootercolumn}
+<td class="{$eYear_class}">
+</td>
+{END eYear_fieldfootercolumn}
+	{BEGIN calonTotal_fieldfootercolumn}
+<td class="{$calonTotal_class}">
+	{BEGIN calonTotal_showtotal}
+			Total:
+	{$calonTotal_total}
+	{END calonTotal_showtotal}
+</td>
+{END calonTotal_fieldfootercolumn}
+	{BEGIN calonTakHadir_fieldfootercolumn}
+<td class="{$calonTakHadir_class}">
+</td>
+{END calonTakHadir_fieldfootercolumn}
+	{BEGIN calonHadir_fieldfootercolumn}
+<td class="{$calonHadir_class}">
+</td>
+{END calonHadir_fieldfootercolumn}
+	{BEGIN jumlahMarkah_fieldfootercolumn}
+<td class="{$jumlahMarkah_class}">
+</td>
+{END jumlahMarkah_fieldfootercolumn}
+	{BEGIN avgperatus_fieldfootercolumn}
+<td class="{$avgperatus_class}">
+</td>
+{END avgperatus_fieldfootercolumn}
+
+									<td class="rnr-edge">&nbsp;</td>
+									{BEGIN endrecordtotals_block}
+									<td class="rnr-cs"></td>
+									{END endrecordtotals_block}
+									{END totals_record}
+								</tr>
+								{END totals_row}
+
 						</tbody>
 					</table>
 					

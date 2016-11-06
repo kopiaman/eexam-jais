@@ -33,7 +33,7 @@ if(mlang_getcurrentlang()=="English")
 	$fieldToolTipssijil_psra["English"]["calon"] = "";
 	$fieldLabelssijil_psra["English"]["jana"] = "Sijil";
 	$fieldToolTipssijil_psra["English"]["jana"] = "";
-	$fieldLabelssijil_psra["English"]["siudul"] = "Sidiul";
+	$fieldLabelssijil_psra["English"]["siudul"] = "Sidiul Jbtn";
 	$fieldToolTipssijil_psra["English"]["siudul"] = "";
 	$fieldLabelssijil_psra["English"]["sid"] = "Sid";
 	$fieldToolTipssijil_psra["English"]["sid"] = "";
@@ -43,6 +43,8 @@ if(mlang_getcurrentlang()=="English")
 	$fieldToolTipssijil_psra["English"]["daftar"] = "";
 	$fieldLabelssijil_psra["English"]["slip"] = "Slip Kehadiran";
 	$fieldToolTipssijil_psra["English"]["slip"] = "";
+	$fieldLabelssijil_psra["English"]["siudul_sek"] = "Sidul Sek";
+	$fieldToolTipssijil_psra["English"]["siudul_sek"] = "";
 	if (count($fieldToolTipssijil_psra["English"]))
 		$tdatasijil_psra[".isUseToolTips"] = true;
 }
@@ -53,6 +55,8 @@ if(mlang_getcurrentlang()=="")
 	$pageTitlessijil_psra[""] = array();
 	$fieldLabelssijil_psra[""]["slip"] = "Slip";
 	$fieldToolTipssijil_psra[""]["slip"] = "";
+	$fieldLabelssijil_psra[""]["siudul_sek"] = "Siudul Sek";
+	$fieldToolTipssijil_psra[""]["siudul_sek"] = "";
 	if (count($fieldToolTipssijil_psra[""]))
 		$tdatasijil_psra[".isUseToolTips"] = true;
 }
@@ -122,7 +126,8 @@ $tdatasijil_psra[".rowHighlite"] = true;
 
 			
 			
-																		$tdatasijil_psra[".isUsebuttonHandlers"] = true;
+																			
+									$tdatasijil_psra[".isUsebuttonHandlers"] = true;
 
 $tdatasijil_psra[".addPageEvents"] = false;
 
@@ -147,6 +152,7 @@ $tdatasijil_psra[".googleLikeFields"] = array();
 $tdatasijil_psra[".googleLikeFields"][] = "sName";
 $tdatasijil_psra[".googleLikeFields"][] = "daftar";
 $tdatasijil_psra[".googleLikeFields"][] = "slip";
+$tdatasijil_psra[".googleLikeFields"][] = "siudul_sek";
 
 $tdatasijil_psra[".panelSearchFields"] = array();
 $tdatasijil_psra[".searchPanelOptions"] = array();
@@ -202,9 +208,9 @@ $tdatasijil_psra[".strOrderBy"] = $tstrOrderBy;
 $tdatasijil_psra[".orderindexes"] = array();
 $tdatasijil_psra[".orderindexes"][] = array(3, (0 ? "ASC" : "DESC"), "exam_marking.eYear");
 
-$tdatasijil_psra[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  school.sZone,  school.sName,  COUNT(exam_marking.sid) AS calon,  exam_marking.sid AS daftar,  exam_marking.sid AS slip,  exam_marking.sid AS jana,  exam_marking.sid AS siudul";
-$tdatasijil_psra[".sqlFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$tdatasijil_psra[".sqlWhereExpr"] = "exam_marking.eType ='PSRA'";
+$tdatasijil_psra[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  school.sZone,  school.sName,  COUNT(exam_marking.sid) AS calon,  exam_marking.sid AS daftar,  exam_marking.sid AS slip,  exam_marking.sid AS jana,  exam_marking.sid AS siudul,  exam_marking.sid AS siudul_sek";
+$tdatasijil_psra[".sqlFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$tdatasijil_psra[".sqlWhereExpr"] = "";
 $tdatasijil_psra[".sqlTail"] = "";
 
 
@@ -254,6 +260,7 @@ $tdatasijil_psra[".listFields"][] = "daftar";
 $tdatasijil_psra[".listFields"][] = "slip";
 $tdatasijil_psra[".listFields"][] = "jana";
 $tdatasijil_psra[".listFields"][] = "siudul";
+$tdatasijil_psra[".listFields"][] = "siudul_sek";
 
 $tdatasijil_psra[".hideMobileList"] = array();
 
@@ -264,8 +271,9 @@ $tdatasijil_psra[".addFields"] = array();
 
 $tdatasijil_psra[".masterListFields"] = array();
 $tdatasijil_psra[".masterListFields"][] = "sZone";
-$tdatasijil_psra[".masterListFields"][] = "sCode";
+$tdatasijil_psra[".masterListFields"][] = "siudul_sek";
 $tdatasijil_psra[".masterListFields"][] = "sid";
+$tdatasijil_psra[".masterListFields"][] = "sCode";
 $tdatasijil_psra[".masterListFields"][] = "sName";
 $tdatasijil_psra[".masterListFields"][] = "eYear";
 $tdatasijil_psra[".masterListFields"][] = "calon";
@@ -1573,6 +1581,120 @@ $tdatasijil_psra[".printFields"] = array();
 
 
 	$tdatasijil_psra["siudul"] = $fdata;
+//	siudul_sek
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 12;
+	$fdata["strName"] = "siudul_sek";
+	$fdata["GoodName"] = "siudul_sek";
+	$fdata["ownerTable"] = "exam_marking";
+	$fdata["Label"] = GetFieldLabel("sijil_psra","siudul_sek");
+	$fdata["FieldType"] = 3;
+
+	
+		$fdata["AutoInc"] = true;
+
+	
+			
+		$fdata["bListPage"] = true;
+
+	
+	
+	
+	
+	
+	
+	
+	
+		$fdata["strField"] = "sid";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "exam_marking.sid";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Custom");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "number";
+
+		$edata["EditParams"] = "";
+		
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+
+
+
+
+	$tdatasijil_psra["siudul_sek"] = $fdata;
 
 
 $tables_data["sijil_psra"]=&$tdatasijil_psra;
@@ -1605,24 +1727,22 @@ function createSqlQuery_sijil_psra()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  school.sZone,  school.sName,  COUNT(exam_marking.sid) AS calon,  exam_marking.sid AS daftar,  exam_marking.sid AS slip,  exam_marking.sid AS jana,  exam_marking.sid AS siudul";
-$proto0["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$proto0["m_strWhere"] = "exam_marking.eType ='PSRA'";
+$proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  school.sZone,  school.sName,  COUNT(exam_marking.sid) AS calon,  exam_marking.sid AS daftar,  exam_marking.sid AS slip,  exam_marking.sid AS jana,  exam_marking.sid AS siudul,  exam_marking.sid AS siudul_sek";
+$proto0["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY exam_marking.eYear DESC";
 $proto0["m_strTail"] = "";
 			$proto0["cipherer"] = null;
 $proto1=array();
-$proto1["m_sql"] = "exam_marking.eType ='PSRA'";
+$proto1["m_sql"] = "";
 $proto1["m_uniontype"] = "SQLL_UNKNOWN";
-						$obj = new SQLField(array(
-	"m_strName" => "eType",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "sijil_psra"
+	$obj = new SQLNonParsed(array(
+	"m_sql" => ""
 ));
 
 $proto1["m_column"]=$obj;
 $proto1["m_contained"] = array();
-$proto1["m_strCase"] = "='PSRA'";
+$proto1["m_strCase"] = "";
 $proto1["m_havingmode"] = false;
 $proto1["m_inBrackets"] = false;
 $proto1["m_useAlias"] = false;
@@ -1807,83 +1927,88 @@ $proto26["m_alias"] = "siudul";
 $obj = new SQLFieldListItem($proto26);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto28=array();
-$proto28["m_link"] = "SQLL_MAIN";
-			$proto29=array();
-$proto29["m_strName"] = "exam_marking";
-$proto29["m_srcTableName"] = "sijil_psra";
-$proto29["m_columns"] = array();
-$proto29["m_columns"][] = "sid";
-$proto29["m_columns"][] = "name";
-$proto29["m_columns"][] = "gender";
-$proto29["m_columns"][] = "birthdate";
-$proto29["m_columns"][] = "birthCert";
-$proto29["m_columns"][] = "nationality";
-$proto29["m_columns"][] = "sCode";
-$proto29["m_columns"][] = "eNo";
-$proto29["m_columns"][] = "eYear";
-$proto29["m_columns"][] = "eType";
-$proto29["m_columns"][] = "s1";
-$proto29["m_columns"][] = "s2";
-$proto29["m_columns"][] = "s3";
-$proto29["m_columns"][] = "s4";
-$proto29["m_columns"][] = "s5";
-$proto29["m_columns"][] = "s6";
-$proto29["m_columns"][] = "s7";
-$obj = new SQLTable($proto29);
+						$proto28=array();
+			$obj = new SQLField(array(
+	"m_strName" => "sid",
+	"m_strTable" => "exam_marking",
+	"m_srcTableName" => "sijil_psra"
+));
 
-$proto28["m_table"] = $obj;
-$proto28["m_sql"] = "exam_marking";
-$proto28["m_alias"] = "";
+$proto28["m_sql"] = "exam_marking.sid";
 $proto28["m_srcTableName"] = "sijil_psra";
-$proto30=array();
-$proto30["m_sql"] = "";
-$proto30["m_uniontype"] = "SQLL_UNKNOWN";
+$proto28["m_expr"]=$obj;
+$proto28["m_alias"] = "siudul_sek";
+$obj = new SQLFieldListItem($proto28);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto30=array();
+$proto30["m_link"] = "SQLL_MAIN";
+			$proto31=array();
+$proto31["m_strName"] = "exam_marking";
+$proto31["m_srcTableName"] = "sijil_psra";
+$proto31["m_columns"] = array();
+$proto31["m_columns"][] = "sid";
+$proto31["m_columns"][] = "name";
+$proto31["m_columns"][] = "gender";
+$proto31["m_columns"][] = "birthdate";
+$proto31["m_columns"][] = "birthCert";
+$proto31["m_columns"][] = "nationality";
+$proto31["m_columns"][] = "sCode";
+$proto31["m_columns"][] = "eNo";
+$proto31["m_columns"][] = "eYear";
+$proto31["m_columns"][] = "eType";
+$proto31["m_columns"][] = "s1";
+$proto31["m_columns"][] = "s2";
+$proto31["m_columns"][] = "s3";
+$proto31["m_columns"][] = "s4";
+$proto31["m_columns"][] = "s5";
+$proto31["m_columns"][] = "s6";
+$proto31["m_columns"][] = "s7";
+$obj = new SQLTable($proto31);
+
+$proto30["m_table"] = $obj;
+$proto30["m_sql"] = "exam_marking";
+$proto30["m_alias"] = "";
+$proto30["m_srcTableName"] = "sijil_psra";
+$proto32=array();
+$proto32["m_sql"] = "";
+$proto32["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto30["m_column"]=$obj;
-$proto30["m_contained"] = array();
-$proto30["m_strCase"] = "";
-$proto30["m_havingmode"] = false;
-$proto30["m_inBrackets"] = false;
-$proto30["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto30);
+$proto32["m_column"]=$obj;
+$proto32["m_contained"] = array();
+$proto32["m_strCase"] = "";
+$proto32["m_havingmode"] = false;
+$proto32["m_inBrackets"] = false;
+$proto32["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto32);
 
-$proto28["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto28);
+$proto30["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto30);
 
 $proto0["m_fromlist"][]=$obj;
-												$proto32=array();
-$proto32["m_link"] = "SQLL_INNERJOIN";
-			$proto33=array();
-$proto33["m_strName"] = "school";
-$proto33["m_srcTableName"] = "sijil_psra";
-$proto33["m_columns"] = array();
-$proto33["m_columns"][] = "sno";
-$proto33["m_columns"][] = "sName";
-$proto33["m_columns"][] = "sCenter";
-$proto33["m_columns"][] = "sCode";
-$proto33["m_columns"][] = "sZone";
-$proto33["m_columns"][] = "sType";
-$obj = new SQLTable($proto33);
+												$proto34=array();
+$proto34["m_link"] = "SQLL_LEFTJOIN";
+			$proto35=array();
+$proto35["m_strName"] = "school";
+$proto35["m_srcTableName"] = "sijil_psra";
+$proto35["m_columns"] = array();
+$proto35["m_columns"][] = "sno";
+$proto35["m_columns"][] = "sName";
+$proto35["m_columns"][] = "sCenter";
+$proto35["m_columns"][] = "sCode";
+$proto35["m_columns"][] = "sZone";
+$proto35["m_columns"][] = "sType";
+$obj = new SQLTable($proto35);
 
-$proto32["m_table"] = $obj;
-$proto32["m_sql"] = "INNER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$proto32["m_alias"] = "";
-$proto32["m_srcTableName"] = "sijil_psra";
-$proto34=array();
-$proto34["m_sql"] = "exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
-$proto34["m_uniontype"] = "SQLL_AND";
-	$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType"
-));
-
-$proto34["m_column"]=$obj;
-$proto34["m_contained"] = array();
-						$proto36=array();
+$proto34["m_table"] = $obj;
+$proto34["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto34["m_alias"] = "";
+$proto34["m_srcTableName"] = "sijil_psra";
+$proto36=array();
 $proto36["m_sql"] = "exam_marking.sCode = school.sCode";
 $proto36["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
@@ -1900,39 +2025,25 @@ $proto36["m_inBrackets"] = false;
 $proto36["m_useAlias"] = false;
 $obj = new SQLLogicalExpr($proto36);
 
-			$proto34["m_contained"][]=$obj;
-						$proto38=array();
-$proto38["m_sql"] = "exam_marking.eType = school.sType";
-$proto38["m_uniontype"] = "SQLL_UNKNOWN";
+$proto34["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto34);
+
+$proto0["m_fromlist"][]=$obj;
+$proto0["m_groupby"] = array();
+												$proto38=array();
 						$obj = new SQLField(array(
-	"m_strName" => "eType",
+	"m_strName" => "sCode",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "sijil_psra"
 ));
 
 $proto38["m_column"]=$obj;
-$proto38["m_contained"] = array();
-$proto38["m_strCase"] = "= school.sType";
-$proto38["m_havingmode"] = false;
-$proto38["m_inBrackets"] = false;
-$proto38["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto38);
+$obj = new SQLGroupByItem($proto38);
 
-			$proto34["m_contained"][]=$obj;
-$proto34["m_strCase"] = "";
-$proto34["m_havingmode"] = false;
-$proto34["m_inBrackets"] = false;
-$proto34["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto34);
-
-$proto32["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto32);
-
-$proto0["m_fromlist"][]=$obj;
-$proto0["m_groupby"] = array();
+$proto0["m_groupby"][]=$obj;
 												$proto40=array();
 						$obj = new SQLField(array(
-	"m_strName" => "sCode",
+	"m_strName" => "eYear",
 	"m_strTable" => "exam_marking",
 	"m_srcTableName" => "sijil_psra"
 ));
@@ -1941,6 +2052,7 @@ $proto40["m_column"]=$obj;
 $obj = new SQLGroupByItem($proto40);
 
 $proto0["m_groupby"][]=$obj;
+$proto0["m_orderby"] = array();
 												$proto42=array();
 						$obj = new SQLField(array(
 	"m_strName" => "eYear",
@@ -1949,21 +2061,9 @@ $proto0["m_groupby"][]=$obj;
 ));
 
 $proto42["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto42);
-
-$proto0["m_groupby"][]=$obj;
-$proto0["m_orderby"] = array();
-												$proto44=array();
-						$obj = new SQLField(array(
-	"m_strName" => "eYear",
-	"m_strTable" => "exam_marking",
-	"m_srcTableName" => "sijil_psra"
-));
-
-$proto44["m_column"]=$obj;
-$proto44["m_bAsc"] = 0;
-$proto44["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto44);
+$proto42["m_bAsc"] = 0;
+$proto42["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto42);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="sijil_psra";		
@@ -1975,7 +2075,7 @@ $queryData_sijil_psra = createSqlQuery_sijil_psra();
 
 
 
-											
+												
 
 $tdatasijil_psra[".sqlquery"] = $queryData_sijil_psra;
 

@@ -51,6 +51,11 @@ $query_at=db_query($sql_at,$conn);
 $row_at=db_fetch_array($query_at);
 $_SESSION['alevel']=$row_at['alevel'];
 $_SESSION['zon']=$data['zon'];
+
+//alevel 1 is for PPTAD
+//alevel 2 is for Key-in-Markah
+
+//admin is alevel -1
 ;		
 } // function AfterSuccessfulLogin
 

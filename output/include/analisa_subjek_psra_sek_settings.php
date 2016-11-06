@@ -235,7 +235,7 @@ else
 $tdataanalisa_subjek_psra_sek[".rowHighlite"] = true;
 
 
-																				
+																			
 $tdataanalisa_subjek_psra_sek[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -321,7 +321,7 @@ $tdataanalisa_subjek_psra_sek[".strOrderBy"] = $tstrOrderBy;
 $tdataanalisa_subjek_psra_sek[".orderindexes"] = array();
 
 $tdataanalisa_subjek_psra_sek[".sqlHead"] = "SELECT sid,  sCode,  sZone,  eYear,  eType,  sName,  s1TH,  s1DF,  s1MQ,  s1JD,  s1JJ,  s1MZ,  (s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1calon,  (s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1lulus,  1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1gagal,  s2TH,  s2DF,  s2MQ,  s2JD,  s2JJ,  s2MZ,  (s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2calon,  (s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2lulus,  1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2gagal,  s3TH,  s3DF,  s3MQ,  s3JD,  s3JJ,  s3MZ,  (s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3calon,  (s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3lulus,  1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3gagal,  s4TH,  s4DF,  s4MQ,  s4JD,  s4JJ,  s4MZ,  (s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4calon,  (s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4lulus,  1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4gagal,  s5TH,  s5DF,  s5MQ,  s5JD,  s5JJ,  s5MZ,  (s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5calon,  (s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5lulus,  1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5gagal,  s6TH,  s6DF,  s6MQ,  s6JD,  s6JJ,  s6MZ,  (s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6calon,  (s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6lulus,  1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6gagal";
-$tdataanalisa_subjek_psra_sek[".sqlFrom"] = "FROM (  		SELECT  sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sCode, eYear  ) AS Sub1";
+$tdataanalisa_subjek_psra_sek[".sqlFrom"] = "FROM (  		SELECT  sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sCode, eYear  ) AS Sub1";
 $tdataanalisa_subjek_psra_sek[".sqlWhereExpr"] = "";
 $tdataanalisa_subjek_psra_sek[".sqlTail"] = "";
 
@@ -7523,7 +7523,7 @@ function createSqlQuery_analisa_subjek_psra_sek()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "sid,  sCode,  sZone,  eYear,  eType,  sName,  s1TH,  s1DF,  s1MQ,  s1JD,  s1JJ,  s1MZ,  (s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1calon,  (s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1lulus,  1-(s1MQ+s1JD+s1JJ+s1MZ)/(s1DF+s1MQ+s1JD+s1JJ+s1MZ) AS s1gagal,  s2TH,  s2DF,  s2MQ,  s2JD,  s2JJ,  s2MZ,  (s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2calon,  (s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2lulus,  1-(s2MQ+s2JD+s2JJ+s2MZ)/(s2DF+s2MQ+s2JD+s2JJ+s2MZ) AS s2gagal,  s3TH,  s3DF,  s3MQ,  s3JD,  s3JJ,  s3MZ,  (s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3calon,  (s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3lulus,  1-(s3MQ+s3JD+s3JJ+s3MZ)/(s3DF+s3MQ+s3JD+s3JJ+s3MZ) AS s3gagal,  s4TH,  s4DF,  s4MQ,  s4JD,  s4JJ,  s4MZ,  (s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4calon,  (s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4lulus,  1-(s4MQ+s4JD+s4JJ+s4MZ)/(s4DF+s4MQ+s4JD+s4JJ+s4MZ) AS s4gagal,  s5TH,  s5DF,  s5MQ,  s5JD,  s5JJ,  s5MZ,  (s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5calon,  (s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5lulus,  1-(s5MQ+s5JD+s5JJ+s5MZ)/(s5DF+s5MQ+s5JD+s5JJ+s5MZ) AS s5gagal,  s6TH,  s6DF,  s6MQ,  s6JD,  s6JJ,  s6MZ,  (s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6calon,  (s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6lulus,  1-(s6MQ+s6JD+s6JJ+s6MZ)/(s6DF+s6MQ+s6JD+s6JJ+s6MZ) AS s6gagal";
-$proto0["m_strFrom"] = "FROM (  		SELECT  sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sCode, eYear  ) AS Sub1";
+$proto0["m_strFrom"] = "FROM (  		SELECT  sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sCode, eYear  ) AS Sub1";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
 $proto0["m_strTail"] = "";
@@ -8366,8 +8366,8 @@ $proto0["m_fromlist"] = array();
 $proto125["m_link"] = "SQLL_MAIN";
 			$proto126=array();
 $proto126["m_strHead"] = "  		SELECT";
-$proto126["m_strFieldList"] = "sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName";
-$proto126["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto126["m_strFieldList"] = "sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName";
+$proto126["m_strFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
 $proto126["m_strWhere"] = "";
 $proto126["m_strOrderBy"] = "";
 $proto126["m_strTail"] = "";
@@ -8490,7 +8490,7 @@ $proto143["m_arguments"] = array();
 $proto144["m_functiontype"] = "SQLF_CUSTOM";
 $proto144["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s1='TH'"
+	"m_sql" => "exam_marking.s1 LIKE '%TH%'"
 ));
 
 $proto144["m_arguments"][]=$obj;
@@ -8511,7 +8511,7 @@ $proto143["m_arguments"][]=$obj;
 $proto143["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto143);
 
-$proto142["m_sql"] = "COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL))";
+$proto142["m_sql"] = "COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto142["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto142["m_expr"]=$obj;
 $proto142["m_alias"] = "s1TH";
@@ -8526,7 +8526,7 @@ $proto149["m_arguments"] = array();
 $proto150["m_functiontype"] = "SQLF_CUSTOM";
 $proto150["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s1!='TH' AND exam_marking.s1<40"
+	"m_sql" => "exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40"
 ));
 
 $proto150["m_arguments"][]=$obj;
@@ -8547,7 +8547,7 @@ $proto149["m_arguments"][]=$obj;
 $proto149["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto149);
 
-$proto148["m_sql"] = "COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL))";
+$proto148["m_sql"] = "COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL))";
 $proto148["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto148["m_expr"]=$obj;
 $proto148["m_alias"] = "s1DF";
@@ -8706,7 +8706,7 @@ $proto179["m_arguments"] = array();
 $proto180["m_functiontype"] = "SQLF_CUSTOM";
 $proto180["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s2='TH'"
+	"m_sql" => "exam_marking.s2 LIKE '%TH%'"
 ));
 
 $proto180["m_arguments"][]=$obj;
@@ -8727,7 +8727,7 @@ $proto179["m_arguments"][]=$obj;
 $proto179["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto179);
 
-$proto178["m_sql"] = "COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL))";
+$proto178["m_sql"] = "COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto178["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto178["m_expr"]=$obj;
 $proto178["m_alias"] = "s2TH";
@@ -8742,7 +8742,7 @@ $proto185["m_arguments"] = array();
 $proto186["m_functiontype"] = "SQLF_CUSTOM";
 $proto186["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s2!='TH' AND exam_marking.s2<40"
+	"m_sql" => "exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40"
 ));
 
 $proto186["m_arguments"][]=$obj;
@@ -8763,7 +8763,7 @@ $proto185["m_arguments"][]=$obj;
 $proto185["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto185);
 
-$proto184["m_sql"] = "COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL))";
+$proto184["m_sql"] = "COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL))";
 $proto184["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto184["m_expr"]=$obj;
 $proto184["m_alias"] = "s2DF";
@@ -8922,7 +8922,7 @@ $proto215["m_arguments"] = array();
 $proto216["m_functiontype"] = "SQLF_CUSTOM";
 $proto216["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s3='TH'"
+	"m_sql" => "exam_marking.s3 LIKE '%TH%'"
 ));
 
 $proto216["m_arguments"][]=$obj;
@@ -8943,7 +8943,7 @@ $proto215["m_arguments"][]=$obj;
 $proto215["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto215);
 
-$proto214["m_sql"] = "COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL))";
+$proto214["m_sql"] = "COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto214["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto214["m_expr"]=$obj;
 $proto214["m_alias"] = "s3TH";
@@ -8958,7 +8958,7 @@ $proto221["m_arguments"] = array();
 $proto222["m_functiontype"] = "SQLF_CUSTOM";
 $proto222["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s3!='TH' AND exam_marking.s3<40"
+	"m_sql" => "exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40"
 ));
 
 $proto222["m_arguments"][]=$obj;
@@ -8979,7 +8979,7 @@ $proto221["m_arguments"][]=$obj;
 $proto221["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto221);
 
-$proto220["m_sql"] = "COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL))";
+$proto220["m_sql"] = "COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL))";
 $proto220["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto220["m_expr"]=$obj;
 $proto220["m_alias"] = "s3DF";
@@ -9138,7 +9138,7 @@ $proto251["m_arguments"] = array();
 $proto252["m_functiontype"] = "SQLF_CUSTOM";
 $proto252["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s4='TH'"
+	"m_sql" => "exam_marking.s4 LIKE '%TH%'"
 ));
 
 $proto252["m_arguments"][]=$obj;
@@ -9159,7 +9159,7 @@ $proto251["m_arguments"][]=$obj;
 $proto251["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto251);
 
-$proto250["m_sql"] = "COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL))";
+$proto250["m_sql"] = "COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto250["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto250["m_expr"]=$obj;
 $proto250["m_alias"] = "s4TH";
@@ -9174,7 +9174,7 @@ $proto257["m_arguments"] = array();
 $proto258["m_functiontype"] = "SQLF_CUSTOM";
 $proto258["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s4!='TH' AND exam_marking.s4<40"
+	"m_sql" => "exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40"
 ));
 
 $proto258["m_arguments"][]=$obj;
@@ -9195,7 +9195,7 @@ $proto257["m_arguments"][]=$obj;
 $proto257["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto257);
 
-$proto256["m_sql"] = "COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL))";
+$proto256["m_sql"] = "COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL))";
 $proto256["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto256["m_expr"]=$obj;
 $proto256["m_alias"] = "s4DF";
@@ -9354,7 +9354,7 @@ $proto287["m_arguments"] = array();
 $proto288["m_functiontype"] = "SQLF_CUSTOM";
 $proto288["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s5='TH'"
+	"m_sql" => "exam_marking.s5 LIKE '%TH%'"
 ));
 
 $proto288["m_arguments"][]=$obj;
@@ -9375,7 +9375,7 @@ $proto287["m_arguments"][]=$obj;
 $proto287["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto287);
 
-$proto286["m_sql"] = "COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL))";
+$proto286["m_sql"] = "COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto286["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto286["m_expr"]=$obj;
 $proto286["m_alias"] = "s5TH";
@@ -9390,7 +9390,7 @@ $proto293["m_arguments"] = array();
 $proto294["m_functiontype"] = "SQLF_CUSTOM";
 $proto294["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s5!='TH' AND exam_marking.s5<40"
+	"m_sql" => "exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40"
 ));
 
 $proto294["m_arguments"][]=$obj;
@@ -9411,7 +9411,7 @@ $proto293["m_arguments"][]=$obj;
 $proto293["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto293);
 
-$proto292["m_sql"] = "COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL))";
+$proto292["m_sql"] = "COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL))";
 $proto292["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto292["m_expr"]=$obj;
 $proto292["m_alias"] = "s5DF";
@@ -9570,7 +9570,7 @@ $proto323["m_arguments"] = array();
 $proto324["m_functiontype"] = "SQLF_CUSTOM";
 $proto324["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s6='TH'"
+	"m_sql" => "exam_marking.s6 LIKE '%TH%'"
 ));
 
 $proto324["m_arguments"][]=$obj;
@@ -9591,7 +9591,7 @@ $proto323["m_arguments"][]=$obj;
 $proto323["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto323);
 
-$proto322["m_sql"] = "COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL))";
+$proto322["m_sql"] = "COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL))";
 $proto322["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto322["m_expr"]=$obj;
 $proto322["m_alias"] = "s6TH";
@@ -9606,7 +9606,7 @@ $proto329["m_arguments"] = array();
 $proto330["m_functiontype"] = "SQLF_CUSTOM";
 $proto330["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
-	"m_sql" => "exam_marking.s6!='TH' AND exam_marking.s6<40"
+	"m_sql" => "exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40"
 ));
 
 $proto330["m_arguments"][]=$obj;
@@ -9627,7 +9627,7 @@ $proto329["m_arguments"][]=$obj;
 $proto329["m_strFunctionName"] = "COUNT";
 $obj = new SQLFunctionCall($proto329);
 
-$proto328["m_sql"] = "COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL))";
+$proto328["m_sql"] = "COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL))";
 $proto328["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto328["m_expr"]=$obj;
 $proto328["m_alias"] = "s6DF";
@@ -9866,7 +9866,7 @@ $proto367["m_columns"][] = "sType";
 $obj = new SQLTable($proto367);
 
 $proto366["m_table"] = $obj;
-$proto366["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto366["m_sql"] = "LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
 $proto366["m_alias"] = "";
 $proto366["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto368=array();
@@ -9918,7 +9918,7 @@ $proto126["m_srcTableName"]="analisa_subjek_psra_sek";
 $obj = new SQLQuery($proto126);
 
 $proto125["m_table"] = $obj;
-$proto125["m_sql"] = "(  		SELECT  sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1='TH', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1!='TH' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2='TH', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2!='TH' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3='TH', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3!='TH' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4='TH', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4!='TH' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5='TH', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5!='TH' AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6='TH', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6!='TH' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName  FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sCode, eYear  ) AS Sub1";
+$proto125["m_sql"] = "(  		SELECT  sid,  exam_marking.sCode,  eYear,  eType,  COUNT(sid) AS totalCalon,  COUNT(if(exam_marking.s1 LIKE '%TH%', exam_marking.sid, NULL)) AS s1TH,  COUNT(if(exam_marking.s1 NOT LIKE '%TH%' AND exam_marking.s1<40, exam_marking.sid, NULL)) AS s1DF,  COUNT(if(exam_marking.s1>=40 AND exam_marking.s1<60, exam_marking.sid, NULL)) AS s1MQ,  COUNT(if(exam_marking.s1>=60 AND exam_marking.s1<75, exam_marking.sid, NULL)) AS s1JD,  COUNT(if(exam_marking.s1>=75 AND exam_marking.s1<90, exam_marking.sid, NULL)) AS s1JJ,  COUNT(if(exam_marking.s1>=90, exam_marking.sid, NULL)) AS s1MZ,  COUNT(if(exam_marking.s2 LIKE '%TH%', exam_marking.sid, NULL)) AS s2TH,  COUNT(if(exam_marking.s2 NOT LIKE '%TH%' AND exam_marking.s2<40, exam_marking.sid, NULL)) AS s2DF,  COUNT(if(exam_marking.s2>=40 AND exam_marking.s2<60, exam_marking.sid, NULL)) AS s2MQ,  COUNT(if(exam_marking.s2>=60 AND exam_marking.s2<75, exam_marking.sid, NULL)) AS s2JD,  COUNT(if(exam_marking.s2>=75 AND exam_marking.s2<90, exam_marking.sid, NULL)) AS s2JJ,  COUNT(if(exam_marking.s2>=90, exam_marking.sid, NULL)) AS s2MZ,  COUNT(if(exam_marking.s3 LIKE '%TH%', exam_marking.sid, NULL)) AS s3TH,  COUNT(if(exam_marking.s3 NOT LIKE '%TH%' AND exam_marking.s3<40, exam_marking.sid, NULL)) AS s3DF,  COUNT(if(exam_marking.s3>=40 AND exam_marking.s3<60, exam_marking.sid, NULL)) AS s3MQ,  COUNT(if(exam_marking.s3>=60 AND exam_marking.s3<75, exam_marking.sid, NULL)) AS s3JD,  COUNT(if(exam_marking.s3>=75 AND exam_marking.s3<90, exam_marking.sid, NULL)) AS s3JJ,  COUNT(if(exam_marking.s3>=90, exam_marking.sid, NULL)) AS s3MZ,  COUNT(if(exam_marking.s4 LIKE '%TH%', exam_marking.sid, NULL)) AS s4TH,  COUNT(if(exam_marking.s4 NOT LIKE '%TH%' AND exam_marking.s4<40, exam_marking.sid, NULL)) AS s4DF,  COUNT(if(exam_marking.s4>=40 AND exam_marking.s4<60, exam_marking.sid, NULL)) AS s4MQ,  COUNT(if(exam_marking.s4>=60 AND exam_marking.s4<75, exam_marking.sid, NULL)) AS s4JD,  COUNT(if(exam_marking.s4>=75 AND exam_marking.s4<90, exam_marking.sid, NULL)) AS s4JJ,  COUNT(if(exam_marking.s4>=90 AND exam_marking.s4<=100, exam_marking.sid, NULL)) AS s4MZ,  COUNT(if(exam_marking.s5 LIKE '%TH%', exam_marking.sid, NULL)) AS s5TH,  COUNT(if(exam_marking.s5 NOT LIKE '%TH%'AND exam_marking.s5<40, exam_marking.sid, NULL)) AS s5DF,  COUNT(if(exam_marking.s5>=40 AND exam_marking.s5<60, exam_marking.sid, NULL)) AS s5MQ,  COUNT(if(exam_marking.s5>=60 AND exam_marking.s5<75, exam_marking.sid, NULL)) AS s5JD,  COUNT(if(exam_marking.s5>=75 AND exam_marking.s5<90, exam_marking.sid, NULL)) AS s5JJ,  COUNT(if(exam_marking.s5>=90, exam_marking.sid, NULL)) AS s5MZ,  COUNT(if(exam_marking.s6 LIKE '%TH%', exam_marking.sid, NULL)) AS s6TH,  COUNT(if(exam_marking.s6 NOT LIKE '%TH%' AND exam_marking.s6<40, exam_marking.sid, NULL)) AS s6DF,  COUNT(if(exam_marking.s6>=40 AND exam_marking.s6<60, exam_marking.sid, NULL)) AS s6MQ,  COUNT(if(exam_marking.s6>=60 AND exam_marking.s6<75, exam_marking.sid, NULL)) AS s6JD,  COUNT(if(exam_marking.s6>=75 AND exam_marking.s6<90, exam_marking.sid, NULL)) AS s6JJ,  COUNT(if(exam_marking.s6>=90, exam_marking.sid, NULL)) AS s6MZ,  sZone,  sName  FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode  GROUP BY sCode, eYear  ) AS Sub1";
 $proto125["m_alias"] = "Sub1";
 $proto125["m_srcTableName"] = "analisa_subjek_psra_sek";
 $proto374=array();

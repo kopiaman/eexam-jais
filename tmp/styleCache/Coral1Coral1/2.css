@@ -32,7 +32,7 @@ background-color:#F9F9F9;
 
 background: none;
 background-color:#F9F9F9;
-background-image: url('img2/sprite1.png?225110265');
+background-image: url('img2/sprite1.png?231401453');
 background-position: 0px 0px;
 background-repeat: repeat-x;
 }
@@ -53,7 +53,7 @@ background-color:#F9F9F9;
 
 background: none;
 background-color:#F9F9F9;
-background-image: url('img2/sprite2.png?225110265');
+background-image: url('img2/sprite2.png?231401453');
 background-position: left top;
 background-repeat: repeat-x;
 }
@@ -333,7 +333,7 @@ height:29px;
 .preview  .runner-wrapper .runner-s-2 .runner-cc  span.runner-btnframe > .runner-btnleft,
 .preview  .runner-wrapper .runner-s-2 .runner-cc  span.runner-btnframe > .runner-btnright
 {
-background-image: url('btnbutton1/sprite1.png?225110218')
+background-image: url('btnbutton1/sprite1.png?231401406')
 }
 .preview .runner-s-2 .runner-cc  span.runner-btnframe > .runner-btnleft,
 .preview .runner-s-2 .runner-cc  span.runner-btnframe > .runner-btnright,
@@ -432,7 +432,7 @@ background-color:#EFEFEF;
 
 background: none;
 background-color:#EFEFEF;
-background-image: url('imgdisabled-2/sprite1.png?225110265');
+background-image: url('imgdisabled-2/sprite1.png?231401453');
 background-position: 0px 0px;
 background-repeat: repeat-x;
 }
@@ -453,7 +453,7 @@ background-color:#EFEFEF;
 
 background: none;
 background-color:#EFEFEF;
-background-image: url('imgdisabled-2/sprite2.png?225110265');
+background-image: url('imgdisabled-2/sprite2.png?231401453');
 background-position: left top;
 background-repeat: repeat-x;
 }
@@ -733,7 +733,7 @@ height:29px;
 .preview  .runner-wrapper .runner-s-disabled-2 .runner-cc  span.runner-btnframe > .runner-btnleft,
 .preview  .runner-wrapper .runner-s-disabled-2 .runner-cc  span.runner-btnframe > .runner-btnright
 {
-background-image: url('btndisabledbutton1/sprite1.png?225110250')
+background-image: url('btndisabledbutton1/sprite1.png?231401437')
 }
 .preview .runner-s-disabled-2 .runner-cc  span.runner-btnframe > .runner-btnleft,
 .preview .runner-s-disabled-2 .runner-cc  span.runner-btnframe > .runner-btnright,

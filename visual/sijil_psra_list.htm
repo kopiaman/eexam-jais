@@ -3,7 +3,7 @@
 <META http-equiv="X-UA-Compatible" content="IE=Edge"> <TITLE>{$pagetitle} </TITLE> 
 <META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <LINK href="styles/default.css" rel="stylesheet" type="text/css"> {BEGIN rtlCSS}<LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">{END rtlCSS} {BEGIN styleCSSFiles}<LINK href="{$stylepath}" rel="stylesheet" type="text/css">{END styleCSSFiles} {BEGIN pageCSSFiles}<LINK href="{$pagestylepath}" rel="stylesheet" type="text/css">{END pageCSSFiles} 
-<META name="GENERATOR" content="MSHTML 11.00.9600.18125"></HEAD> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18125"> </HEAD> 
 <BODY class="{$stylename} function-list" {$bodyattrs}>{BEGIN body}
 
 {$header} 
@@ -118,46 +118,46 @@ Add field </A> </SPAN> <A class="rnr-button" id="showHideSearchType{$id}" href="
 {$message} </DIV></DIV>{END message_block}</DIV>{END container_message}</DIV>
 <DIV class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_grid} rnr-wrapper rnr-cbw-grid">
 {BEGIN container_grid}
-{BEGIN grid_block}<TABLE class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable hoverable" style="width: 961px;" cellpadding="0">
+{BEGIN grid_block}<TABLE class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable hoverable" bordercolor style="width: 961px;" bgcolor border="0" rules cellspacing="2" cellpadding="0" class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable hoverable">
   <THEAD>{BEGIN grid_header}
   <TR class="rnr-toprow style1 {$gridHeader_class}">{BEGIN record_header}
-    {BEGIN listIcons_column}<TH style="width: 39px;" ieditcont="all"> &nbsp;</TH>
-    {END listIcons_column}{BEGIN sCode_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$sCode_class}" style="width: 74px;">{BEGIN sCode_fieldheader}<SPAN {$sCode_orderlinkattrs}>
+    {BEGIN listIcons_column}<TH style="width: 39px;" rowspan="1" colspan="1" ieditcont="all"> 
+      &nbsp;</TH>
+    {END listIcons_column}{BEGIN sCode_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$sCode_class}" style="width: 74px;" rowspan="1" colspan="1">{BEGIN sCode_fieldheader}<SPAN {$sCode_orderlinkattrs}>
       {$label sijil_psra sCode} </SPAN> {END sCode_fieldheader}</TH>
-    {END sCode_fieldheadercolumn}{BEGIN sName_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$sName_class}" style="width: 400px;">{BEGIN sName_fieldheader}<SPAN {$sName_orderlinkattrs}>
+    {END sCode_fieldheadercolumn}{BEGIN sName_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$sName_class}" style="width: 400px;" rowspan="1" colspan="1">{BEGIN sName_fieldheader}<SPAN {$sName_orderlinkattrs}>
       {$label sijil_psra sName} </SPAN> {END sName_fieldheader}</TH>
-    {END sName_fieldheadercolumn}{BEGIN eYear_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$eYear_class}" style="width: 67px;">{BEGIN eYear_fieldheader}<SPAN {$eYear_orderlinkattrs}>
+    {END sName_fieldheadercolumn}{BEGIN eYear_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$eYear_class}" style="width: 67px;" rowspan="1" colspan="1">{BEGIN eYear_fieldheader}<SPAN {$eYear_orderlinkattrs}>
       {$label sijil_psra eYear} </SPAN> {END eYear_fieldheader}</TH>
-    {END eYear_fieldheadercolumn}{BEGIN calon_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$calon_class}" style="width: 65px;">{BEGIN calon_fieldheader}<SPAN {$calon_orderlinkattrs}>
+    {END eYear_fieldheadercolumn}{BEGIN calon_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$calon_class}" style="width: 65px;" rowspan="1" colspan="1">{BEGIN calon_fieldheader}<SPAN {$calon_orderlinkattrs}>
       {$label sijil_psra calon} </SPAN> {END calon_fieldheader}</TH>
-    {END calon_fieldheadercolumn}{BEGIN jana_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$jana_class}" style="width: 107px;">{BEGIN jana_fieldheader}<SPAN {$jana_orderlinkattrs}>
+    {END calon_fieldheadercolumn}{BEGIN jana_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$jana_class}" style="width: 107px;" rowspan="1" colspan="1">{BEGIN jana_fieldheader}<SPAN {$jana_orderlinkattrs}>
       {$label sijil_psra jana} </SPAN> {END jana_fieldheader}</TH>
-    {END jana_fieldheadercolumn}{BEGIN siudul_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$siudul_class}">{BEGIN siudul_fieldheader}<SPAN {$siudul_orderlinkattrs}>
+    {END jana_fieldheadercolumn}{BEGIN siudul_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$siudul_class}" rowspan="1" colspan="1">{BEGIN siudul_fieldheader}<SPAN {$siudul_orderlinkattrs}>
       {$label sijil_psra siudul} </SPAN> {END siudul_fieldheader}</TH>
-    {END siudul_fieldheadercolumn}<TH class="rnr-edge" style="width: 23px;"> &nbsp;</TH>
-    {BEGIN endrecordheader_block}<TH class="rnr-cs" style="width: 7px;"> &nbsp;
-</TH>{END endrecordheader_block}{END record_header}</TR>{END grid_header}</THEAD>
+    {END siudul_fieldheadercolumn}{BEGIN siudul_sek_fieldheadercolumn}<TH class="rnr-gridfieldlabel {$siudul_sek_class}" rowspan="1" colspan="1">{BEGIN siudul_sek_fieldheader}<SPAN {$siudul_sek_orderlinkattrs}>
+      {$label sijil_psra siudul_sek} </SPAN> {END siudul_sek_fieldheader}</TH>
+    {END siudul_sek_fieldheadercolumn}{BEGIN endrecordheader_block}<TH class="rnr-cs" style="width: 7px;" rowspan="1" colspan="1"> 
+      &nbsp;</TH>{END endrecordheader_block}{END record_header}</TR>{END grid_header}</THEAD>
   <TBODY>
   {BEGIN grid_row}<TR class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>{BEGIN grid_record}
-    {BEGIN listIcons_column}<TD class="rnr-cc rnr-bc rnr-icons" style="width: 39px;" ieditcont="all" {$rowstyle} {$recordattrs}></TD>
-    {END listIcons_column}{BEGIN sCode_fieldcolumn}<TD class="{$sCode_class}" style="width: 74px;" {$sCode_style} {$recordattrs}>
+    {BEGIN listIcons_column}<TD class="rnr-cc rnr-bc rnr-icons" style="width: 39px;" rowspan="1" colspan="1" ieditcont="all" {$rowstyle} {$recordattrs}></TD>
+    {END listIcons_column}{BEGIN sCode_fieldcolumn}<TD class="{$sCode_class}" style="width: 74px;" rowspan="1" colspan="1" {$sCode_style} {$recordattrs}>
       {$sCode_value} </TD>
-    {END sCode_fieldcolumn}{BEGIN sName_fieldcolumn}<TD class="{$sName_class}" style="width: 160px;" {$sName_style} {$recordattrs}>
+    {END sCode_fieldcolumn}{BEGIN sName_fieldcolumn}<TD class="{$sName_class}" style="width: 160px;" rowspan="1" colspan="1" {$sName_style} {$recordattrs}>
       {$sName_value} </TD>
-    {END sName_fieldcolumn}{BEGIN eYear_fieldcolumn}<TD class="{$eYear_class}" style="width: 67px;" {$eYear_style} {$recordattrs}>
+    {END sName_fieldcolumn}{BEGIN eYear_fieldcolumn}<TD class="{$eYear_class}" style="width: 67px;" rowspan="1" colspan="1" {$eYear_style} {$recordattrs}>
       {$eYear_value} </TD>
-    {END eYear_fieldcolumn}{BEGIN calon_fieldcolumn}<TD class="{$calon_class}" style="width: 65px;" {$calon_style} {$recordattrs}>
+    {END eYear_fieldcolumn}{BEGIN calon_fieldcolumn}<TD class="{$calon_class}" style="width: 65px;" rowspan="1" colspan="1" {$calon_style} {$recordattrs}>
       {$calon_value} </TD>
-    {END calon_fieldcolumn}{BEGIN jana_fieldcolumn}<TD class="{$jana_class}" style="width: 107px;" {$jana_style} {$recordattrs}>
-      {$jana_value} <A class="rnr-button button" id="Sijil" href="#" typeid="ib">&nbsp;View&nbsp;</A> </TD>
-    {END jana_fieldcolumn}{BEGIN siudul_fieldcolumn}<TD class="{$siudul_class}" {$siudul_style} {$recordattrs}>
-      {$siudul_value} 
-      <A class="rnr-button button" id="Siudul" href="#" typeid="ib">&nbsp;View&nbsp;</A> 
-    </TD>
-    {END siudul_fieldcolumn}<TD class="rnr-edge" style="width: 23px;" {$recordattrs}><STRONG>&nbsp;&nbsp;&nbsp;</STRONG>&nbsp;
-    </TD>
-    {BEGIN endrecord_block}<TD class="rnr-cs" style="width: 7px;" {$endrecordblock_attrs}> 
-      &nbsp;</TD>{END endrecord_block}{END grid_record}</TR>{END grid_row}</TBODY></TABLE>{END grid_block}{END container_grid}</DIV>
+    {END calon_fieldcolumn}{BEGIN jana_fieldcolumn}<TD class="{$jana_class}" style="width: 107px;" rowspan="1" colspan="1" {$jana_style} {$recordattrs}>
+      {$jana_value} <A class="rnr-button button" id="Sijil" href="#" typeid="ib"> 
+      &nbsp;View&nbsp; </A> </TD>
+    {END jana_fieldcolumn}{BEGIN siudul_fieldcolumn}<TD class="{$siudul_class}" rowspan="1" colspan="1" {$siudul_style} {$recordattrs}>
+      {$siudul_value} <A class="rnr-button button" id="Siudul" href="#" typeid="ib"> Jbtn </A> </TD>
+    {END siudul_fieldcolumn}{BEGIN siudul_sek_fieldcolumn}<TD class="{$siudul_sek_class}" rowspan="1" colspan="1" {$siudul_sek_style} {$recordattrs}><STRONG></STRONG>
+      {$siudul_sek_value}<A class="rnr-button button" id="Sek" href="#" typeid="ib">Sek</A> </TD>
+    {END siudul_sek_fieldcolumn}{BEGIN endrecord_block}<TD class="rnr-cs" style="width: 7px;" rowspan="1" colspan="1" {$endrecordblock_attrs}> &nbsp;</TD>{END endrecord_block}{END grid_record}</TR>{END grid_row}</TBODY></TABLE>{END grid_block}{END container_grid}</DIV>
 <DIV class="rnr-brickcontents style1 rnr-b-wrapper {$wrapperclass_pagination} rnr-wrapper rnr-cbw-pagination">
 {BEGIN container_pagination}
 <DIV class="rnr-c rnr-ch rnr-c-pagination">

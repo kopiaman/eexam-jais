@@ -55,8 +55,6 @@ include_once(getabspath("include/exam_marking_events.php"));
 $tableEvents["exam_marking"] = new eventclass_exam_marking;
 include_once(getabspath("include/semakan_events.php"));
 $tableEvents["semakan"] = new eventclass_semakan;
-include_once(getabspath("include/sijil_psra_events.php"));
-$tableEvents["sijil_psra"] = new eventclass_sijil_psra;
 include_once(getabspath("include/analisa_kelulusan_psra_sek_events.php"));
 $tableEvents["analisa_kelulusan_psra_sek"] = new eventclass_analisa_kelulusan_psra_sek;
 include_once(getabspath("include/gps_psra_sek_events.php"));
@@ -109,6 +107,8 @@ include_once(getabspath("include/marking_TJ_events.php"));
 $tableEvents["marking_TJ"] = new eventclass_marking_TJ;
 include_once(getabspath("include/marking_UTH_events.php"));
 $tableEvents["marking_UTH"] = new eventclass_marking_UTH;
+include_once(getabspath("include/sijil_psra1_events.php"));
+$tableEvents["sijil_psra1"] = new eventclass_sijil_psra1;
 
 $xt = new Xtempl();
 
