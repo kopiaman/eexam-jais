@@ -542,6 +542,7 @@ $tableCaptions[""]["marking_TJ"] = "Marking TJ";
 $tableCaptions[""]["marking_UTH"] = "Marking UTH";
 $tableCaptions[""]["sijil_psra1"] = "Sijil Psra1";
 $tableCaptions[""]["analisa_subjek_psra_all"] = "Analisa Subjek Psra All";
+$tableCaptions[""]["semakan_duplicate"] = "Semakan Duplicate";
 
 
 $globalEvents = new class_GlobalEvents;

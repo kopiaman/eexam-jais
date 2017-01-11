@@ -219,7 +219,7 @@ $tdatadaftar_daerah[".orderindexes"] = array();
 $tdatadaftar_daerah[".orderindexes"][] = array(3, (0 ? "ASC" : "DESC"), "exam_marking.eYear");
 
 $tdatadaftar_daerah[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  sCenter,  sZone,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL)) AS perempuan";
-$tdatadaftar_daerah[".sqlFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$tdatadaftar_daerah[".sqlFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
 $tdatadaftar_daerah[".sqlWhereExpr"] = "";
 $tdatadaftar_daerah[".sqlTail"] = "";
 
@@ -1393,7 +1393,7 @@ function createSqlQuery_daftar_daerah()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  sCenter,  sZone,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL)) AS perempuan";
-$proto0["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto0["m_strFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY exam_marking.eYear DESC";
 $proto0["m_strTail"] = "";
@@ -1668,7 +1668,7 @@ $proto37["m_columns"][] = "sType";
 $obj = new SQLTable($proto37);
 
 $proto36["m_table"] = $obj;
-$proto36["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode";
+$proto36["m_sql"] = "LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode";
 $proto36["m_alias"] = "";
 $proto36["m_srcTableName"] = "daftar_daerah";
 $proto38=array();

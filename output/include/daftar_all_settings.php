@@ -192,7 +192,7 @@ $tdatadaftar_all[".orderindexes"] = array();
 $tdatadaftar_all[".orderindexes"][] = array(3, (0 ? "ASC" : "DESC"), "exam_marking.eYear");
 
 $tdatadaftar_all[".sqlHead"] = "SELECT exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL)) AS perempuan";
-$tdatadaftar_all[".sqlFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$tdatadaftar_all[".sqlFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
 $tdatadaftar_all[".sqlWhereExpr"] = "";
 $tdatadaftar_all[".sqlTail"] = "";
 
@@ -1114,7 +1114,7 @@ function createSqlQuery_daftar_all()
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode AS sCode,  exam_marking.eYear,  exam_marking.eType,  COUNT(exam_marking.sid) AS calonTotal,  COUNT(if(exam_marking.gender LIKE '%L%', exam_marking.sid, NULL)) AS lelaki,  COUNT(if(exam_marking.gender LIKE '%P%', exam_marking.sid, NULL)) AS perempuan";
-$proto0["m_strFrom"] = "FROM exam_marking  LEFT JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$proto0["m_strFrom"] = "FROM exam_marking  LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY exam_marking.eYear DESC";
 $proto0["m_strTail"] = "";
@@ -1365,7 +1365,7 @@ $proto33["m_columns"][] = "sType";
 $obj = new SQLTable($proto33);
 
 $proto32["m_table"] = $obj;
-$proto32["m_sql"] = "LEFT JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
+$proto32["m_sql"] = "LEFT OUTER JOIN school ON exam_marking.sCode = school.sCode AND exam_marking.eType = school.sType";
 $proto32["m_alias"] = "";
 $proto32["m_srcTableName"] = "daftar_all";
 $proto34=array();

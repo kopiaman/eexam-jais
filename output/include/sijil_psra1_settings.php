@@ -186,6 +186,7 @@ $tdatasijil_psra1[".geocodingEnabled"] = false;
 
 
 
+$tdatasijil_psra1[".noRecordsFirstPage"] = true;
 
 // view page pdf
 
@@ -198,7 +199,7 @@ $tdatasijil_psra1[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "ORDER BY exam_marking.sCode ASC ,exam_marking.eYear DESC";
+$tstrOrderBy = "ORDER BY exam_marking.sCode, exam_marking.eYear DESC";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
 $tdatasijil_psra1[".strOrderBy"] = $tstrOrderBy;
@@ -1497,7 +1498,7 @@ $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "exam_marking.sid,  exam_marking.sCode,  exam_marking.eYear,  exam_marking.eType,  school.sZone,  school.sName,  COUNT(exam_marking.sid) AS calon,  exam_marking.sid AS sijil,  exam_marking.sid AS sidul_jbtn,  exam_marking.sid AS sidul_sek";
 $proto0["m_strFrom"] = "FROM exam_marking  INNER JOIN school ON exam_marking.sCode = school.sCode";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "ORDER BY exam_marking.sCode ASC ,exam_marking.eYear DESC";
+$proto0["m_strOrderBy"] = "ORDER BY exam_marking.sCode, exam_marking.eYear DESC";
 $proto0["m_strTail"] = "";
 			$proto0["cipherer"] = null;
 $proto1=array();
@@ -1844,11 +1845,8 @@ $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
 if($zon!==NULL && $alevel==1 || $alevel==2){
-$query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-}else{
-$query->addWhere("eYear='".$year."'");
-};
-
+$query->addWhere("sZone=".$zon);
+}else{};  
 ;
 unset($query);
 ?>

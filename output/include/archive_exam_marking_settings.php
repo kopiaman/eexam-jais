@@ -2998,20 +2998,4 @@ include_once(getabspath("include/archive_exam_marking_events.php"));
 $tableEvents["archive_exam_marking"] = new eventclass_archive_exam_marking;
 $tdataarchive_exam_marking[".hasEvents"] = true;
 
-$query = &$queryData_archive_exam_marking;
-$table = "archive_exam_marking";
-// here goes EVENT_INIT_TABLE event
-global $conn;
-//only PPTAD zon can view their own zon
-$year=date('Y');
-$alevel=$_SESSION['alevel'];
-$zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1 || $alevel==2){
-$query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-}else{
-$query->addWhere("eYear='".$year."'");
-};
-
-;
-unset($query);
 ?>

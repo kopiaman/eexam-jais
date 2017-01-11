@@ -1213,102 +1213,6 @@ $pangkat='';
 $value=$pangkat;;
 		return $value;
 	}
-				if($table=="semakan_duplicate" && $field=="s1")
-	{
-		
-$mark=$data['s1'];
-$value=$mark;
-if($mark=='0' OR $mark>100 ){
-$value="<font color=red><strong>$mark</strong></font>";
-}else if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
-				if($table=="semakan_duplicate" && $field=="s2")
-	{
-		
-$mark=$data['s2'];
-$value=$mark;
-if($mark=='0' OR $mark>100 ){
-$value="<font color=red><strong>$mark</strong></font>";
-}else if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
-				if($table=="semakan_duplicate" && $field=="s3")
-	{
-		
-$mark=$data['s3'];
-$value=$mark;
-if($mark=='0' OR $mark>100 ){
-$value="<font color=red><strong>$mark</strong></font>";
-}else if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
-				if($table=="semakan_duplicate" && $field=="s4")
-	{
-		
-$mark=$data['s4'];
-$value=$mark;
-if($mark=='0' OR $mark>100 ){
-$value="<font color=red><strong>$mark</strong></font>";
-}else if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
-				if($table=="semakan_duplicate" && $field=="s5")
-	{
-		
-$mark=$data['s5'];
-$value=$mark;
-if($mark=='0' OR $mark>100 ){
-$value="<font color=red><strong>$mark</strong></font>";
-}else if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
-				if($table=="semakan_duplicate" && $field=="s6")
-	{
-		
-$mark=$data['s6'];
-$value=$mark;
-if($mark=='0' OR $mark>100 ){
-$value="<font color=red><strong>$mark</strong></font>";
-}else if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
-				if($table=="semakan_duplicate" && $field=="s7")
-	{
-		
-$mark=$data['s7'];
-$value=$mark;
-if($mark=='' OR $mark===NULL){
-$value="<font color=red><strong>E!!</strong></font>";
-};
-
-;
-		return $value;
-	}
 				if($table=="pendaftaran_sekolah" && $field=="jumlah")
 	{
 		
@@ -1428,10 +1332,6 @@ function GetLWWhere($field, $ptype, $table = "")
 		return "catID=2";
 	}
 				if($table=="result_psra" && $field=="sZone")
-	{
-		return "catID=2";
-	}
-				if($table=="semakan_duplicate" && $field=="sZone")
 	{
 		return "catID=2";
 	}

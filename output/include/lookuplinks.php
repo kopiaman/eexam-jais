@@ -56,7 +56,6 @@ function InitLookupLinks()
 	$lookupTableLinks["setting"]["purata_psra_daerah.sZone"]["edit"] = array("table" => "purata_psra_daerah", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["archive_exam_marking.sZone"]["edit"] = array("table" => "archive_exam_marking", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["result_psra.sZone"]["edit"] = array("table" => "result_psra", "field" => "sZone", "page" => "edit");
-	$lookupTableLinks["setting"]["semakan_duplicate.sZone"]["edit"] = array("table" => "semakan_duplicate", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["daftar_sek.sZone"]["edit"] = array("table" => "daftar_sek", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["daftar_daerah.sZone"]["edit"] = array("table" => "daftar_daerah", "field" => "sZone", "page" => "edit");
 	$lookupTableLinks["setting"]["pendaftaran_murid.sZone"]["edit"] = array("table" => "pendaftaran_murid", "field" => "sZone", "page" => "edit");

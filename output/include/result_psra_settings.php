@@ -237,6 +237,7 @@ $tdataresult_psra[".geocodingEnabled"] = false;
 
 
 
+$tdataresult_psra[".noRecordsFirstPage"] = true;
 
 // view page pdf
 
@@ -4076,11 +4077,8 @@ $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
 if($zon!==NULL && $alevel==1 || $alevel==2){
-$query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
-}else{
-$query->addWhere("eYear='".$year."'");
-};
-
+$query->addWhere("sZone=".$zon);
+}else{};  
 ;
 unset($query);
 ?>

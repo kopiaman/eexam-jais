@@ -190,17 +190,7 @@
 			</td>	
 		</tr>
 		{END searchCtrlBlock}
-		{BEGIN searchCtrlBlock_sZone}
-		<tr class="srchPanelRow {$filterRow_class_sZone}" {$filterRow_attrs_sZone}>
-						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$label semakan_duplicate sZone}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-								<div class="rnr-searchtype">{$searchtype_sZone}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol_sZone}</div>
-								<div class="rnr-searchcontrol">{$searchcontrol1_sZone}</div>
-			</td>	
-		</tr>
-		{END searchCtrlBlock_sZone}
+		 
 		{BEGIN searchCtrlBlock_name}
 		<tr class="srchPanelRow {$filterRow_class_name}" {$filterRow_attrs_name}>
 						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
@@ -212,17 +202,7 @@
 			</td>	
 		</tr>
 		{END searchCtrlBlock_name}
-		{BEGIN searchCtrlBlock_sCode}
-		<tr class="srchPanelRow {$filterRow_class_sCode}" {$filterRow_attrs_sCode}>
-						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$label semakan_duplicate sCode}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-								<div class="rnr-searchtype">{$searchtype_sCode}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol_sCode}</div>
-								<div class="rnr-searchcontrol">{$searchcontrol1_sCode}</div>
-			</td>	
-		</tr>
-		{END searchCtrlBlock_sCode}
+		 
 		{BEGIN searchCtrlBlock_eYear}
 		<tr class="srchPanelRow {$filterRow_class_eYear}" {$filterRow_attrs_eYear}>
 						<td class="srchPanelCell srchPanel-delBtn">{$delCtrlButt}</td>	
@@ -333,106 +313,6 @@
 									</th>
 									{END gender_fieldheadercolumn}
 
-																	{BEGIN nationality_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$nationality_class}">
-									{BEGIN nationality_fieldheader}
-																				<span {$nationality_orderlinkattrs}>
-											{$label semakan_duplicate nationality}
-										</span>
-									{END nationality_fieldheader}
-									</th>
-									{END nationality_fieldheadercolumn}
-
-																	{BEGIN sCode_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$sCode_class}">
-									{BEGIN sCode_fieldheader}
-																				<span {$sCode_orderlinkattrs}>
-											{$label semakan_duplicate sCode}
-										</span>
-									{END sCode_fieldheader}
-									</th>
-									{END sCode_fieldheadercolumn}
-
-																	{BEGIN eNo_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$eNo_class}">
-									{BEGIN eNo_fieldheader}
-																				<span {$eNo_orderlinkattrs}>
-											{$label semakan_duplicate eNo}
-										</span>
-									{END eNo_fieldheader}
-									</th>
-									{END eNo_fieldheadercolumn}
-
-																	{BEGIN s1_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s1_class}">
-									{BEGIN s1_fieldheader}
-																				<span {$s1_orderlinkattrs}>
-											{$label semakan_duplicate s1}
-										</span>
-									{END s1_fieldheader}
-									</th>
-									{END s1_fieldheadercolumn}
-
-																	{BEGIN s2_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s2_class}">
-									{BEGIN s2_fieldheader}
-																				<span {$s2_orderlinkattrs}>
-											{$label semakan_duplicate s2}
-										</span>
-									{END s2_fieldheader}
-									</th>
-									{END s2_fieldheadercolumn}
-
-																	{BEGIN s3_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s3_class}">
-									{BEGIN s3_fieldheader}
-																				<span {$s3_orderlinkattrs}>
-											{$label semakan_duplicate s3}
-										</span>
-									{END s3_fieldheader}
-									</th>
-									{END s3_fieldheadercolumn}
-
-																	{BEGIN s4_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s4_class}">
-									{BEGIN s4_fieldheader}
-																				<span {$s4_orderlinkattrs}>
-											{$label semakan_duplicate s4}
-										</span>
-									{END s4_fieldheader}
-									</th>
-									{END s4_fieldheadercolumn}
-
-																	{BEGIN s5_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s5_class}">
-									{BEGIN s5_fieldheader}
-																				<span {$s5_orderlinkattrs}>
-											{$label semakan_duplicate s5}
-										</span>
-									{END s5_fieldheader}
-									</th>
-									{END s5_fieldheadercolumn}
-
-																	{BEGIN s6_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s6_class}">
-									{BEGIN s6_fieldheader}
-																				<span {$s6_orderlinkattrs}>
-											{$label semakan_duplicate s6}
-										</span>
-									{END s6_fieldheader}
-									</th>
-									{END s6_fieldheadercolumn}
-
-																	{BEGIN s7_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$s7_class}">
-									{BEGIN s7_fieldheader}
-																				<span {$s7_orderlinkattrs}>
-											{$label semakan_duplicate s7}
-										</span>
-									{END s7_fieldheader}
-									</th>
-									{END s7_fieldheadercolumn}
-
 																	{BEGIN eYear_fieldheadercolumn}
 									<th class="rnr-gridfieldlabel {$eYear_class}">
 									{BEGIN eYear_fieldheader}
@@ -442,26 +322,6 @@
 									{END eYear_fieldheader}
 									</th>
 									{END eYear_fieldheadercolumn}
-
-																	{BEGIN eType_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$eType_class}">
-									{BEGIN eType_fieldheader}
-																				<span {$eType_orderlinkattrs}>
-											{$label semakan_duplicate eType}
-										</span>
-									{END eType_fieldheader}
-									</th>
-									{END eType_fieldheadercolumn}
-
-																	{BEGIN dup_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$dup_class}">
-									{BEGIN dup_fieldheader}
-																				<span {$dup_orderlinkattrs}>
-											{$label semakan_duplicate dup}
-										</span>
-									{END dup_fieldheader}
-									</th>
-									{END dup_fieldheadercolumn}
 
 
 									
@@ -515,83 +375,11 @@
 	</td>
 {END gender_fieldcolumn}
 
-	{BEGIN nationality_fieldcolumn}
-	<td class="{$nationality_class}" {$nationality_style} {$recordattrs}>
-		{$nationality_value}
-	</td>
-{END nationality_fieldcolumn}
-
-	{BEGIN sCode_fieldcolumn}
-	<td class="{$sCode_class}" {$sCode_style} {$recordattrs}>
-		{$sCode_value}
-	</td>
-{END sCode_fieldcolumn}
-
-	{BEGIN eNo_fieldcolumn}
-	<td class="{$eNo_class}" {$eNo_style} {$recordattrs}>
-		{$eNo_value}
-	</td>
-{END eNo_fieldcolumn}
-
-	{BEGIN s1_fieldcolumn}
-	<td class="{$s1_class}" {$s1_style} {$recordattrs}>
-		{$s1_value}
-	</td>
-{END s1_fieldcolumn}
-
-	{BEGIN s2_fieldcolumn}
-	<td class="{$s2_class}" {$s2_style} {$recordattrs}>
-		{$s2_value}
-	</td>
-{END s2_fieldcolumn}
-
-	{BEGIN s3_fieldcolumn}
-	<td class="{$s3_class}" {$s3_style} {$recordattrs}>
-		{$s3_value}
-	</td>
-{END s3_fieldcolumn}
-
-	{BEGIN s4_fieldcolumn}
-	<td class="{$s4_class}" {$s4_style} {$recordattrs}>
-		{$s4_value}
-	</td>
-{END s4_fieldcolumn}
-
-	{BEGIN s5_fieldcolumn}
-	<td class="{$s5_class}" {$s5_style} {$recordattrs}>
-		{$s5_value}
-	</td>
-{END s5_fieldcolumn}
-
-	{BEGIN s6_fieldcolumn}
-	<td class="{$s6_class}" {$s6_style} {$recordattrs}>
-		{$s6_value}
-	</td>
-{END s6_fieldcolumn}
-
-	{BEGIN s7_fieldcolumn}
-	<td class="{$s7_class}" {$s7_style} {$recordattrs}>
-		{$s7_value}
-	</td>
-{END s7_fieldcolumn}
-
 	{BEGIN eYear_fieldcolumn}
 	<td class="{$eYear_class}" {$eYear_style} {$recordattrs}>
 		{$eYear_value}
 	</td>
 {END eYear_fieldcolumn}
-
-	{BEGIN eType_fieldcolumn}
-	<td class="{$eType_class}" {$eType_style} {$recordattrs}>
-		{$eType_value}
-	</td>
-{END eType_fieldcolumn}
-
-	{BEGIN dup_fieldcolumn}
-	<td class="{$dup_class}" {$dup_style} {$recordattrs}>
-		{$dup_value}
-	</td>
-{END dup_fieldcolumn}
 
 
 									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>

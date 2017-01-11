@@ -7,7 +7,6 @@ class eventclass_archive_exam_marking  extends eventsBase
 		$this->events["BeforeInsert"]=true;
 
 
-
 //	onscreen events
 
 	}
@@ -75,60 +74,6 @@ return true;
 ;		
 } // function BeforeInsert
 
-		
-			
-		
-		
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-								
-		
 		
 			
 		
