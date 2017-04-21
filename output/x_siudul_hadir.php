@@ -262,6 +262,29 @@ $all=mysql_fetch_array($query_all);
     <br /></th>
   </tr>
 </table>
+<table width="500px" border="1" cellpadding="3">
+    <tr>
+      <th>Ketua Pengawas</th>
+    </tr>
+    <tr>
+
+      <td>Tandatangan <br/><br/></td>
+
+
+    </tr>
+    <tr>
+          <td>Nama</td>
+     
+    
+    </tr>
+    <tr>
+     <td>No Tel</td> 
+    
+    </tr>
+    <tr>
+      <td>Tarikh</td>
+    </tr>
+</table>
 <p class="pagebreak"></p>
 </body>
 </html>

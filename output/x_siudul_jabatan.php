@@ -184,7 +184,7 @@ $all=mysql_fetch_array($query_all);
 <table width="100%" border="0" cellpadding="0">
   <tr>
     <td width="15%"><img src="images/JATASELANGOR.GIF" width="144" height="190" /></td>
-    <td width="80%" valign="top"><span dir="rtl"><h1 class="jawi">جابتن اڬام إسلام سلاڠور  <br />بهاڬين ڤنديديقن إسلام <BR /> ڤنيلاين سكوله رنده اڬام كراجاءن نڬري سلاڠور <BR /> تاهون <?php echo date('Y') ?>
+    <td width="80%" valign="top"><span dir="rtl"><h1 class="jawi">جابتن اڬام إسلام سلاڠور  <br />بهاڬين ڤنديديقن إسلام <BR /> ڤنيلاين سكوله رنده اڬام كراجاءن نڬري سلاڠور <BR /> تاهون <?php echo $row['eYear']; ?>
       
       </h1> 
       </span></td>
