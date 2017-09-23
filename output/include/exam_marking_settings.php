@@ -2931,7 +2931,7 @@ global $conn;
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1 || $alevel==2){
+if($zon!==NULL && $alevel==1 || $alevel==3){
 $query->addWhere("sZone='".$zon."' AND eYear='"  .$year."'");
 }else{
 $query->addWhere("eYear='".$year."'");
