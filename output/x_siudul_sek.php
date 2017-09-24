@@ -30,8 +30,17 @@ body {
 	top:0px;
 
 }
+  @media print
+  {
+      thead {display: table-header-group;}
 
-.vertical-text {transform: rotate(270deg);}
+  }
+
+.vertical-text {
+  transform: rotate(270deg);
+  -ms-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+}
 .table2{font-size:12px;	}
 table{border-collapse:collapse;}
 td{font-weight:100; height:25px;}
@@ -220,27 +229,29 @@ $all=mysql_fetch_array($query_all);
 <br />
     
       <table width="1400" border="1" cellpadding="3" class="table2">
+      <thead>
         <tr>
-          <th width="20" rowspan="2" class="vertical-text">BIL</th>
-          <th width="570" rowspan="2" class="vertical-text">NAMA</th>
-          <th width="120" rowspan="2" class="vertical-text">TARIKH  LAHIR</th>
+          <th width="20" rowspan="2">BIL</th>
+          <th width="570" rowspan="2" >NAMA</th>
+          <th width="120" rowspan="2" >T.LAHIR</th>
           <th width="120" rowspan="2">IC</th>
-          <th width="20" rowspan="2" class="vertical-text">JANTINA</th>
-          <th width="20" rowspan="2" class="vertical-text">WNEGARA</th>
-          <th width="80" rowspan="2" class="vertical-text">NO GILIRAN</th>
+          <th width="20" rowspan="2" >JTN</th>
+          <th width="20" rowspan="2" >WG</th>
+          <th width="80" rowspan="2" >NO GILIRAN</th>
           <th colspan="7">MATAPELAJARAN</th>
    
-          <th width="80" rowspan="2" class="vertical-text">PANGKAT</th>
+          <th width="80" rowspan="2">PANGKAT</th>
         </tr>
         <tr>
-          <th width="30" height="86" class="vertical-text">AS</th>
-          <th width="30" class="vertical-text">BA</th>
-          <th width="30" class="vertical-text">JIK</th>
-          <th width="30" class="vertical-text">TF</th>
-          <th width="30" class="vertical-text">TJ</th>
-          <th width="30" class="vertical-text">UTH</th>
-          <th width="30" class="vertical-text">PAFA</th>
+          <th width="30" height="86" >AS</th>
+          <th width="30" >BA</th>
+          <th width="30" >JIK</th>
+          <th width="30" >TF</th>
+          <th width="30" >TJ</th>
+          <th width="30" >UTH</th>
+          <th width="30" >PAFA</th>
         </tr>
+        </thead>
             <?php $i=1;do{ ?>
         <tr>
           <td><?php echo $i ?></td>
