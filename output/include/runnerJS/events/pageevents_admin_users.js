@@ -1,0 +1,5 @@
+
+Runner.pages.PageSettings.addPageEvent("admin_users",Runner.pages.constants.PAGE_LIST,"afterPageReady",function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='Reset_Password';if(!pageObj.buttonEventBefore['Reset_Password']){pageObj.buttonEventBefore['Reset_Password']=function(params,ctrl,pageObj,proxy,pageid,rowData){ctrl.setMessage("Load..");}}
+if(!pageObj.buttonEventAfter['Reset_Password']){pageObj.buttonEventAfter['Reset_Password']=function(result,ctrl,pageObj,proxy,pageid,rowData){var message="Password changed to user123";ctrl.setMessage(message);}}
+$('a[id=Reset_Password]').each(function(){if($(this).closest('tr.gridRowAdd').length){return;}
+this.id="Reset_Password"+"_"+Runner.genId();var button_Reset_Password=new Runner.form.Button({id:this.id,btnName:"Reset_Password"});button_Reset_Password.init({args:[pageObj,proxy,pageid]});});});

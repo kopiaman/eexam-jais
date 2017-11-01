@@ -53,59 +53,12 @@
 {END security_block}
 
 
-{BEGIN asearch_link}
-<div  class="style1 rnr-bl rnr-b-toplinks_advsearch {$brickclass_toplinks_advsearch}">	<a href="admin_users_search.php" class="rnr-button" {$advsearchlink_attrs}>Advanced search</a>
-</div>
-{END asearch_link}
-
-
-
-{BEGIN export_link}
-<div  class="style1 rnr-bl rnr-b-toplinks_export {$brickclass_toplinks_export}">	<a target="_blank" href="admin_users_export.php" class="rnr-button" {$exportlink_attrs}>Export results</a>
-</div>
-{END export_link}
 
 
 
 
-<div  class="style1 rnr-bl rnr-b-printpanel {$brickclass_printpanel}">{BEGIN print_friendly}
-<div class="rnr-printpanelblock" id="printpanelblock{$id}">
-<div class="rnr-printtab">
-<a data-icon="printdown" class="rnr-printicon" id="print_friendly_togger{$id}" title="Print-friendly page"></a>
-</div>
-<div class="rnr-printpanel" >
-<table class="rnr-printscope" id="print_friendly_scope{$id}">
-	<tr>
-		<td class="rnr-printScopeCell">Scope:</td>
-		{BEGIN print_friendly_all}
-		<td class="rnr-printScopeCell"><input type="radio" id="printAll{$id}" data-href="admin_users_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">&nbsp;<label for="printAll{$id}">Print all pages</label></td>
-		{END print_friendly_all}
 
-	</tr>
-	<tr>
-		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printPage{$id}" data-href="admin_users_print.php?{$crosstable_attrs}" name="printScope" checked>&nbsp;<label for="printPage{$id}">Print this page</label></td>
-	</tr>
-		<tr>
-		<td></td>
-		<td class="rnr-printScopeCell"><input type="radio" id="printSelection{$id}" name="printScope" disabled="disabled">&nbsp;<label for="printSelection{$id}" style="color: gray;">Print selected</label></td>
-	</tr>
-</table>
-
-
-<div class="rnr-printdetails">
-<label for="printPerPage{$id}">
-	Records Per Page:
-</label>&nbsp;<input type=number id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">&nbsp;
-</div>
-
-<div class="rnr-printbutton">
-<a href=# class="rnr-button button" id="print_friendly_button{$id}" >Print</a>
-</div>
-</div>
-</div>
-{END print_friendly}
-</div>
+<div  class="style1 rnr-bl rnr-b-printpanel {$brickclass_printpanel}"></div>
 
 
 
@@ -130,36 +83,7 @@
 {BEGIN container_search}
 <div class="rnr-c rnr-ch rnr-c-search">
 
-{BEGIN searchform_block}
-<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
-		{BEGIN searchform_text}
-		<input type="text" {$searchfor_attrs} size="25">
-		{END searchform_text}
-		{BEGIN searchform_search}
-			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
-		{END searchform_search}
-		{BEGIN searchform_showall}	
-		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
-		{END searchform_showall}
-	</span>
-</div>
-{END searchform_block}
 
-
-{BEGIN searchformbuttons_block}
-<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
-<span>
-	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
-	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
-</span>
-{END searchPanelTopButtons}
-</div>
-{END searchformbuttons_block}
-
-
-{BEGIN searchsaving_block}
-<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
-{END searchsaving_block}
 
 <div class="rnr-hfiller"></div>
 {BEGIN details_block}
@@ -195,58 +119,6 @@
 		<div class="rnr-middle">
 			<div class="rnr-left {$blockclass_left}">
 				
-
-{BEGIN container_left}
-<div class="rnr-c rnr-cv rnr-c-left">
-
-{BEGIN searchPanel}
-<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
-<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
-	
-	<!-- Search panel content -->
-	<div class="srchCritTop" style="display: none;">
-		Criteria:&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
-		&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
-	</div>
-	
-	<div class="addOption">
-		<span class="rnr-buttons-group">
-			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
-		</span>
-		
-		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
-	</div>
-	
-
-	<table class="controlsBlock {$controls_block_class}">
-				{BEGIN searchCtrlBlock}
-		<tr class="srchPanelRow" {$filterRow_attrs}>
-			<td class="srchPanelCell">{$delCtrlButt}</td>	
-			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
-			<td class="srchPanelCell srchPanelCell2">
-				<div class="rnr-searchtype">{$searchtype}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol}</div>
-				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
-			</td>	
-		</tr>
-		{END searchCtrlBlock}
-	</table>	
-
-
-	
-	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
-		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
-	</div>
-</div>
-
-</div></div>{END searchPanel}
-
-
-
-</div>
-{END container_left}
 
 
 			</div>
@@ -289,10 +161,7 @@
 		<a href="#" class="rnr-button" {$deleteselectedlink_attrs} {$deleteselectedlink_span}>Delete selected</a>
 	{END deleteselected_link}
 
-		{BEGIN exportselected_link}
-		<a href="#" class="rnr-button" {$exportselectedlink_attrs} {$exportselectedlink_span}>Export selected</a>
-	{END exportselected_link}
-
+	
 </div>
 {END record_controls_block}
 
@@ -352,16 +221,6 @@
 									</th>
 									{END username_fieldheadercolumn}
 
-																	{BEGIN password_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$password_class}">
-									{BEGIN password_fieldheader}
-																				<span {$password_orderlinkattrs}>
-											{$label admin_users password}
-										</span>
-									{END password_fieldheader}
-									</th>
-									{END password_fieldheadercolumn}
-
 																	{BEGIN fullname_fieldheadercolumn}
 									<th class="rnr-gridfieldlabel {$fullname_class}">
 									{BEGIN fullname_fieldheader}
@@ -391,6 +250,16 @@
 									{END umail_fieldheader}
 									</th>
 									{END umail_fieldheadercolumn}
+
+																	{BEGIN action_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$action_class}">
+									{BEGIN action_fieldheader}
+																				<span {$action_orderlinkattrs}>
+											{$label admin_users action}
+										</span>
+									{END action_fieldheader}
+									</th>
+									{END action_fieldheadercolumn}
 
 
 									
@@ -438,12 +307,6 @@
 	</td>
 {END username_fieldcolumn}
 
-	{BEGIN password_fieldcolumn}
-	<td class="{$password_class}" {$password_style} {$recordattrs}>
-		{$password_value}
-	</td>
-{END password_fieldcolumn}
-
 	{BEGIN fullname_fieldcolumn}
 	<td class="{$fullname_class}" {$fullname_style} {$recordattrs}>
 		{$fullname_value}
@@ -461,6 +324,12 @@
 		{$umail_value}
 	</td>
 {END umail_fieldcolumn}
+
+	{BEGIN action_fieldcolumn}
+	<td class="{$action_class}" {$action_style} {$recordattrs}>
+		{$action_value}
+	</td>
+{END action_fieldcolumn}
 
 
 									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>

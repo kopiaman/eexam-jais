@@ -128,7 +128,7 @@ $tdatamarking_AS[".rowHighlite"] = true;
 
 
 								
-													$tdatamarking_AS[".isUsebuttonHandlers"] = true;
+														$tdatamarking_AS[".isUsebuttonHandlers"] = true;
 
 $tdatamarking_AS[".addPageEvents"] = false;
 

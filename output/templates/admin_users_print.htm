@@ -82,13 +82,6 @@
 	{END username_fieldheader}
 </th>
 {END username_fieldheadercolumn}
-	{BEGIN password_fieldheadercolumn}
-<th class="runner-cc {$password_class}" {$password_style}>
-	{BEGIN password_fieldheader}
-	<b>{$label admin_users password}</b>
-	{END password_fieldheader}
-</th>
-{END password_fieldheadercolumn}
 	{BEGIN fullname_fieldheadercolumn}
 <th class="runner-cc {$fullname_class}" {$fullname_style}>
 	{BEGIN fullname_fieldheader}
@@ -129,11 +122,6 @@
 	{$username_value}
 </td>
 {END username_fieldcolumn}
-	{BEGIN password_fieldcolumn}
-<td  class="runner-cc {$password_class}" {$password_style} {$recordattrs}>
-	{$password_value}
-</td>
-{END password_fieldcolumn}
 	{BEGIN fullname_fieldcolumn}
 <td  class="runner-cc {$fullname_class}" {$fullname_style} {$recordattrs}>
 	{$fullname_value}

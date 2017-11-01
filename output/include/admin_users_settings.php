@@ -33,6 +33,8 @@ if(mlang_getcurrentlang()=="English")
 	$fieldToolTipsadmin_users["English"]["zon"] = "";
 	$fieldLabelsadmin_users["English"]["umail"] = "Email";
 	$fieldToolTipsadmin_users["English"]["umail"] = "";
+	$fieldLabelsadmin_users["English"]["action"] = "Action";
+	$fieldToolTipsadmin_users["English"]["action"] = "";
 	if (count($fieldToolTipsadmin_users["English"]))
 		$tdataadmin_users[".isUseToolTips"] = true;
 }
@@ -90,9 +92,7 @@ $tdataadmin_users[".inlineEdit"] = true;
 $tdataadmin_users[".inlineAdd"] = true;
 
 
-$tdataadmin_users[".exportTo"] = true;
 
-$tdataadmin_users[".printFriendly"] = true;
 
 $tdataadmin_users[".delete"] = true;
 
@@ -105,15 +105,14 @@ $tdataadmin_users[".searchSaving"] = false;
 $tdataadmin_users[".showSearchPanel"] = true;
 		$tdataadmin_users[".flexibleSearch"] = true;
 
-if (isMobile())
-	$tdataadmin_users[".isUseAjaxSuggest"] = false;
-else
-	$tdataadmin_users[".isUseAjaxSuggest"] = true;
+$tdataadmin_users[".isUseAjaxSuggest"] = false;
 
 $tdataadmin_users[".rowHighlite"] = true;
 
 
-																			
+																						
+$tdataadmin_users[".isUsebuttonHandlers"] = true;
+
 $tdataadmin_users[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -127,28 +126,12 @@ $tdataadmin_users[".allSearchFields"] = array();
 $tdataadmin_users[".filterFields"] = array();
 $tdataadmin_users[".requiredSearchFields"] = array();
 
-$tdataadmin_users[".allSearchFields"][] = "username";
-	$tdataadmin_users[".allSearchFields"][] = "password";
-	$tdataadmin_users[".allSearchFields"][] = "fullname";
-	$tdataadmin_users[".allSearchFields"][] = "zon";
-	$tdataadmin_users[".allSearchFields"][] = "umail";
-	
+
 
 $tdataadmin_users[".googleLikeFields"] = array();
-$tdataadmin_users[".googleLikeFields"][] = "uid";
-$tdataadmin_users[".googleLikeFields"][] = "username";
-$tdataadmin_users[".googleLikeFields"][] = "password";
-$tdataadmin_users[".googleLikeFields"][] = "fullname";
-$tdataadmin_users[".googleLikeFields"][] = "zon";
-$tdataadmin_users[".googleLikeFields"][] = "umail";
+$tdataadmin_users[".googleLikeFields"][] = "action";
 
 
-$tdataadmin_users[".advSearchFields"] = array();
-$tdataadmin_users[".advSearchFields"][] = "username";
-$tdataadmin_users[".advSearchFields"][] = "password";
-$tdataadmin_users[".advSearchFields"][] = "fullname";
-$tdataadmin_users[".advSearchFields"][] = "zon";
-$tdataadmin_users[".advSearchFields"][] = "umail";
 
 $tdataadmin_users[".tableType"] = "list";
 
@@ -190,7 +173,7 @@ $tdataadmin_users[".strOrderBy"] = $tstrOrderBy;
 
 $tdataadmin_users[".orderindexes"] = array();
 
-$tdataadmin_users[".sqlHead"] = "SELECT `uid`,  	username,  	password,  	fullname,  	zon,  	umail";
+$tdataadmin_users[".sqlHead"] = "SELECT `uid`,  username,  password,  fullname,  zon,  umail,  `uid` AS `action`";
 $tdataadmin_users[".sqlFrom"] = "FROM `user`";
 $tdataadmin_users[".sqlWhereExpr"] = "";
 $tdataadmin_users[".sqlTail"] = "";
@@ -227,7 +210,6 @@ $arrGPP[] = 100;
 $arrGPP[] = -1;
 $tdataadmin_users[".arrGroupsPerPage"] = $arrGPP;
 
-$tdataadmin_users[".highlightSearchResults"] = true;
 
 $tableKeysadmin_users = array();
 $tableKeysadmin_users[] = "uid";
@@ -235,10 +217,10 @@ $tdataadmin_users[".Keys"] = $tableKeysadmin_users;
 
 $tdataadmin_users[".listFields"] = array();
 $tdataadmin_users[".listFields"][] = "username";
-$tdataadmin_users[".listFields"][] = "password";
 $tdataadmin_users[".listFields"][] = "fullname";
 $tdataadmin_users[".listFields"][] = "zon";
 $tdataadmin_users[".listFields"][] = "umail";
+$tdataadmin_users[".listFields"][] = "action";
 
 $tdataadmin_users[".hideMobileList"] = array();
 
@@ -254,10 +236,10 @@ $tdataadmin_users[".masterListFields"][] = "password";
 $tdataadmin_users[".masterListFields"][] = "fullname";
 $tdataadmin_users[".masterListFields"][] = "zon";
 $tdataadmin_users[".masterListFields"][] = "umail";
+$tdataadmin_users[".masterListFields"][] = "action";
 
 $tdataadmin_users[".inlineAddFields"] = array();
 $tdataadmin_users[".inlineAddFields"][] = "username";
-$tdataadmin_users[".inlineAddFields"][] = "password";
 $tdataadmin_users[".inlineAddFields"][] = "fullname";
 $tdataadmin_users[".inlineAddFields"][] = "zon";
 $tdataadmin_users[".inlineAddFields"][] = "umail";
@@ -266,26 +248,15 @@ $tdataadmin_users[".editFields"] = array();
 
 $tdataadmin_users[".inlineEditFields"] = array();
 $tdataadmin_users[".inlineEditFields"][] = "username";
-$tdataadmin_users[".inlineEditFields"][] = "password";
 $tdataadmin_users[".inlineEditFields"][] = "fullname";
 $tdataadmin_users[".inlineEditFields"][] = "zon";
 $tdataadmin_users[".inlineEditFields"][] = "umail";
 
 $tdataadmin_users[".exportFields"] = array();
-$tdataadmin_users[".exportFields"][] = "username";
-$tdataadmin_users[".exportFields"][] = "password";
-$tdataadmin_users[".exportFields"][] = "fullname";
-$tdataadmin_users[".exportFields"][] = "zon";
-$tdataadmin_users[".exportFields"][] = "umail";
 
 $tdataadmin_users[".importFields"] = array();
 
 $tdataadmin_users[".printFields"] = array();
-$tdataadmin_users[".printFields"][] = "username";
-$tdataadmin_users[".printFields"][] = "password";
-$tdataadmin_users[".printFields"][] = "fullname";
-$tdataadmin_users[".printFields"][] = "zon";
-$tdataadmin_users[".printFields"][] = "umail";
 
 //	uid
 //	Custom field settings
@@ -423,12 +394,9 @@ $tdataadmin_users[".printFields"][] = "umail";
 		$fdata["bInlineEdit"] = true;
 
 	
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
 		$fdata["strField"] = "username";
 
 		$fdata["isSQLExpression"] = true;
@@ -637,11 +605,6 @@ $tdataadmin_users[".printFields"][] = "umail";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
@@ -661,21 +624,15 @@ $tdataadmin_users[".printFields"][] = "umail";
 	
 	
 			
-		$fdata["bListPage"] = true;
-
 	
-		$fdata["bInlineAdd"] = true;
-
 	
-		$fdata["bInlineEdit"] = true;
-
 	
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
+	
+	
+	
 		$fdata["strField"] = "password";
 
 		$fdata["isSQLExpression"] = true;
@@ -683,8 +640,7 @@ $tdataadmin_users[".printFields"][] = "umail";
 
 	
 	
-				$fdata["FieldPermissions"] = true;
-
+			
 				$fdata["UploadFolder"] = "files";
 
 //  Begin View Formats
@@ -757,11 +713,6 @@ $tdataadmin_users[".printFields"][] = "umail";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
@@ -790,12 +741,9 @@ $tdataadmin_users[".printFields"][] = "umail";
 		$fdata["bInlineEdit"] = true;
 
 	
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
 		$fdata["strField"] = "fullname";
 
 		$fdata["isSQLExpression"] = true;
@@ -879,11 +827,6 @@ $tdataadmin_users[".printFields"][] = "umail";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
@@ -912,12 +855,9 @@ $tdataadmin_users[".printFields"][] = "umail";
 		$fdata["bInlineEdit"] = true;
 
 	
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
 		$fdata["strField"] = "zon";
 
 		$fdata["isSQLExpression"] = true;
@@ -1024,11 +964,6 @@ $tdataadmin_users[".printFields"][] = "umail";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
@@ -1057,12 +992,9 @@ $tdataadmin_users[".printFields"][] = "umail";
 		$fdata["bInlineEdit"] = true;
 
 	
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
 		$fdata["strField"] = "umail";
 
 		$fdata["isSQLExpression"] = true;
@@ -1146,16 +1078,125 @@ $tdataadmin_users[".printFields"][] = "umail";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
 
 	$tdataadmin_users["umail"] = $fdata;
+//	action
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 7;
+	$fdata["strName"] = "action";
+	$fdata["GoodName"] = "action";
+	$fdata["ownerTable"] = "user";
+	$fdata["Label"] = GetFieldLabel("admin_users","action");
+	$fdata["FieldType"] = 3;
+
+	
+		$fdata["AutoInc"] = true;
+
+	
+			
+		$fdata["bListPage"] = true;
+
+	
+	
+	
+	
+	
+	
+	
+	
+		$fdata["strField"] = "uid";
+
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "`uid`";
+
+	
+	
+				$fdata["FieldPermissions"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Custom");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Text field");
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+	
+	
+			$edata["HTML5InuptType"] = "number";
+
+		$edata["EditParams"] = "";
+		
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+				$edata["validateAs"]["basicValidate"][] = getJsValidatorName("Number");
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+
+
+
+
+	$tdataadmin_users["action"] = $fdata;
 
 
 $tables_data["admin_users"]=&$tdataadmin_users;
@@ -1188,7 +1229,7 @@ function createSqlQuery_admin_users()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "`uid`,  	username,  	password,  	fullname,  	zon,  	umail";
+$proto0["m_strFieldList"] = "`uid`,  username,  password,  fullname,  zon,  umail,  `uid` AS `action`";
 $proto0["m_strFrom"] = "FROM `user`";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "";
@@ -1311,42 +1352,56 @@ $proto15["m_alias"] = "";
 $obj = new SQLFieldListItem($proto15);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto17=array();
-$proto17["m_link"] = "SQLL_MAIN";
-			$proto18=array();
-$proto18["m_strName"] = "user";
-$proto18["m_srcTableName"] = "admin_users";
-$proto18["m_columns"] = array();
-$proto18["m_columns"][] = "uid";
-$proto18["m_columns"][] = "username";
-$proto18["m_columns"][] = "password";
-$proto18["m_columns"][] = "fullname";
-$proto18["m_columns"][] = "zon";
-$proto18["m_columns"][] = "umail";
-$obj = new SQLTable($proto18);
+						$proto17=array();
+			$obj = new SQLField(array(
+	"m_strName" => "uid",
+	"m_strTable" => "user",
+	"m_srcTableName" => "admin_users"
+));
 
-$proto17["m_table"] = $obj;
-$proto17["m_sql"] = "`user`";
-$proto17["m_alias"] = "";
+$proto17["m_sql"] = "`uid`";
 $proto17["m_srcTableName"] = "admin_users";
-$proto19=array();
-$proto19["m_sql"] = "";
-$proto19["m_uniontype"] = "SQLL_UNKNOWN";
+$proto17["m_expr"]=$obj;
+$proto17["m_alias"] = "action";
+$obj = new SQLFieldListItem($proto17);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto19=array();
+$proto19["m_link"] = "SQLL_MAIN";
+			$proto20=array();
+$proto20["m_strName"] = "user";
+$proto20["m_srcTableName"] = "admin_users";
+$proto20["m_columns"] = array();
+$proto20["m_columns"][] = "uid";
+$proto20["m_columns"][] = "username";
+$proto20["m_columns"][] = "password";
+$proto20["m_columns"][] = "fullname";
+$proto20["m_columns"][] = "zon";
+$proto20["m_columns"][] = "umail";
+$obj = new SQLTable($proto20);
+
+$proto19["m_table"] = $obj;
+$proto19["m_sql"] = "`user`";
+$proto19["m_alias"] = "";
+$proto19["m_srcTableName"] = "admin_users";
+$proto21=array();
+$proto21["m_sql"] = "";
+$proto21["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto19["m_column"]=$obj;
-$proto19["m_contained"] = array();
-$proto19["m_strCase"] = "";
-$proto19["m_havingmode"] = false;
-$proto19["m_inBrackets"] = false;
-$proto19["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto19);
+$proto21["m_column"]=$obj;
+$proto21["m_contained"] = array();
+$proto21["m_strCase"] = "";
+$proto21["m_havingmode"] = false;
+$proto21["m_inBrackets"] = false;
+$proto21["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto21);
 
-$proto17["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto17);
+$proto19["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto19);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
@@ -1360,11 +1415,12 @@ $queryData_admin_users = createSqlQuery_admin_users();
 
 
 
-																		
+																			
 
 $tdataadmin_users[".sqlquery"] = $queryData_admin_users;
 
-$tableEvents["admin_users"] = new eventsBase;
-$tdataadmin_users[".hasEvents"] = false;
+include_once(getabspath("include/admin_users_events.php"));
+$tableEvents["admin_users"] = new eventclass_admin_users;
+$tdataadmin_users[".hasEvents"] = true;
 
 ?>

@@ -128,7 +128,7 @@ $tdatapendaftaran_sekolah[".rowHighlite"] = true;
 			
 			
 			
-															$tdatapendaftaran_sekolah[".isUsebuttonHandlers"] = true;
+																$tdatapendaftaran_sekolah[".isUsebuttonHandlers"] = true;
 
 $tdatapendaftaran_sekolah[".addPageEvents"] = false;
 

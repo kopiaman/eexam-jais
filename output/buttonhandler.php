@@ -123,6 +123,12 @@ if($buttId=='SidulSek1')
 	$cipherer = new RunnerCipherer("sijil_psra1");
 	buttonHandler_SidulSek1($params);
 }
+if($buttId=='Reset_Password')
+{
+	require_once("include/admin_users_variables.php");
+	$cipherer = new RunnerCipherer("admin_users");
+	buttonHandler_Reset_Password($params);
+}
 
 // proccess non table events
 
@@ -452,6 +458,36 @@ function buttonHandler_SidulSek1($params)
 	$data = $button->getCurrentRecord();
 $result['sCode']=$data['sCode'] ;
 $result['eYear']=$data['eYear'] ;;
+	echo my_json_encode($result);
+}
+function buttonHandler_Reset_Password($params) 
+{
+	global $strTableName;
+	$result = array();
+		
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+	
+	$button = new Button($params);
+	$keys = $button->getKeys();
+	
+	global $dal;
+
+
+$data = $button->getCurrentRecord();
+
+//random pass
+//$rand = substr(md5(microtime()),rand(0,26),5);
+
+$tblUsers = $dal->Table("user");
+$tblUsers->Param["uid"]= $data['uid'];
+$tblUsers->Value["password"]= md5('user123');
+$tblUsers->Update();
+
+
+;
 	echo my_json_encode($result);
 }
 ?>

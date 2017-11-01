@@ -125,7 +125,7 @@ $tdatasijil_psra1[".rowHighlite"] = true;
 																			
 			
 			
-$tdatasijil_psra1[".isUsebuttonHandlers"] = true;
+	$tdatasijil_psra1[".isUsebuttonHandlers"] = true;
 
 $tdatasijil_psra1[".addPageEvents"] = false;
 

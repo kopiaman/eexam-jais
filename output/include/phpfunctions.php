@@ -862,6 +862,11 @@ $value="<font color=red><strong>E!!</strong></font>";
 ;
 		return $value;
 	}
+				if($table=="admin_users" && $field=="action")
+	{
+		$value="";;
+		return $value;
+	}
 				if($table=="analisa_kelulusan_psra_sek" && $field=="Mpercent")
 	{
 		$gred=$data['mumtaz'];

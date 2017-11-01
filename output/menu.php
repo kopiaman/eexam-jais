@@ -55,6 +55,8 @@ include_once(getabspath("include/exam_marking_events.php"));
 $tableEvents["exam_marking"] = new eventclass_exam_marking;
 include_once(getabspath("include/semakan_events.php"));
 $tableEvents["semakan"] = new eventclass_semakan;
+include_once(getabspath("include/admin_users_events.php"));
+$tableEvents["admin_users"] = new eventclass_admin_users;
 include_once(getabspath("include/analisa_kelulusan_psra_sek_events.php"));
 $tableEvents["analisa_kelulusan_psra_sek"] = new eventclass_analisa_kelulusan_psra_sek;
 include_once(getabspath("include/gps_psra_sek_events.php"));

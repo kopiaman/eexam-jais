@@ -76,11 +76,6 @@ $layout->skins["bigblock"] = "1";
 
 $layout->blocks["center"][] = "bigblock";
 $layout->blocks["left"] = array();
-$layout->containers["left"] = array();
-$layout->container_properties["left"] = array(  );
-$layout->containers["left"][] = array("name"=>"searchpanel", 
-	"block"=>"searchPanel", "substyle"=>1  );
-
 $layout->skins["left"] = "menu";
 
 $layout->blocks["left"][] = "left";
@@ -92,12 +87,6 @@ $layout->containers["toplinks"] = array();
 $layout->container_properties["toplinks"] = array(  );
 $layout->containers["toplinks"][] = array("name"=>"loggedas", 
 	"block"=>"security_block", "substyle"=>1  );
-
-$layout->containers["toplinks"][] = array("name"=>"toplinks_advsearch", 
-	"block"=>"asearch_link", "substyle"=>1  );
-
-$layout->containers["toplinks"][] = array("name"=>"toplinks_export", 
-	"block"=>"export_link", "substyle"=>1  );
 
 $layout->containers["toplinks"][] = array("name"=>"printpanel", 
 	"block"=>"", "substyle"=>1  );
@@ -115,15 +104,6 @@ $layout->skins["hmenu"] = "hmenu";
 $layout->blocks["top"][] = "hmenu";
 $layout->containers["search"] = array();
 $layout->container_properties["search"] = array(  );
-$layout->containers["search"][] = array("name"=>"search", 
-	"block"=>"searchform_block", "substyle"=>1  );
-
-$layout->containers["search"][] = array("name"=>"search_buttons", 
-	"block"=>"searchformbuttons_block", "substyle"=>1  );
-
-$layout->containers["search"][] = array("name"=>"search_saving_buttons", 
-	"block"=>"searchsaving_block", "substyle"=>1  );
-
 $layout->containers["search"][] = array("name"=>"details_found", 
 	"block"=>"details_block", "substyle"=>1  );
 

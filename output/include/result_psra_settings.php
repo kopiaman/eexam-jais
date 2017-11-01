@@ -143,7 +143,7 @@ else
 $tdataresult_psra[".rowHighlite"] = true;
 
 
-																			
+																				
 $tdataresult_psra[".addPageEvents"] = false;
 
 // use timepicker for search panel
@@ -4076,9 +4076,9 @@ global $conn;
 $year=date('Y');
 $alevel=$_SESSION['alevel'];
 $zon=$_SESSION['zon'];
-if($zon!==NULL && $alevel==1 || $alevel==2){
-$query->addWhere("sZone=".$zon);
-}else{};  
+if($zon!==NULL && $alevel==1){
+$query->addWhere("sZone='".$zon."'");
+}
 ;
 unset($query);
 ?>
