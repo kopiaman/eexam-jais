@@ -1,6 +1,6 @@
 <?php
 //$host="localhost"; $user="root"; $pwd="";$sys_dbname="eexam";
-$host="localhost"; $user="root"; $pwd=""; $sys_dbname="eexam";	
+$host="localhost"; $user="root"; $pwd="gengmalay86"; $sys_dbname="eexam";	
  
 function gred($mark){
 	
