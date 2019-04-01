@@ -3,10 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>CETAK SIJIL PEPERIKSAAN</title>
-<?php require_once('include/dbcommon.php');
+<?php
 require_once('x_config.php');
-$conn = mysql_connect($host, $user, $pwd) or trigger_error(mysql_error(),E_USER_ERROR);
-mysql_select_db($sys_dbname, $conn);
 ?>
 <link href="styles/basic.css" rel="stylesheet" type="text/css" />
 <style>
@@ -59,8 +57,8 @@ FROM exam_marking
 INNER JOIN school ON exam_marking.sCode = school.sCode
 WHERE exam_marking.eType ='PSRA' AND exam_marking.sCode='$sCode' AND exam_marking.eYear='$eYear'
 GROUP BY exam_marking.sid";
-$query_at=mysql_query($sql_at,$conn);
-$row=mysql_fetch_array($query_at);
+$query_at=mysqli_query($conn, $sql_at);
+$row=mysqli_fetch_array($query_at);
 
 ?>
   <?php do{ ?>
@@ -293,6 +291,6 @@ $row=mysql_fetch_array($query_at);
   </tr>
 </table>
 <br/><p class="pagebreak"></p>
-<?php }while($row=mysql_fetch_array($query_at)); ?>
+<?php }while($row=mysqli_fetch_array($query_at)); ?>
 </body>
 </html>

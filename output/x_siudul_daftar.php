@@ -3,10 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>CETAK SIJIL PEPERIKSAAN</title>
-<?php require_once('include/dbcommon.php');
+<?php
 require_once('x_config.php');
-$conn = mysql_connect($host, $user, $pwd) or trigger_error(mysql_error(),E_USER_ERROR);
-mysql_select_db($sys_dbname, $conn);
 ?>
 <style>
   @font-face {
@@ -76,8 +74,8 @@ FROM exam_marking
 INNER JOIN school ON exam_marking.sCode = school.sCode
 WHERE exam_marking.eType ='PSRA' AND exam_marking.sCode='$sCode' AND exam_marking.eYear='$eYear'
 GROUP BY exam_marking.sid";
-$query_at=mysql_query($sql_at,$conn);
-$row=mysql_fetch_array($query_at);
+$query_at=mysqli_query($conn, $sql_at);
+$row=mysqli_fetch_array($query_at);
 
 $sql_lulus= "
 SELECT
@@ -114,8 +112,8 @@ INNER JOIN school ON exam_marking.sCode = school.sCode AND eType = school.sType
 WHERE exam_marking.eType ='PSRA' AND exam_marking.sCode='$sCode' AND exam_marking.eYear='$eYear'
 ) AS Sub1
 ";
-$query_lulus=mysql_query($sql_lulus,$conn);
-$lulus=mysql_fetch_array($query_lulus);
+$query_lulus=mysqli_query($conn,$sql_lulus);
+$lulus=mysqli_fetch_array($query_lulus);
 
 
 
@@ -181,8 +179,8 @@ GROUP BY sCode, eYear
 ) AS Sub2
 ORDER BY eYear DESC, mumtaz DESC
 ";
-$query_all=mysql_query($sql_all,$conn);
-$all=mysql_fetch_array($query_all);
+$query_all=mysqli_query($conn,$sql_all);
+$all=mysqli_fetch_array($query_all);
 ?>
 
 
@@ -264,7 +262,7 @@ $all=mysql_fetch_array($query_all);
 		
 			
 			  $i++;
-			  }while($row=mysql_fetch_array($query_at)); ?>
+			  }while($row=mysqli_fetch_array($query_at)); ?>
           
       </table>
     <br /></th>

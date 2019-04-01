@@ -1,7 +1,8 @@
 <?php
 //$host="localhost"; $user="root"; $pwd="";$sys_dbname="eexam";
-$host="localhost"; $user="root"; $pwd=""; $sys_dbname="eexam";	
- 
+$host="localhost"; $user="root"; $pwd="gengmalay86"; $sys_dbname="eexam";	
+$conn = mysqli_connect($host, $user, $pwd, $sys_dbname);
+
 function gred($mark){
 	
 	if($mark=='TH'){

@@ -252,10 +252,10 @@ class ConnectionManager
 		$data["useServerMapPath"] = 1; //currently unused
 		
 $host="localhost";
-$user="kreatiwi_user";
+$user="root";
 $pwd="gengmalay86";
 $port="";
-$sys_dbname="kreatiwi_eexam";
+$sys_dbname="eexam";
 $data["connInfo"][0] = $host;
 $data["connInfo"][1] = $user;
 $data["connInfo"][2] = $pwd;
