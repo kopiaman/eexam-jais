@@ -14,7 +14,7 @@
     $port="";
     $sys_dbname="db_name";
 `
-- then change db user, password and dbname in output/x_config_server.php as well
+- then change db user, password and sys_dbname in output/x_config.php as well
 
 
 
