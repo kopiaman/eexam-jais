@@ -3,7 +3,7 @@
 - Download PHP Runner at https://xlinesoft.com/phprunner
 - Open the file .phpr
 
-# change DB connection
+# change DB connection 
 - edit file output/connections/ConnectionManager.php
 - change at line 254 to 258:
 
@@ -14,6 +14,8 @@
     $port="";
     $sys_dbname="db_name";
 `
+- then change db user, password and dbname in output/x_config_server.php as well
+
 
 
 # Min Server Requirement
