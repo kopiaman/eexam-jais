@@ -4,7 +4,7 @@
 - Open the file .phpr
 
 # change DB connection
-- open ConnectionManager.php
+- edit file output/connections/ConnectionManager.php
 - change at line 254 to 258:
 
 `
